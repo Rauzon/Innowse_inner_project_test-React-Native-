@@ -1,77 +1,32 @@
 import React, {memo} from 'react';
-import {Image, StyleSheet, View, Text} from 'react-native';
+import {Image, View, Text, StyleSheet} from 'react-native';
+import {RULES_ICON_URL_DATA} from '../../../../constants';
+import s from './ruleComponent.styles';
 
-type RuleComponentType = {
+type RuleComponentPropsType = {
   title: string;
   content?: string;
   icon: string;
   isLastItem?: boolean;
 };
 
-//TODO move data
-const urlData: {[key: string]: string} = {
-  firstIcon: require('../../../../assets/img/rule_icon_1.png'),
-  secondIcon: require('../../../../assets/img/rule_icon_2.png'),
-};
-
 const RuleComponent = memo(
-  ({title, content, icon, isLastItem}: RuleComponentType) => {
+  ({title, content, icon, isLastItem}: RuleComponentPropsType) => {
     return (
-      <View style={!isLastItem ? styles.rule_block : styleWithoutBorder}>
-        <View style={styles.image_block}>
-          <Image source={urlData[icon]} />
+      <View style={!isLastItem ? s.rule_block : styleWithoutBorder}>
+        <View style={s.image_block}>
+          <Image source={RULES_ICON_URL_DATA[icon]} />
         </View>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.content}>{content}</Text>
+        <Text style={s.title}>{title}</Text>
+        <Text style={s.content}>{content}</Text>
       </View>
     );
   },
 );
 
-const styles = StyleSheet.create({
-  rule_block: {
-    width: 343,
-    height: 201,
-    borderBottomWidth: 1,
-    borderBottomColor: '#EFEFEF',
-    borderStyle: 'solid',
-    marginBottom: 24,
-  },
-  rule_block_without_border: {
-    borderBottomWidth: 0,
-  },
-  image_block: {
-    width: 60,
-    height: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 50,
-    backgroundColor: '#F8F8F8',
-  },
-  title: {
-    marginTop: 8,
-    marginBottom: 5,
-    fontFamily: 'Montserrat',
-    fontStyle: 'normal',
-    fontWeight: 'bold',
-    fontSize: 18,
-    lineHeight: 33,
-    letterSpacing: 0.25,
-  },
-  content: {
-    fontFamily: 'SF Pro Display',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: 14,
-    lineHeight: 18,
-    letterSpacing: 0.25,
-    color: '#828282',
-  },
-});
-
 const styleWithoutBorder = StyleSheet.compose(
-  styles.rule_block,
-  styles.rule_block_without_border,
+  s.rule_block,
+  s.rule_block_without_border,
 );
 
 export default RuleComponent;

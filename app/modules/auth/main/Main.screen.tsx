@@ -2,12 +2,11 @@ import React, {memo} from 'react';
 import {Alert, Image, Pressable, Text, View} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import authService from '../../../services/auth/auth.service';
-import constants from '../../../constants';
+import {WEB_CLIENT_ID} from '../../../constants';
 import useIsAuthorized from '../../../hooks/useIsAuthorized';
 import s from './main.styles';
 import {useNavigation} from '@react-navigation/native';
-
-const {WEB_CLIENT_ID} = constants;
+import userService from '../../../services/users/user.service';
 
 interface IMainProps {}
 
@@ -22,7 +21,7 @@ const MainScreen = memo(({}: IMainProps) => {
   const onGoogleButtonPress = async () => {
     try {
       await authService.signInWithGoogle();
-      authService.setUserData();
+      userService.setUserData();
     } catch (error) {
       Alert.alert(error.message);
     }

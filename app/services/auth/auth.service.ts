@@ -4,11 +4,44 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-import {IAuthState, TransformNameType} from './auth.types';
+import {IAuthState} from './auth.types';
 
 class AuthService {
   public authState$: BehaviorSubject<IAuthState> =
-    new BehaviorSubject<IAuthState>({user: null});
+    new BehaviorSubject<IAuthState>({
+      rules: {
+        rulesData: [
+          {
+            id: '1',
+            title: 'Правило №1',
+            content:
+              'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
+            icon: 'firstIcon',
+          },
+          {
+            id: '2',
+            title: 'Правило №2',
+            content:
+              'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
+            icon: 'secondIcon',
+          },
+          {
+            id: '3',
+            title: 'Правило №3',
+            content:
+              'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
+            icon: 'firstIcon',
+          },
+          {
+            id: '4',
+            title: 'Правило №4',
+            content:
+              'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
+            icon: 'secondIcon',
+          },
+        ],
+      },
+    });
   public constructor() {
     if (AuthService.exists) {
       return AuthService.instance;
@@ -16,7 +49,9 @@ class AuthService {
     AuthService.instance = this;
     AuthService.exists = true;
   }
-
+  public getRules = () => {
+    return this.authState$.value.rules;
+  };
   public signInWithGoogle = async () => {
     try {
       await GoogleSignin.hasPlayServices();
@@ -29,34 +64,6 @@ class AuthService {
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
         throw new Error("called services isn't available");
       }
-    }
-  };
-
-  public setUserData = () => {
-    const transformName = (userName: string): TransformNameType => {
-      const [name, surname] = userName.split(' ');
-      const initials = `${name?.charAt(0)}${surname.charAt(0)}`;
-      return {
-        name,
-        surname,
-        initials,
-      };
-    };
-    try {
-      const userData = auth().currentUser;
-      const {name, initials, surname} = transformName(userData?.displayName!);
-      this.authState$.next({
-        ...this.authState$,
-        user: {
-          name,
-          surname,
-          initials,
-          photoUrl: userData?.photoURL,
-          email: userData?.email,
-        },
-      });
-    } catch (err) {
-      console.log(err);
     }
   };
 

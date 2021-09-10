@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -8,50 +8,23 @@ import {
   SafeAreaView,
 } from 'react-native';
 import RuleComponent from './components/RuleComponent';
+import authService from '../../../services/auth/auth.service';
+import {RulesType} from '../../../services/auth/auth.types';
 
 interface IRulesProps {
   navigation: any;
 }
 
-export type RuleDataType = {
-  id: string;
-  icon: string;
-  title: string;
-  content: string;
-};
-
-const rulesData: RuleDataType[] = [
-  {
-    id: '1',
-    title: 'Правило №1',
-    content:
-      'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
-    icon: 'firstIcon',
-  },
-  {
-    id: '2',
-    title: 'Правило №2',
-    content:
-      'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
-    icon: 'secondIcon',
-  },
-  {
-    id: '3',
-    title: 'Правило №3',
-    content:
-      'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
-    icon: 'firstIcon',
-  },
-  {
-    id: '4',
-    title: 'Правило №4',
-    content:
-      'Будьте в курсе последних событий компании, находите нужные вам скидки. Будьте в курсе последних событий компании, находите нужные   вам скидки',
-    icon: 'secondIcon',
-  },
-]; //TODO move data
-
 const RulesScreen = memo(({navigation}: IRulesProps) => {
+  const [rules, setRules] = useState({} as RulesType);
+
+  useEffect(() => {
+    const rulesData = authService.getRules();
+    if (rules) {
+      setRules(rulesData);
+    }
+  }, [rules]);
+
   return (
     <View>
       <ScrollView style={styles.container}>
@@ -61,7 +34,7 @@ const RulesScreen = memo(({navigation}: IRulesProps) => {
           </Text>
         </View>
         <SafeAreaView>
-          {rulesData.map(({id, content, title, icon}, index, arr) => {
+          {rules.rulesData?.map(({id, content, title, icon}, index, arr) => {
             return (
               <RuleComponent
                 key={id}
