@@ -2,7 +2,6 @@ import React, {memo, useCallback, useEffect, useState} from 'react';
 import {FlatList, View, Modal} from 'react-native';
 import videoStreamService from '../../../../services/videoStreamService/videoStream.service';
 import VideoItem from '../videoItem/VideoItem';
-import s from './videoList.styles';
 import VideoModal from '../videoModal/VideoModal';
 import ListHeader from '../listHeader/ListHeader';
 import videoListStyle from '../videoItem/videoItem.styles';

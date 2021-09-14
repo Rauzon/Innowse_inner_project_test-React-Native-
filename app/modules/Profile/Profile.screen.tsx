@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {View, Text, Pressable} from 'react-native';
-import AvatarComponent from './components/AvatarComponent';
+import AvatarComponent from './components/avatarComponent/AvatarComponent';
 import authService from '../../services/auth/auth.service';
 import useSetUserData from '../../hooks/useSetUserData';
 import s from './profile.styles';

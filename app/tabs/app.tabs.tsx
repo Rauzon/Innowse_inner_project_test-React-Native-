@@ -1,26 +1,18 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import VideosScreen from '../modules/community/videos/Videos.screen';
 import DiscountsScreen from '../modules/benefits/dicounts/Discounts.screen';
 import FaqComponentScreen from '../modules/help/faq/FaqComponent.screen';
-import CustomAppHeader from '../modules/commonComponents/customAppHeader/CustomAppHeader';
 import s from './Tabs.styles';
 import TabBarIcon from './components/tabBarIcon/TabBarIcon';
-import useButtonsSwitch from '../hooks/useButtonsSwitch';
 import SupportScreen from '../modules/help/support/Support.screen';
 import ReferralScreen from '../modules/benefits/referals/Referral.screen';
-import NewsScreen from '../modules/community/news/News.screen';
+import CommunityContainer from '../modules/community/CommunityContainer';
+import BenefitsContainer from "../modules/benefits/BenefitsContainer";
+import HelpContainer from "../modules/help/HelpContainer";
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
 const Tabs = () => {
-  const {
-    isRightButtonPressed,
-    isLeftButtonPressed,
-    pressRightButton,
-    pressLeftButton,
-  } = useButtonsSwitch();
-
   const {tabBarStyle, shadow} = s;
 
   return (
@@ -37,7 +29,7 @@ const Tabs = () => {
       }}>
       <Screen
         name="videos"
-        component={isLeftButtonPressed ? VideosScreen : NewsScreen}
+        component={CommunityContainer}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIcon
@@ -46,21 +38,12 @@ const Tabs = () => {
               label={'Сообщество'}
             />
           ),
-          header: () => (
-            <CustomAppHeader
-              rightBtnContent={'Новости'}
-              leftBtnContent={'Видео'}
-              isLeftButtonPressed={isLeftButtonPressed}
-              isRightButtonPressed={isRightButtonPressed}
-              pressRightButton={pressRightButton}
-              pressLeftButton={pressLeftButton}
-            />
-          ),
+          headerShown: false,
         }}
       />
       <Screen
         name="discounts"
-        component={isLeftButtonPressed ? DiscountsScreen : ReferralScreen}
+        component={BenefitsContainer}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIcon
@@ -69,21 +52,12 @@ const Tabs = () => {
               label={'Бонусы'}
             />
           ),
-          header: () => (
-            <CustomAppHeader
-              rightBtnContent={'Рефералка'}
-              leftBtnContent={'Скидки'}
-              isRightButtonPressed={isRightButtonPressed}
-              isLeftButtonPressed={isLeftButtonPressed}
-              pressLeftButton={pressLeftButton}
-              pressRightButton={pressRightButton}
-            />
-          ),
+          headerShown: false,
         }}
       />
       <Screen
         name="faq"
-        component={isLeftButtonPressed ? FaqComponentScreen : SupportScreen}
+        component={HelpContainer}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIcon
@@ -92,16 +66,7 @@ const Tabs = () => {
               label={'Помощь'}
             />
           ),
-          header: () => (
-            <CustomAppHeader
-              rightBtnContent={'Служба Поддержки'}
-              leftBtnContent={'FAQ'}
-              isLeftButtonPressed={isLeftButtonPressed}
-              isRightButtonPressed={isRightButtonPressed}
-              pressRightButton={pressRightButton}
-              pressLeftButton={pressLeftButton}
-            />
-          ),
+          headerShown: false,
         }}
       />
     </Navigator>
