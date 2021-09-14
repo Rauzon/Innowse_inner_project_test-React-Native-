@@ -11,3 +11,8 @@ export const TABS_BAR_URL_DATA: {[key: string]: string} = {
   benefits_icon: require('./assets/img/benefits_icon.png'),
   support_icon: require('./assets/img/support_icon.png'),
 };
+
+export const VIDEOS_ICON_URL_DATA: {[key: string]: string} = {
+  play_small_icon: require('./assets/img/play_icon_small.png'),
+  play_huge_icon: require('./assets/img/play_icon.png'),
+};

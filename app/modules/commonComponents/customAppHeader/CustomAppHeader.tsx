@@ -1,22 +1,25 @@
 import React, {memo} from 'react';
 import {View, Text, Pressable} from 'react-native';
 import s from './customAppHeader.styles';
-import useButtonsSwitch from '../../../hooks/useButtonsSwitch';
 
 interface ICustomAppHeaderProps {
   rightBtnContent: string;
   leftBtnContent: string;
+  isRightButtonPressed: boolean | undefined;
+  isLeftButtonPressed: boolean | undefined;
+  pressRightButton: ((pressed: boolean) => any[]) | undefined;
+  pressLeftButton: ((pressed: boolean) => any[]) | undefined;
 }
 
 const CustomAppHeader = memo(
-  ({rightBtnContent, leftBtnContent}: ICustomAppHeaderProps): JSX.Element => {
-    const {
-      isRightButtonPressed,
-      isLeftButtonPressed,
-      pressRightButton,
-      pressLeftButton,
-    } = useButtonsSwitch();
-
+  ({
+    rightBtnContent,
+    leftBtnContent,
+    isLeftButtonPressed,
+    pressRightButton,
+    isRightButtonPressed,
+    pressLeftButton,
+  }: ICustomAppHeaderProps): JSX.Element => {
     return (
       <View style={s.container}>
         <View style={s.wrapper}>

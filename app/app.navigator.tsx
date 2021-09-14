@@ -17,19 +17,19 @@ const AppNavigator = () => {
         screenOptions={{
           headerShown: false,
         }}>
-        <Screen name="splash" component={SplashScreen} />
-        <Screen name="login" component={MainScreen} />
-        <Screen name="rules" component={RulesScreen} />
+        {/*<Screen name="splash" component={SplashScreen} />*/}
+        {/*<Screen name="login" component={MainScreen} />*/}
+        {/*<Screen name="rules" component={RulesScreen} />*/}
         <Screen name="app" component={TabsComponentContainer} />
-        <Screen
-          name="profile"
-          options={{
-            title: 'Профиль',
-            headerShown: true,
-            header: () => <ProfileHeader />,
-          }}
-          component={ProfileScreen}
-        />
+        {/*<Screen*/}
+        {/*  name="profile"*/}
+        {/*  options={{*/}
+        {/*    title: 'Профиль',*/}
+        {/*    headerShown: true,*/}
+        {/*    header: () => <ProfileHeader />,*/}
+        {/*  }}*/}
+        {/*  component={ProfileScreen}*/}
+        {/*/>*/}
       </Navigator>
     </NavigationContainer>
   );

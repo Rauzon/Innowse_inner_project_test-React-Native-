@@ -1,16 +1,14 @@
-import React, { memo } from "react";
-import {View, Text, StyleSheet} from 'react-native';
+import React, {memo} from 'react';
+import {View, Text, StyleSheet, Alert} from 'react-native';
+import VideoList from './videoList/VideoList';
+import s from './Videos.styles';
 
 const VideosScreen = memo((): JSX.Element => {
   return (
-    <View>
-      <Text>Videos Screen</Text>
+    <View style={s.container}>
+      <VideoList />
     </View>
   );
-});
-
-const styles = StyleSheet.create({
-
 });
 
 export default VideosScreen;

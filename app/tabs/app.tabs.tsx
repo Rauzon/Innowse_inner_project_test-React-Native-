@@ -6,10 +6,21 @@ import FaqComponentScreen from '../modules/help/faq/FaqComponent.screen';
 import CustomAppHeader from '../modules/commonComponents/customAppHeader/CustomAppHeader';
 import s from './Tabs.styles';
 import TabBarIcon from './components/tabBarIcon/TabBarIcon';
+import useButtonsSwitch from '../hooks/useButtonsSwitch';
+import SupportScreen from '../modules/help/support/Support.screen';
+import ReferralScreen from '../modules/benefits/referals/Referral.screen';
+import NewsScreen from '../modules/community/news/News.screen';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
 const Tabs = () => {
+  const {
+    isRightButtonPressed,
+    isLeftButtonPressed,
+    pressRightButton,
+    pressLeftButton,
+  } = useButtonsSwitch();
+
   const {tabBarStyle, shadow} = s;
 
   return (
@@ -26,7 +37,7 @@ const Tabs = () => {
       }}>
       <Screen
         name="videos"
-        component={VideosScreen}
+        component={isLeftButtonPressed ? VideosScreen : NewsScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIcon
@@ -39,13 +50,17 @@ const Tabs = () => {
             <CustomAppHeader
               rightBtnContent={'Новости'}
               leftBtnContent={'Видео'}
+              isLeftButtonPressed={isLeftButtonPressed}
+              isRightButtonPressed={isRightButtonPressed}
+              pressRightButton={pressRightButton}
+              pressLeftButton={pressLeftButton}
             />
           ),
         }}
       />
       <Screen
         name="discounts"
-        component={DiscountsScreen}
+        component={isLeftButtonPressed ? DiscountsScreen : ReferralScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIcon
@@ -58,13 +73,17 @@ const Tabs = () => {
             <CustomAppHeader
               rightBtnContent={'Рефералка'}
               leftBtnContent={'Скидки'}
+              isRightButtonPressed={isRightButtonPressed}
+              isLeftButtonPressed={isLeftButtonPressed}
+              pressLeftButton={pressLeftButton}
+              pressRightButton={pressRightButton}
             />
           ),
         }}
       />
       <Screen
         name="faq"
-        component={FaqComponentScreen}
+        component={isLeftButtonPressed ? FaqComponentScreen : SupportScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIcon
@@ -76,7 +95,11 @@ const Tabs = () => {
           header: () => (
             <CustomAppHeader
               rightBtnContent={'Служба Поддержки'}
-              leftBtnContent={'FAQ  '}
+              leftBtnContent={'FAQ'}
+              isLeftButtonPressed={isLeftButtonPressed}
+              isRightButtonPressed={isRightButtonPressed}
+              pressRightButton={pressRightButton}
+              pressLeftButton={pressLeftButton}
             />
           ),
         }}
