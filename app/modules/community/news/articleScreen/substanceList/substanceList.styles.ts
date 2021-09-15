@@ -8,6 +8,7 @@ export default StyleSheet.create({
     paddingLeft: 16,
     paddingTop: 16,
     paddingBottom: 16,
+    marginTop: 16,
   },
   title: {
     fontFamily: 'SF Pro Display',

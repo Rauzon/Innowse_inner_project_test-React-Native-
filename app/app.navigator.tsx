@@ -9,11 +9,14 @@ import ScreenHeader from './modules/commonComponents/screenHeader/ScreenHeader';
 import TabsComponentContainer from './tabs/TabsComponentContainer';
 import ArticleScreen from './modules/community/news/articleScreen/Article.screen';
 import useGetNews from './hooks/useGetNews';
+import useGetBenefitsData from './hooks/useGetBenefitsData';
+import CouponScreen from './modules/benefits/dicounts/CouponScreen/Coupon.screen';
 
 const {Navigator, Screen} = createNativeStackNavigator();
 
 const AppNavigator = () => {
   const newsData = useGetNews();
+  const benefitsData = useGetBenefitsData();
 
   return (
     <NavigationContainer theme={MyTheme}>
@@ -44,6 +47,19 @@ const AppNavigator = () => {
                 header: () => <ScreenHeader title={'Просмотр новости'} />,
               }}>
               {props => <ArticleScreen item={item} {...props} />}
+            </Screen>
+          );
+        })}
+        {benefitsData?.discountsData.map(item => {
+          return (
+            <Screen
+              key={item.id}
+              name={`discounts/${item.city}`}
+              options={{
+                headerShown: true,
+                header: () => <ScreenHeader title={item.city} />,
+              }}>
+              {props => <CouponScreen discount={item} {...props} />}
             </Screen>
           );
         })}

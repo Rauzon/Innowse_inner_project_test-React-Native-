@@ -21,7 +21,7 @@ class VideoStreamService {
     VideoStreamService.instance = this;
     VideoStreamService.exists = true;
   }
-  public getMetaData(videoId) {
+  public setMetaData(videoId: string): Promise<void> {
     return getYoutubeMeta(videoId).then(data => {
       const currentData = this.videoState$.getValue();
       const state$ = {
@@ -34,9 +34,8 @@ class VideoStreamService {
       this.videoState$.next(state$);
     });
   }
-  public getVideoSeries = (): string[] => {
-    const currentData = this.videoState$.getValue();
-    return currentData.videoSeries;
+  public getVideoState = (): IVideoStream => {
+    return this.videoState$.getValue();
   };
 }
 

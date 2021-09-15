@@ -7,19 +7,19 @@ interface ISubstanceProps {
 }
 
 const SubstanceList = memo(({headers}: ISubstanceProps): JSX.Element => {
-  return (
-    headers && (
-      <View style={s.container}>
-        <Text style={s.title}>Содержание</Text>
-        {headers.map((header, index) => {
-          return (
-            <Text style={s.subtitle} key={index}>
-              {header}
-            </Text>
-          );
-        })}
-      </View>
-    )
+  return headers.length ? (
+    <View style={s.container}>
+      <Text style={s.title}>Содержание</Text>
+      {headers.map((header, index) => {
+        return (
+          <Text style={s.subtitle} key={index}>
+            {header}
+          </Text>
+        );
+      })}
+    </View>
+  ) : (
+    <></>
   );
 });
 

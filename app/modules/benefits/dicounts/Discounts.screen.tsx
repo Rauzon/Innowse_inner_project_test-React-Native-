@@ -1,11 +1,20 @@
-import React, { memo } from "react";
-import {View, Text} from 'react-native';
+import React, {memo} from 'react';
+import {FlatList} from 'react-native';
+import s from './discounts.styles';
+import CouponCard from './couponCard/CouponCard';
+import useGetBenefitsData from '../../../hooks/useGetBenefitsData';
 
 const DiscountsScreen = memo((): JSX.Element => {
-  return (
-    <View>
-      <Text>Discounts screen</Text>
-    </View>
+  const data = useGetBenefitsData();
+
+  return data ? (
+    <FlatList
+      data={data.discountsData}
+      renderItem={({item}) => <CouponCard key={item.id} item={item} />}
+      style={s.container}
+    />
+  ) : (
+    <></>
   );
 });
 

@@ -32,7 +32,7 @@ export default StyleSheet.create({
   },
   title_wrapper: {
     width: '100%',
-    height: 84,
+    height: 90,
     paddingRight: 16,
     paddingLeft: 16,
   },

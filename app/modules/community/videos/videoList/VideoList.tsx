@@ -15,9 +15,9 @@ const VideoList = memo(({}: IVideoListProps): JSX.Element => {
   const [selectedVideo, setSelectedVideo] = useState<string>('');
 
   useEffect(() => {
-    const dataSeries = videoStreamService.getVideoSeries();
-    if (dataSeries) {
-      setDataSeries(dataSeries);
+    const {videoSeries} = videoStreamService.getVideoState();
+    if (videoSeries) {
+      setDataSeries(videoSeries);
     }
   }, []);
 

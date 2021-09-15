@@ -25,3 +25,10 @@ export const NEWS_ICON_URL_DATA: {[key: string]: string} = {
   fifth_new: require('./assets/img/fifth_new.png'),
   sixth_new: require('./assets/img/sixth_new.png'),
 };
+
+export const DISCOUNT_CARDS_ICON_URL_DATA: {[key: string]: string} = {
+  minsk_card: require('./assets/img/minsk_card.png'),
+  vitebsk_card: require('./assets/img/vitebsk_card.png'),
+  gomel_card: require('./assets/img/gomel_card.png'),
+  mogilev_card: require('./assets/img/mogilev_card.png'),
+};
