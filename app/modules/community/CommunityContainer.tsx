@@ -2,8 +2,8 @@ import React, {memo} from 'react';
 import {ScrollView} from 'react-native';
 import CustomAppHeader from '../commonComponents/customAppHeader/CustomAppHeader';
 import useButtonsSwitch from '../../hooks/useButtonsSwitch';
-import VideosScreen from "./videos/Videos.screen";
-import NewsScreen from "./news/News.screen";
+import VideosScreen from './videos/Videos.screen';
+import NewsScreen from './news/News.screen';
 
 interface ICommunityContainerProps {}
 

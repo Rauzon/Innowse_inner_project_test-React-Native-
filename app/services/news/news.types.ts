@@ -4,7 +4,8 @@ export type NewType = {
   title: string;
   date: string;
   headers: string[];
-  content: string;
+  content: Array<{subtitle?: string; text?: string}>;
+  preContent?: string;
 };
 
 export interface INewsState {

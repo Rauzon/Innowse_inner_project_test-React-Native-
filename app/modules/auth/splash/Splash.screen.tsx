@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Dimensions, Image, StyleSheet, View} from 'react-native';
+import {Image, View} from 'react-native';
 import authService from '../../../services/auth/auth.service';
 import useIsAuthorized from '../../../hooks/useIsAuthorized';
+import s from './splash.styles';
+
 interface ISplashProps {
   navigation: any;
 }
@@ -23,20 +25,10 @@ const SplashScreen = ({navigation}: ISplashProps): JSX.Element => {
     navigation?.navigate('rules');
   }
   return (
-    <View style={styles.container}>
+    <View style={s.container}>
       <Image source={require('../../../assets/img/logo.png')} />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default SplashScreen;

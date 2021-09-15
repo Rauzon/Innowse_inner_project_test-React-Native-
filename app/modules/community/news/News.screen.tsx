@@ -22,7 +22,7 @@ const NewsScreen = memo(({}: INewsProps): JSX.Element => {
       style={s.container}
       data={newsData}
       renderItem={({item, index}) => (
-        <NewComponent isFirstItem={index === 0} key={index} newItem={item} />
+        <NewComponent isFirstItem={index === 0} newItem={item} />
       )}
     />
   );

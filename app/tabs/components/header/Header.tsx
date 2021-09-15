@@ -3,7 +3,7 @@ import s from './header.styles';
 import {Image, Pressable, View} from 'react-native';
 import DefaultAvatar from '../../../modules/commonComponents/defaultAvatar/DefaultAvatar';
 import {useNavigation} from '@react-navigation/native';
-import {UserType} from '../../../services/auth/auth.types';
+import {UserType} from '../../../services/users/user.types';
 
 interface IHeaderProps {
   userData: UserType | null;

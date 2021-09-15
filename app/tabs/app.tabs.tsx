@@ -1,14 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import DiscountsScreen from '../modules/benefits/dicounts/Discounts.screen';
-import FaqComponentScreen from '../modules/help/faq/FaqComponent.screen';
 import s from './Tabs.styles';
 import TabBarIcon from './components/tabBarIcon/TabBarIcon';
-import SupportScreen from '../modules/help/support/Support.screen';
-import ReferralScreen from '../modules/benefits/referals/Referral.screen';
 import CommunityContainer from '../modules/community/CommunityContainer';
-import BenefitsContainer from "../modules/benefits/BenefitsContainer";
-import HelpContainer from "../modules/help/HelpContainer";
+import BenefitsContainer from '../modules/benefits/BenefitsContainer';
+import HelpContainer from '../modules/help/HelpContainer';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 

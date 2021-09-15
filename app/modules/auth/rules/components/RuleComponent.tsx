@@ -8,12 +8,13 @@ type RuleComponentPropsType = {
   content?: string;
   icon: string;
   isLastItem?: boolean;
+  id: string;
 };
 
 const RuleComponent = memo(
-  ({title, content, icon, isLastItem}: RuleComponentPropsType) => {
+  ({id, title, content, icon, isLastItem}: RuleComponentPropsType) => {
     return (
-      <View style={!isLastItem ? s.rule_block : styleWithoutBorder}>
+      <View key={id} style={!isLastItem ? s.rule_block : styleWithoutBorder}>
         <View style={s.image_block}>
           <Image source={RULES_ICON_URL_DATA[icon]} />
         </View>

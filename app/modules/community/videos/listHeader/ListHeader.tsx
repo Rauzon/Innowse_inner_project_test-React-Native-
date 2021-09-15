@@ -1,14 +1,6 @@
-import React, {memo, useRef} from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  Dimensions,
-  ScrollView,
-} from 'react-native';
+import React, {memo} from 'react';
+import {SafeAreaView, ScrollView} from 'react-native';
 import s from '../videoItem/videoItem.styles';
-import listHeaderStyles from './listHeader.styles';
 import VideoItem from '../videoItem/VideoItem';
 
 interface IListHeaderProps {
@@ -19,7 +11,6 @@ interface IListHeaderProps {
 
 const ListHeader = memo(
   ({dataSeries, styles, onVideoPress}: IListHeaderProps): JSX.Element => {
-    const {} = styles;
     return (
       <SafeAreaView style={{marginBottom: 16}}>
         <ScrollView
