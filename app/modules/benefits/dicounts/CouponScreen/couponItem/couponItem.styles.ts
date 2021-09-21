@@ -1,0 +1,92 @@
+import {StyleSheet} from 'react-native';
+
+export default StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginRight: 16,
+    marginLeft: 16,
+    marginBottom: 10,
+    height: 170,
+    backgroundColor: '#F3F3F3',
+    borderRadius: 10,
+    position: 'relative',
+  },
+  circle: {
+    height: 18,
+    width: 18,
+    position: 'absolute',
+    zIndex: 999,
+    borderRadius: 50,
+    backgroundColor: '#FFF',
+    left: '25%',
+    transform: [{translateX: -10.5}],
+  },
+  countSize_wrapper: {
+    height: '100%',
+    width: '25%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  countSize_text: {
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: 24,
+    lineHeight: 29,
+    letterSpacing: 0.25,
+    color: '#C32D2C',
+  },
+  coupon_line_icon: {
+    position: 'absolute',
+    right: 0,
+    top: 9,
+  },
+  placeName: {
+    paddingRight: '50%',
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: 16,
+    lineHeight: 20,
+    letterSpacing: 0.25,
+    color: '#333333',
+    marginBottom: 8,
+  },
+  text: {
+    fontFamily: 'SF Pro Display',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: 14,
+    lineHeight: 18,
+    letterSpacing: 0.25,
+    color: '#828282',
+  },
+  bold_text: {
+    fontWeight: 'bold',
+  },
+  content_wrapper: {
+    marginLeft: 24,
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'flex-start',
+  },
+  btn: {
+    marginTop: 8,
+  },
+  btn_content: {
+    fontFamily: 'SF Pro Display',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: 16,
+    lineHeight: 18,
+    letterSpacing: 0.25,
+    color: '#C32D2C',
+  },
+  top: {
+    top: -9,
+  },
+  bottom: {
+    bottom: -9,
+  },
+});

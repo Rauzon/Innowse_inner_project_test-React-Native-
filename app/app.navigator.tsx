@@ -5,64 +5,59 @@ import MainScreen from './modules/auth/main/Main.screen';
 import RulesScreen from './modules/auth/rules/Rules.screen';
 import ProfileScreen from './modules/Profile/Profile.screen';
 import SplashScreen from './modules/auth/splash/Splash.screen';
-import ScreenHeader from './modules/commonComponents/screenHeader/ScreenHeader';
+import ScreenHeader from './components/screenHeader/ScreenHeader';
 import TabsComponentContainer from './tabs/TabsComponentContainer';
 import ArticleScreen from './modules/community/news/articleScreen/Article.screen';
-import useGetNews from './hooks/useGetNews';
-import useGetBenefitsData from './hooks/useGetBenefitsData';
 import CouponScreen from './modules/benefits/dicounts/CouponScreen/Coupon.screen';
+import commonArticleScreen from './components/articleScreen/Article.screen';
 
 const {Navigator, Screen} = createNativeStackNavigator();
 
 const AppNavigator = () => {
-  const newsData = useGetNews();
-  const benefitsData = useGetBenefitsData();
-
   return (
     <NavigationContainer theme={MyTheme}>
       <Navigator
         screenOptions={{
           headerShown: false,
-        }}>
-        <Screen name="splash" component={SplashScreen} />
-        <Screen name="login" component={MainScreen} />
+        }}
+        initialRouteName={'splash'}>
+        {/*<Screen name="splash" component={SplashScreen} />*/}
+        {/*<Screen name="login" component={MainScreen} />*/}
         <Screen name="rules" component={RulesScreen} />
-        <Screen name="app" component={TabsComponentContainer} />
-        <Screen
-          name="profile"
-          options={{
-            title: 'Профиль',
-            headerShown: true,
-            header: () => <ScreenHeader title={'Профиль'} />,
-          }}
-          component={ProfileScreen}
-        />
-        {newsData.map(item => {
-          return (
-            <Screen
-              key={item.id}
-              name={`news/${item.id}`}
-              options={{
-                headerShown: true,
-                header: () => <ScreenHeader title={'Просмотр новости'} />,
-              }}>
-              {props => <ArticleScreen item={item} {...props} />}
-            </Screen>
-          );
-        })}
-        {benefitsData?.discountsData.map(item => {
-          return (
-            <Screen
-              key={item.id}
-              name={`discounts/${item.city}`}
-              options={{
-                headerShown: true,
-                header: () => <ScreenHeader title={item.city} />,
-              }}>
-              {props => <CouponScreen discount={item} {...props} />}
-            </Screen>
-          );
-        })}
+        {/*<Screen name="app" component={TabsComponentContainer} />*/}
+        {/*<Screen*/}
+        {/*  name="profile"*/}
+        {/*  options={{*/}
+        {/*    title: 'Профиль',*/}
+        {/*    headerShown: true,*/}
+        {/*    header: () => <ScreenHeader title={'Профиль'} />,*/}
+        {/*  }}*/}
+        {/*  component={ProfileScreen}*/}
+        {/*/>*/}
+        {/*<Screen*/}
+        {/*  name={'News'}*/}
+        {/*  options={{*/}
+        {/*    headerShown: true,*/}
+        {/*    header: () => <ScreenHeader title={'Просмотр новости'} />,*/}
+        {/*  }}*/}
+        {/*  component={ArticleScreen}*/}
+        {/*/>*/}
+        {/*<Screen*/}
+        {/*  name={'Discounts'}*/}
+        {/*  options={{*/}
+        {/*    headerShown: true,*/}
+        {/*    header: ({route}) => <ScreenHeader title={route.params?.city} />,*/}
+        {/*  }}*/}
+        {/*  component={CouponScreen}*/}
+        {/*/>*/}
+        {/*<Screen*/}
+        {/*  name={'FAQ'}*/}
+        {/*  options={{*/}
+        {/*    headerShown: true,*/}
+        {/*    header: ({route}) => <ScreenHeader title={route.params?.title} />,*/}
+        {/*  }}*/}
+        {/*  component={commonArticleScreen}*/}
+        {/*/>*/}
       </Navigator>
     </NavigationContainer>
   );

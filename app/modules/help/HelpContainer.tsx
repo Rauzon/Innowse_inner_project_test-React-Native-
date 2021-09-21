@@ -1,8 +1,7 @@
 import React, {memo} from 'react';
-import {ScrollView} from 'react-native';
+import {View} from 'react-native';
 import useButtonsSwitch from '../../hooks/useButtonsSwitch';
-import CustomAppHeader from '../commonComponents/customAppHeader/CustomAppHeader';
-import FaqComponentScreen from './faq/FaqComponent.screen';
+import FaqScreen from './faq/Faq.screen';
 import SupportScreen from './support/Support.screen';
 
 const BenefitsContainer = memo((): JSX.Element => {
@@ -12,19 +11,24 @@ const BenefitsContainer = memo((): JSX.Element => {
     pressRightButton,
     pressLeftButton,
   } = useButtonsSwitch();
-
   return (
-    <ScrollView>
-      <CustomAppHeader
-        rightBtnContent={'Служба Поддержки'}
-        leftBtnContent={'FAQ'}
-        isLeftButtonPressed={isLeftButtonPressed}
-        isRightButtonPressed={isRightButtonPressed}
-        pressRightButton={pressRightButton}
-        pressLeftButton={pressLeftButton}
-      />
-      {isLeftButtonPressed ? <FaqComponentScreen /> : <SupportScreen />}
-    </ScrollView>
+    <View>
+      {isLeftButtonPressed ? (
+        <FaqScreen
+          pressLeftButton={pressLeftButton}
+          pressRightButton={pressRightButton}
+          isRightButtonPressed={isRightButtonPressed}
+          isLeftButtonPressed={isLeftButtonPressed}
+        />
+      ) : (
+        <SupportScreen
+          isLeftButtonPressed={isLeftButtonPressed}
+          isRightButtonPressed={isRightButtonPressed}
+          pressRightButton={pressRightButton}
+          pressLeftButton={pressLeftButton}
+        />
+      )}
+    </View>
   );
 });
 

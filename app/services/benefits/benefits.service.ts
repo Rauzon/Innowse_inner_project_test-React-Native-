@@ -1,6 +1,6 @@
 import {BehaviorSubject} from 'rxjs';
 import {IBenefits} from './benefits.types';
-import {MinskCouponsData, VitebskCouponsData} from './data';
+import {MinskCouponsData, ReferralsData, VitebskCouponsData} from './data';
 
 class BenefitsService {
   private benefitsState$: BehaviorSubject<IBenefits> =
@@ -36,9 +36,9 @@ class BenefitsService {
             coupons: VitebskCouponsData,
           },
         ],
-        categories: ['все', 'спорт', 'красота', 'еда', 'алкоголь'],
+        categories: ['Все', 'Спорт', 'Красота', 'Еда', 'Алкоголь'],
       },
-      referrals: {},
+      referrals: ReferralsData,
     });
   public constructor() {
     if (BenefitsService.exists) {

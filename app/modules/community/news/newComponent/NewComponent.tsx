@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {Image, View, Text, TouchableOpacity} from 'react-native';
-import s from './newComponent.styles';
+import styles from './newComponent.styles';
 import {NewType} from '../../../../services/news/news.types';
 import {NEWS_ICON_URL_DATA} from '../../../../constants';
 import {useNavigation} from '@react-navigation/native';
@@ -15,23 +15,26 @@ const NewComponent = memo(
     const {navigate} = useNavigation();
 
     const onNewPress = () => {
-      navigate(`news/${newItem.id}`);
+      navigate('News', newItem);
     };
 
     return (
-      <TouchableOpacity key={newItem.id} onPress={onNewPress}>
+      <TouchableOpacity
+        key={newItem.id}
+        onPress={onNewPress}
+        style={isFirstItem ? [styles.container, {marginTop: 8}] : styles.container}>
         <View
           style={
             !isFirstItem
-              ? [s.wrapper, s.content_wrapper_border]
-              : [s.wrapper, {paddingBottom: 14}]
+              ? [styles.wrapper, styles.content_wrapper_border]
+              : [styles.wrapper, {paddingBottom: 14}]
           }>
-          <View style={s.icon_wrapper}>
-            <Image source={NEWS_ICON_URL_DATA[newItem.icon]} style={s.icon} />
+          <View style={styles.icon_wrapper}>
+            <Image source={NEWS_ICON_URL_DATA[newItem.icon]} style={styles.icon} />
           </View>
-          <View style={s.content_wrapper}>
-            <Text style={s.title}>{newItem.title}</Text>
-            <Text style={s.date}>{newItem.date}</Text>
+          <View style={styles.content_wrapper}>
+            <Text style={styles.title}>{newItem.title}</Text>
+            <Text style={styles.date}>{newItem.date}</Text>
           </View>
         </View>
       </TouchableOpacity>

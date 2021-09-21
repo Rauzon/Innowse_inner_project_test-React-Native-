@@ -1,16 +1,33 @@
 import React, {memo} from 'react';
-import {ScrollView, View} from 'react-native';
+import {View, ViewStyle} from 'react-native';
 import VideoList from './videoList/VideoList';
-import s from './Videos.styles';
+import styles from './Videos.styles';
 
-interface IVideosProps {}
+interface IVideosProps {
+  isRightButtonPressed?: boolean;
+  isLeftButtonPressed?: boolean;
+  pressRightButton?: (pressed: boolean) => ViewStyle[];
+  pressLeftButton?: (pressed: boolean) => ViewStyle[];
+}
 
-const VideosScreen = memo(({}: IVideosProps): JSX.Element => {
-  return (
-    <View style={s.container}>
-      <VideoList />
-    </View>
-  );
-});
+const VideosScreen = memo(
+  ({
+    pressLeftButton,
+    pressRightButton,
+    isLeftButtonPressed,
+    isRightButtonPressed,
+  }: IVideosProps): JSX.Element => {
+    return (
+      <View style={styles.container}>
+        <VideoList
+          isLeftButtonPressed={isLeftButtonPressed}
+          isRightButtonPressed={isRightButtonPressed}
+          pressRightButton={pressRightButton}
+          pressLeftButton={pressLeftButton}
+        />
+      </View>
+    );
+  },
+);
 
 export default VideosScreen;

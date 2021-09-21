@@ -32,3 +32,30 @@ export const DISCOUNT_CARDS_ICON_URL_DATA: {[key: string]: string} = {
   gomel_card: require('./assets/img/gomel_card.png'),
   mogilev_card: require('./assets/img/mogilev_card.png'),
 };
+
+export const REFERRALS_ICONS_URL_DATA: {[key: string]: string} = {
+  gift_icon: require('./assets/img/gift_icon.png'),
+  tree_icon: require('./assets/img/tree_icon.png'),
+  people_icon: require('./assets/img/people_icon.png'),
+  money_icon: require('./assets/img/money_icon.png'),
+};
+
+export const FAQ_ICONS_URL_DATA: {[key: string]: string} = {
+  vacation_icon: require('./assets/img/vacation_icon.png'),
+  umbrella_icon: require('./assets/img/umbrella_icon.png'),
+  remote_work_icon: require('./assets/img/remote_work_icon.png'),
+  sick_days_icon: require('./assets/img/sick_days_icon.png'),
+  yoga_icon: require('./assets/img/ioga_icon.png'),
+  gym_icon: require('./assets/img/gym_icon.png'),
+  links_icon: require('./assets/img/links_icon.png'),
+};
+
+export enum BENEFITS_DISCOUNTS_CATEGORY {
+  ALL = 'Все',
+  FOOD = 'Еда',
+  DRINK = 'Алкоголь',
+  SPORT = 'Спорт',
+  BEAUTY = 'Красота',
+}
+
+export const POLICY_AGREEMENT_LINK = 'https://reactnative.dev/';

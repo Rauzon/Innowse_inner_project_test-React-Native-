@@ -1,20 +1,18 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {Alert, Image, Pressable, Text, View} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import authService from '../../../services/auth/auth.service';
 import {WEB_CLIENT_ID} from '../../../constants';
 import useIsAuthorized from '../../../hooks/useIsAuthorized';
-import s from './main.styles';
+import styles from './main.styles';
 import {useNavigation} from '@react-navigation/native';
 import userService from '../../../services/users/user.service';
-
-interface IMainProps {}
 
 GoogleSignin.configure({
   webClientId: WEB_CLIENT_ID,
 });
 
-const MainScreen = memo(({}: IMainProps) => {
+const MainScreen = () => {
   const {navigate} = useNavigation();
   const isAuthorized = useIsAuthorized();
 
@@ -32,32 +30,32 @@ const MainScreen = memo(({}: IMainProps) => {
   }
 
   return (
-    <View style={s.container}>
-      <View style={s.header}>
+    <View style={styles.container}>
+      <View style={styles.header}>
         <Image source={require('../../../assets/img/MainScreen_fon.png')} />
       </View>
-      <View style={s.title_wrapper}>
+      <View style={styles.title_wrapper}>
         <View>
-          <Text style={s.top_title}>Добро пожаловать</Text>
+          <Text style={styles.top_title}>Добро пожаловать</Text>
         </View>
         <View>
-          <Text style={s.bottom_title}>в my Innowise</Text>
+          <Text style={styles.bottom_title}>в my Innowise</Text>
         </View>
-        <View style={s.subtitle_wrapper}>
-          <Text style={s.subtitle}>
+        <View style={styles.subtitle_wrapper}>
+          <Text style={styles.subtitle}>
             Будьте в курсе последних событий компании, находите нужные вам
             скидки
           </Text>
         </View>
       </View>
-      <View style={s.button_wrapper}>
-        <Pressable style={s.button} onPress={onGoogleButtonPress}>
+      <View style={styles.button_wrapper}>
+        <Pressable style={styles.button} onPress={onGoogleButtonPress}>
           <Image source={require('../../../assets/img/Group.png')} />
-          <Text style={s.button_content}>Continue with Google</Text>
+          <Text style={styles.button_content}>Continue with Google</Text>
         </Pressable>
       </View>
     </View>
   );
-});
+};
 
 export default MainScreen;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import s from './Tabs.styles';
+import styles from './Tabs.styles';
 import TabBarIcon from './components/tabBarIcon/TabBarIcon';
 import CommunityContainer from '../modules/community/CommunityContainer';
 import BenefitsContainer from '../modules/benefits/BenefitsContainer';
@@ -9,7 +9,7 @@ import HelpContainer from '../modules/help/HelpContainer';
 const {Navigator, Screen} = createBottomTabNavigator();
 
 const Tabs = () => {
-  const {tabBarStyle, shadow} = s;
+  const {tabBarStyle, shadow} = styles;
 
   return (
     <Navigator

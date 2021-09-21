@@ -1,11 +1,10 @@
-import React, {memo} from 'react';
-import {ScrollView} from 'react-native';
+import React from 'react';
+import {View} from 'react-native';
 import useButtonsSwitch from '../../hooks/useButtonsSwitch';
-import CustomAppHeader from '../commonComponents/customAppHeader/CustomAppHeader';
 import DiscountsScreen from './dicounts/Discounts.screen';
 import ReferralScreen from './referals/Referral.screen';
 
-const BenefitsContainer = memo((): JSX.Element => {
+const BenefitsContainer = (): JSX.Element => {
   const {
     isRightButtonPressed,
     isLeftButtonPressed,
@@ -14,18 +13,24 @@ const BenefitsContainer = memo((): JSX.Element => {
   } = useButtonsSwitch();
 
   return (
-    <ScrollView>
-      <CustomAppHeader
-        rightBtnContent={'Рефералка'}
-        leftBtnContent={'Скидки'}
-        isLeftButtonPressed={isLeftButtonPressed}
-        isRightButtonPressed={isRightButtonPressed}
-        pressRightButton={pressRightButton}
-        pressLeftButton={pressLeftButton}
-      />
-      {isLeftButtonPressed ? <DiscountsScreen /> : <ReferralScreen />}
-    </ScrollView>
+    <View>
+      {isLeftButtonPressed ? (
+        <DiscountsScreen
+          pressLeftButton={pressLeftButton}
+          isRightButtonPressed={isRightButtonPressed}
+          pressRightButton={pressRightButton}
+          isLeftButtonPressed={isLeftButtonPressed}
+        />
+      ) : (
+        <ReferralScreen
+          isLeftButtonPressed={isLeftButtonPressed}
+          isRightButtonPressed={isRightButtonPressed}
+          pressRightButton={pressRightButton}
+          pressLeftButton={pressLeftButton}
+        />
+      )}
+    </View>
   );
-});
+};
 
 export default BenefitsContainer;

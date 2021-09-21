@@ -1,11 +1,11 @@
 import React, {memo} from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
-import s from '../videoItem/videoItem.styles';
+import styles from '../videoItem/videoItem.styles';
 import VideoItem from '../videoItem/VideoItem';
 
 interface IListHeaderProps {
   dataSeries: string[];
-  styles: typeof s;
+  styles: typeof styles;
   onVideoPress(videoId: string): void;
 }
 

@@ -1,14 +1,17 @@
 import {useCallback, useState} from 'react';
 import getCurrentStyles from '../helpers/getCurrentStyles';
+import {ViewStyle} from 'react-native';
 
 type UseButtonSwitchType = {
-  isRightButtonPressed?: boolean;
-  isLeftButtonPressed?: boolean;
-  pressRightButton?: (pressed: boolean) => any[];
-  pressLeftButton?: (pressed: boolean) => any[];
+  isRightButtonPressed: boolean;
+  isLeftButtonPressed: boolean;
+  pressRightButton: (pressed: boolean) => ViewStyle[];
+  pressLeftButton: (pressed: boolean) => ViewStyle[];
 };
 
-const useButtonsSwitch = (initialState: boolean = true): UseButtonSwitchType => {
+const useButtonsSwitch = (
+  initialState: boolean = true,
+): UseButtonSwitchType => {
   const [isLeftButtonPressed, setIsLeftButtonPressed] =
     useState<boolean>(initialState);
   const [isRightButtonPressed, setIsRightButtonPressed] = useState<boolean>(

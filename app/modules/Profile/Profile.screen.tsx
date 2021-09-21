@@ -1,45 +1,43 @@
-import React, {memo} from 'react';
-import {View, Text, Pressable} from 'react-native';
+import React from 'react';
+import {Pressable, Text, View} from 'react-native';
 import AvatarComponent from './components/avatarComponent/AvatarComponent';
 import authService from '../../services/auth/auth.service';
 import useSetUserData from '../../hooks/useSetUserData';
-import s from './profile.styles';
+import styles from './profile.styles';
+import {useNavigation} from '@react-navigation/native';
 
-interface IProfileScreenProps {
-  navigation: any;
-}
-
-const ProfileScreen = memo(({navigation}: IProfileScreenProps): JSX.Element => {
+const ProfileScreen = (): JSX.Element => {
   const user = useSetUserData();
+  const {navigate} = useNavigation();
 
   const onSignOut = async () => {
     await authService.signOut();
-    navigation.navigate('login');
+    navigate('login');
   };
 
   return (
-    <View style={s.container}>
-      <View style={s.wrapper}>
-        <View style={s.avatar__block}>
+    <View style={styles.container}>
+      <View style={styles.wrapper}>
+        <View style={styles.avatar__block}>
           <AvatarComponent
             initials={user?.initials}
             photoUrl={user?.photoUrl}
           />
         </View>
-        <View style={s.content__block}>
+        <View style={styles.content__block}>
           <View>
-            <Text style={s.content__block_name}>
+            <Text style={styles.content__block_name}>
               {user?.name ? `${user.name} ${user.surname}` : 'User'}
             </Text>
-            <Text style={s.content__block_email}>{user?.email}</Text>
+            <Text style={styles.content__block_email}>{user?.email}</Text>
           </View>
-          <Pressable style={s.logout__button} onPress={onSignOut}>
-            <Text style={s.logout__button_content}>Logout</Text>
+          <Pressable style={styles.logout__button} onPress={onSignOut}>
+            <Text style={styles.logout__button_content}>Logout</Text>
           </Pressable>
         </View>
       </View>
     </View>
   );
-});
+};
 
 export default ProfileScreen;

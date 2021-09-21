@@ -1,13 +1,13 @@
 import React, {memo} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import useGetMetaData from '../../../../hooks/useGetMetaData';
-import s from './videoItem.styles';
+import styles from './videoItem.styles';
 import {VIDEOS_ICON_URL_DATA} from '../../../../constants';
 
 interface IVideoItemProps {
   videoId: string;
   onVideoPress(videoId: string): void;
-  styles: typeof s;
+  styles: typeof styles;
   isLastItem?: boolean;
   isFirstItem?: boolean;
   iconName: string;

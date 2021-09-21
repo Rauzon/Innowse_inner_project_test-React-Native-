@@ -1,14 +1,14 @@
 import {useEffect, useState} from 'react';
-import {DiscountsType} from '../services/benefits/benefits.types';
+import {IBenefits} from '../services/benefits/benefits.types';
 import benefitsService from '../services/benefits/benefits.service';
 
-const useGetBenefitsData = (): DiscountsType | null => {
-  const [data, setDiscountsData] = useState<DiscountsType | null>(null);
+const useGetBenefitsData = (): IBenefits | null => {
+  const [data, setDiscountsData] = useState<IBenefits | null>(null);
 
   useEffect(() => {
-    const {discounts} = benefitsService.getDiscountsState();
-    if (discounts) {
-      setDiscountsData(discounts);
+    const data = benefitsService.getDiscountsState();
+    if (data) {
+      setDiscountsData(data);
     }
   }, []);
 

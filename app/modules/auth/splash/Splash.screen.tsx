@@ -2,15 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {Image, View} from 'react-native';
 import authService from '../../../services/auth/auth.service';
 import useIsAuthorized from '../../../hooks/useIsAuthorized';
-import s from './splash.styles';
+import styles from './splash.styles';
+import {useNavigation} from '@react-navigation/native';
 
-interface ISplashProps {
-  navigation: any;
-}
-
-const SplashScreen = ({navigation}: ISplashProps): JSX.Element => {
+const SplashScreen = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
   const isAuthorized = useIsAuthorized();
+  const {navigate} = useNavigation();
 
   useEffect(() => {
     authService.signOut(); // for development
@@ -19,13 +17,13 @@ const SplashScreen = ({navigation}: ISplashProps): JSX.Element => {
   }, []);
 
   if (!isLoading) {
-    navigation?.navigate('login');
+    navigate('login');
   }
   if (!isLoading && isAuthorized) {
-    navigation?.navigate('rules');
+    navigate('rules');
   }
   return (
-    <View style={s.container}>
+    <View style={styles.container}>
       <Image source={require('../../../assets/img/logo.png')} />
     </View>
   );

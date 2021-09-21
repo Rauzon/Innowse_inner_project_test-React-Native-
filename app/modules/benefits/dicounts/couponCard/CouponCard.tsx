@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {DiscountsDataType} from '../../../../services/benefits/benefits.types';
-import s from './couponCardstyles';
+import styles from './couponCard.styles';
 import {DISCOUNT_CARDS_ICON_URL_DATA} from '../../../../constants';
 import {useNavigation} from '@react-navigation/native';
 
@@ -14,17 +14,17 @@ const CouponCard = memo(({item}: ICouponProps): JSX.Element => {
   const {navigate} = useNavigation();
 
   const onCardPress = () => {
-    navigate(`discounts/${city}`);
+    navigate('Discounts', item);
   };
 
   return (
-    <TouchableOpacity style={s.wrapper} onPress={onCardPress}>
-      <View style={s.content_wrapper}>
-        <Text style={s.title}>{city}</Text>
-        <Text style={s.description}>{shortDescription}</Text>
+    <TouchableOpacity style={styles.wrapper} onPress={onCardPress}>
+      <View style={styles.content_wrapper}>
+        <Text style={styles.title}>{city}</Text>
+        <Text style={styles.description}>{shortDescription}</Text>
       </View>
       <View>
-        <Image source={DISCOUNT_CARDS_ICON_URL_DATA[icon]} style={s.img} />
+        <Image source={DISCOUNT_CARDS_ICON_URL_DATA[icon]} style={styles.img} />
       </View>
     </TouchableOpacity>
   );

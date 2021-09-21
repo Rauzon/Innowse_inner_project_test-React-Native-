@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
-import s from './header.styles';
+import styles from './header.styles';
 import {Image, Pressable, View} from 'react-native';
-import DefaultAvatar from '../../../modules/commonComponents/defaultAvatar/DefaultAvatar';
+import DefaultAvatar from '../../../components/defaultAvatar/DefaultAvatar';
 import {useNavigation} from '@react-navigation/native';
 import {UserType} from '../../../services/users/user.types';
 
@@ -17,18 +17,18 @@ const Header = memo(({userData}: IHeaderProps): JSX.Element => {
   };
 
   return (
-    <View style={s.wrapper}>
-      <View style={s.logo}>
+    <View style={styles.wrapper}>
+      <View style={styles.logo}>
         <Image
-          style={s.logo_img}
+          style={styles.logo_img}
           source={require('../../../assets/img/logo.png')}
         />
       </View>
-      <Pressable onPress={onProfileIconPress} style={s.container_wrapper}>
+      <Pressable onPress={onProfileIconPress} style={styles.container_wrapper}>
         {userData?.photoUrl ? (
-          <Image source={{uri: userData.photoUrl}} style={s.avatar_icon} />
+          <Image source={{uri: userData.photoUrl}} style={styles.avatar_icon} />
         ) : (
-          <DefaultAvatar initials={userData?.initials} componentStyle={s} />
+          <DefaultAvatar initials={userData?.initials} componentStyle={styles} />
         )}
       </Pressable>
     </View>

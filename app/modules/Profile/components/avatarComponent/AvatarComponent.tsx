@@ -1,6 +1,6 @@
 import React from 'react';
-import DefaultAvatar from '../../../commonComponents/defaultAvatar/DefaultAvatar';
-import s from './avatarComponent.styles';
+import DefaultAvatar from '../../../../components/defaultAvatar/DefaultAvatar';
+import styles from './avatarComponent.styles';
 import {Image} from 'react-native';
 
 interface IAvatarComponentProps {
@@ -13,9 +13,9 @@ const AvatarComponent = ({
   photoUrl,
 }: IAvatarComponentProps): JSX.Element => {
   return photoUrl ? (
-    <Image style={s.photo_avatar} source={{uri: photoUrl}} />
+    <Image style={styles.photo_avatar} source={{uri: photoUrl}} />
   ) : (
-    <DefaultAvatar initials={initials} componentStyle={s} />
+    <DefaultAvatar initials={initials} componentStyle={styles} />
   );
 };
 

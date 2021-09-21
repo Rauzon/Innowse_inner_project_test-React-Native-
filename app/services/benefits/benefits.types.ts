@@ -1,15 +1,22 @@
+import {BENEFITS_DISCOUNTS_CATEGORY} from '../../constants';
+
 type WorkTimeType = {start?: string; end?: string};
 
-type CategoriesType = 'все' | 'еда' | 'алкоголь' | 'спорт' | 'красота';
+export type CategoriesType =
+  | BENEFITS_DISCOUNTS_CATEGORY.ALL
+  | BENEFITS_DISCOUNTS_CATEGORY.FOOD
+  | BENEFITS_DISCOUNTS_CATEGORY.DRINK
+  | BENEFITS_DISCOUNTS_CATEGORY.SPORT
+  | BENEFITS_DISCOUNTS_CATEGORY.BEAUTY;
 
-type DiscountMetaDataType = {
+export type DiscountMetaDataType = {
   condition?: string | null;
   login?: string | null;
   password?: string | null;
   description?: string | null;
 };
 
-type PlaceDataType = {
+export type PlaceDataType = {
   address?: string | null;
   phoneNumber?: string | null;
   workTime?: {
@@ -41,7 +48,38 @@ export type DiscountsType = {
   categories: CategoriesType[];
 };
 
-type ReferralsDataType = {};
+export type VacancyType = {
+  id: string;
+  vacancy: string;
+  salary: string;
+  cities: string[];
+};
+
+export type RecommendationRuleType = {
+  id: string;
+  rule: string;
+  iconName: string;
+};
+
+export type RecommendationSchemaType = {
+  id: string;
+  bonus: string;
+  position: string;
+};
+
+export type ContactType = {
+  id: string;
+  city: string[];
+  name: string;
+  mail: string;
+};
+
+export type ReferralsDataType = {
+  vacancies: VacancyType[];
+  recommendationRules: RecommendationRuleType[];
+  recommendationSchema: RecommendationSchemaType[];
+  contacts: ContactType[];
+};
 
 export interface IBenefits {
   discounts: DiscountsType;

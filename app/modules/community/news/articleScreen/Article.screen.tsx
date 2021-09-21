@@ -1,33 +1,30 @@
-import React, {memo} from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
-import {NewType} from '../../../../services/news/news.types';
-import s from './article.styles';
+import React from 'react';
+import {Image, ScrollView, Text, View} from 'react-native';
+import styles from './article.styles';
 import {NEWS_ICON_URL_DATA} from '../../../../constants';
-import SubstanceList from './substanceList/SubstanceList';
-import ContentList from './contentList/ContentList';
+import SubstanceList from '../../../../components/substanceList/SubstanceList';
+import ContentList from '../../../../components/contentList/ContentList';
+import {useRoute} from '@react-navigation/native';
 
-interface IArticleProps {
-  item: NewType;
-}
-
-const ArticleScreen = memo(({item}: IArticleProps): JSX.Element => {
-  const {content, icon, date, title, headers, preContent} = item;
+const ArticleScreen = (): JSX.Element => {
+  const {params} = useRoute();
+  const {content, icon, date, title, headers, preContent} = params;
 
   return (
-    <ScrollView style={s.container}>
-      <Image source={NEWS_ICON_URL_DATA[icon]} style={s.poster} />
-      <View style={s.content_wrapper}>
-        <View style={s.date_wrapper}>
-          <Text style={s.date}>{date}</Text>
+    <ScrollView style={styles.container}>
+      <Image source={NEWS_ICON_URL_DATA[icon]} style={styles.poster} />
+      <View style={styles.content_wrapper}>
+        <View style={styles.date_wrapper}>
+          <Text style={styles.date}>{date}</Text>
         </View>
-        <View style={s.title_wrapper}>
-          <Text style={s.title}>{title}</Text>
+        <View style={styles.title_wrapper}>
+          <Text style={styles.title}>{title}</Text>
         </View>
         <SubstanceList headers={headers} />
         <ContentList content={content} preContent={preContent} />
       </View>
     </ScrollView>
   );
-});
+};
 
 export default ArticleScreen;

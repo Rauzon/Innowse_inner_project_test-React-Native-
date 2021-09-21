@@ -1,21 +1,47 @@
 import React, {memo} from 'react';
-import {FlatList} from 'react-native';
-import s from './discounts.styles';
+import {FlatList, ViewStyle} from 'react-native';
+import styles from './discounts.styles';
 import CouponCard from './couponCard/CouponCard';
 import useGetBenefitsData from '../../../hooks/useGetBenefitsData';
+import CustomAppHeader from '../../../components/customAppHeader/CustomAppHeader';
 
-const DiscountsScreen = memo((): JSX.Element => {
-  const data = useGetBenefitsData();
+interface IDiscountsProps {
+  isRightButtonPressed: boolean;
+  isLeftButtonPressed: boolean;
+  pressRightButton: (pressed: boolean) => ViewStyle[];
+  pressLeftButton: (pressed: boolean) => ViewStyle[];
+}
 
-  return data ? (
-    <FlatList
-      data={data.discountsData}
-      renderItem={({item}) => <CouponCard key={item.id} item={item} />}
-      style={s.container}
-    />
-  ) : (
-    <></>
-  );
-});
+const DiscountsScreen = memo(
+  ({
+    isRightButtonPressed,
+    isLeftButtonPressed,
+    pressRightButton,
+    pressLeftButton,
+  }: IDiscountsProps): JSX.Element => {
+    const data = useGetBenefitsData();
+    const discounts = data?.discounts;
+
+    return discounts ? (
+      <FlatList
+        data={discounts.discountsData}
+        ListHeaderComponent={() => (
+          <CustomAppHeader
+            rightBtnContent={'Рефералка'}
+            leftBtnContent={'Скидки'}
+            isLeftButtonPressed={isLeftButtonPressed}
+            isRightButtonPressed={isRightButtonPressed}
+            pressRightButton={pressRightButton}
+            pressLeftButton={pressLeftButton}
+          />
+        )}
+        renderItem={({item}) => <CouponCard key={item.id} item={item} />}
+        style={styles.container}
+      />
+    ) : (
+      <></>
+    );
+  },
+);
 
 export default DiscountsScreen;

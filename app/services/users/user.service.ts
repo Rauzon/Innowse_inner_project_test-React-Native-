@@ -13,20 +13,14 @@ class UserService {
     UserService.exists = true;
   }
   public setUserData = () => {
-    const transformName = (userName: string): TransformNameType => {
-      const [name, surname] = userName.split(' ');
-      const initials = `${name?.charAt(0)}${surname.charAt(0)}`;
-      return {
-        name,
-        surname,
-        initials,
-      };
-    };
     try {
       const userData = auth().currentUser;
-      const {name, initials, surname} = transformName(userData?.displayName!);
+      const {name, initials, surname} = this.transformName(
+        userData?.displayName!,
+      );
+      const data = this.userState$.getValue();
       this.userState$.next({
-        ...this.userState$,
+        ...data,
         user: {
           name,
           surname,
@@ -38,6 +32,15 @@ class UserService {
     } catch (err) {
       console.log(err);
     }
+  };
+  private transformName = (userName: string): TransformNameType => {
+    const [name, surname] = userName.split(' ');
+    const initials = `${name?.charAt(0)}${surname.charAt(0)}`;
+    return {
+      name,
+      surname,
+      initials,
+    };
   };
 }
 
