@@ -6,6 +6,7 @@ import useGetMetaData from '../../hooks/useGetMetaData';
 import SubstanceList from '../substanceList/SubstanceList';
 import ContentList from '../contentList/ContentList';
 import VideoModal from '../videoModal/VideoModal';
+import { PlayIcon } from "../../Icons";
 
 const ArticleScreen = memo((): JSX.Element => {
   const {params} = useRoute();
@@ -20,7 +21,7 @@ const ArticleScreen = memo((): JSX.Element => {
         onPress={() => setVisibleModal(true)}>
         <Image style={styles.poster} source={{uri: metaData?.thumbnail_url}} />
         <View style={styles.play_icon_wrapper}>
-          <Image source={require('../../assets/img/play_icon.png')} />
+          <PlayIcon />
         </View>
       </Pressable>
       <View style={styles.title_wrapper}>

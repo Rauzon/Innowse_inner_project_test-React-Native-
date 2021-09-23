@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
-import {Image, View, Text, StyleSheet} from 'react-native';
-import {RULES_ICON_URL_DATA} from '../../../../constants';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import styles from './ruleComponent.styles';
+import {RULES_ICON_URL_DATA} from '../../../../constants';
 
 type RuleComponentPropsType = {
   title: string;
@@ -14,7 +14,9 @@ type RuleComponentPropsType = {
 const RuleComponent = memo(
   ({id, title, content, icon, isLastItem}: RuleComponentPropsType) => {
     return (
-      <View key={id} style={!isLastItem ? styles.rule_block : styleWithoutBorder}>
+      <View
+        key={id}
+        style={!isLastItem ? styles.rule_block : styleWithoutBorder}>
         <View style={styles.image_block}>
           <Image source={RULES_ICON_URL_DATA[icon]} />
         </View>

@@ -11,7 +11,7 @@ const AuthErrorScreen = (): JSX.Element => {
     <ErrorScreenWrapper>
       <Text style={styles.title_error}>Не получилось войти</Text>
       <Text style={styles.message_error}>
-        Попробуйте ещё раз, используя почту @innowise-group.com
+        Попробуйте ещё раз, используя почту @gmail.com
       </Text>
       <Pressable style={styles.button} onPress={() => navigate('login')}>
         <Text style={styles.button_content}>Попробовать снова</Text>

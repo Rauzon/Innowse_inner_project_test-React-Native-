@@ -4,6 +4,7 @@ import useIsAuthorized from '../../../hooks/useIsAuthorized';
 import styles from './splash.styles';
 import {useNavigation} from '@react-navigation/native';
 import userService from '../../../services/users/user.service';
+import { BigLogoIcon } from "../../../Icons";
 
 const SplashScreen = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +32,7 @@ const SplashScreen = (): JSX.Element => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../../../assets/img/logo.png')} />
+      <BigLogoIcon />
     </View>
   );
 };

@@ -16,10 +16,6 @@ export default StyleSheet.create({
     width: 100,
     height: 14,
   },
-  logo_img: {
-    width: 100,
-    height: 14,
-  },
   container_wrapper: {
     width: 38,
     height: 38,

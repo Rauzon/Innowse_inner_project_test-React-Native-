@@ -7,6 +7,7 @@ import useIsAuthorized from '../../../hooks/useIsAuthorized';
 import styles from './main.styles';
 import {useNavigation} from '@react-navigation/native';
 import userService from '../../../services/users/user.service';
+import {GoogleIcon, MainScreenIcon} from '../../../Icons';
 
 GoogleSignin.configure({
   webClientId: WEB_CLIENT_ID,
@@ -20,7 +21,7 @@ const MainScreen = () => {
     if (isAuthorized) {
       navigate('rules');
     }
-  }, [isAuthorized, navigate]);
+  }, [isAuthorized]);
 
   const onGoogleButtonPress = async () => {
     try {
@@ -38,7 +39,7 @@ const MainScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require('../../../assets/img/MainScreen_fon.png')} />
+        <MainScreenIcon />
       </View>
       <View style={styles.title_wrapper}>
         <View>
@@ -55,7 +56,7 @@ const MainScreen = () => {
         </View>
       </View>
       <Pressable style={styles.button} onPress={onGoogleButtonPress}>
-        <Image source={require('../../../assets/img/Group.png')} />
+        <GoogleIcon />
         <Text style={styles.button_content}>Continue with Google</Text>
       </Pressable>
     </View>
