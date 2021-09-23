@@ -25,9 +25,9 @@ export default StyleSheet.create({
     marginRight: 16,
   },
   title: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 20,
     lineHeight: 28,
     color: '#353535',
@@ -37,7 +37,7 @@ export default StyleSheet.create({
     paddingRight: '5%',
   },
   precontent: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 16,

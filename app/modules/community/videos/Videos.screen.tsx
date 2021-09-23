@@ -1,7 +1,6 @@
 import React, {memo} from 'react';
 import {View, ViewStyle} from 'react-native';
 import VideoList from './videoList/VideoList';
-import styles from './Videos.styles';
 
 interface IVideosProps {
   isRightButtonPressed?: boolean;
@@ -18,7 +17,7 @@ const VideosScreen = memo(
     isRightButtonPressed,
   }: IVideosProps): JSX.Element => {
     return (
-      <View style={styles.container}>
+      <View>
         <VideoList
           isLeftButtonPressed={isLeftButtonPressed}
           isRightButtonPressed={isRightButtonPressed}

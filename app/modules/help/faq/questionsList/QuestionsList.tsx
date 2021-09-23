@@ -1,7 +1,6 @@
 import React, {memo} from 'react';
 import {FlatList, View, ViewStyle} from 'react-native';
 import {FaqType} from '../../../../services/help/help.types';
-import styles from './questionsList.styles';
 import QuestionItem from './questionItem/QuestionItem';
 import CustomAppHeader from '../../../../components/customAppHeader/CustomAppHeader';
 
@@ -22,7 +21,7 @@ const QuestionsList = memo(
     pressRightButton,
   }: IQuestionsListProps): JSX.Element => {
     return (
-      <View style={styles.container}>
+      <View>
         <FlatList
           data={faqData}
           ListHeaderComponent={() => (

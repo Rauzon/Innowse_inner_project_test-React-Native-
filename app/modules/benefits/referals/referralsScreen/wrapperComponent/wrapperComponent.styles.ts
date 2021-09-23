@@ -9,9 +9,9 @@ export default StyleSheet.create({
   },
   title: {
     paddingRight: '17.5%',
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 20,
     lineHeight: 33,
     color: '#353535',

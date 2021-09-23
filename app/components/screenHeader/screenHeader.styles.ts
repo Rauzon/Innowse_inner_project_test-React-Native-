@@ -15,7 +15,7 @@ export default StyleSheet.create({
   header_content: {
     fontFamily: 'SF Pro Display',
     fontStyle: 'normal',
-    fontWeight: '500',
+    fontWeight: 'bold',
     fontSize: 16,
     lineHeight: 19,
     letterSpacing: 0.25,

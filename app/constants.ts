@@ -59,3 +59,6 @@ export enum BENEFITS_DISCOUNTS_CATEGORY {
 }
 
 export const POLICY_AGREEMENT_LINK = 'https://reactnative.dev/';
+
+export const ACCESSIBLE_EMAIL = ['gmail.com'];
+export const EMAIL_VALID_ERROR = 'email is not valid';

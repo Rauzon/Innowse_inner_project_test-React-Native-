@@ -24,15 +24,15 @@ export default StyleSheet.create({
     marginTop: 4,
   },
   content_title: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 14,
     lineHeight: 17,
     color: '#333333',
   },
   content: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 12,

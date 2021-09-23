@@ -13,8 +13,8 @@ import {RulesType} from '../../../services/auth/auth.types';
 import styles from './rules.styles';
 import {useNavigation} from '@react-navigation/native';
 import CheckBox from '@react-native-community/checkbox';
-import OpenURLButton from "../../../components/openURLButton/OpenURLButton";
-import { POLICY_AGREEMENT_LINK } from "../../../constants";
+import OpenURLButton from '../../../components/openURLButton/OpenURLButton';
+import {POLICY_AGREEMENT_LINK} from '../../../constants';
 
 const RulesScreen = () => {
   const [rules, setRules] = useState({} as RulesType);
@@ -50,6 +50,7 @@ const RulesScreen = () => {
               <RuleComponent
                 title={title}
                 content={content}
+                key={id}
                 id={id}
                 icon={icon}
                 isLastItem={index === arr.length - 1}
@@ -68,8 +69,10 @@ const RulesScreen = () => {
           />
           <View style={styles.policy_content_wrapper}>
             <Text style={styles.policy_content}>
-              Я соглашаюсь с <OpenURLButton url={POLICY_AGREEMENT_LINK}>Политикой Конфиденциальности и Условиями
-              использования</OpenURLButton>
+              Я соглашаюсь с{' '}
+              <OpenURLButton url={POLICY_AGREEMENT_LINK}>
+                Политикой Конфиденциальности и Условиями использования
+              </OpenURLButton>
             </Text>
           </View>
         </View>

@@ -18,9 +18,9 @@ export default StyleSheet.create({
     color: '#828282',
   },
   bonus: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 22,
     lineHeight: 33,
     color: '#C32D2C',

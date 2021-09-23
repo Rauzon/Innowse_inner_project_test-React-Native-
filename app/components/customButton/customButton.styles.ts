@@ -7,7 +7,7 @@ export default StyleSheet.create({
     marginRight: 8,
   },
   btn: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 16,

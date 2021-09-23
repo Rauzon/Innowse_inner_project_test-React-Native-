@@ -1,16 +1,13 @@
-import React, {memo} from 'react';
+import React from 'react';
 import styles from './header.styles';
 import {Image, Pressable, View} from 'react-native';
 import DefaultAvatar from '../../../components/defaultAvatar/DefaultAvatar';
 import {useNavigation} from '@react-navigation/native';
-import {UserType} from '../../../services/users/user.types';
+import useSetUserData from '../../../hooks/useSetUserData';
 
-interface IHeaderProps {
-  userData: UserType | null;
-}
-
-const Header = memo(({userData}: IHeaderProps): JSX.Element => {
+const Header = (): JSX.Element => {
   const {navigate} = useNavigation();
+  const userData = useSetUserData();
 
   const onProfileIconPress = () => {
     navigate('profile');
@@ -28,11 +25,14 @@ const Header = memo(({userData}: IHeaderProps): JSX.Element => {
         {userData?.photoUrl ? (
           <Image source={{uri: userData.photoUrl}} style={styles.avatar_icon} />
         ) : (
-          <DefaultAvatar initials={userData?.initials} componentStyle={styles} />
+          <DefaultAvatar
+            initials={userData?.initials}
+            componentStyle={styles}
+          />
         )}
       </Pressable>
     </View>
   );
-});
+};
 
 export default Header;

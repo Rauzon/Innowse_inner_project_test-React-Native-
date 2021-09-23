@@ -39,15 +39,15 @@ export default StyleSheet.create({
     letterSpacing: 0.25,
   },
   salary: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 20,
     lineHeight: 33,
     color: '#C32D2C',
   },
   city: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 14,

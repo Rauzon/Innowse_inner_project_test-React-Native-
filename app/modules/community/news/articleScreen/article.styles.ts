@@ -22,7 +22,7 @@ export default StyleSheet.create({
     marginBottom: 6,
   },
   date: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 14,
@@ -37,10 +37,10 @@ export default StyleSheet.create({
     paddingLeft: 16,
   },
   title: {
-    alignSelf: 'flex-start',
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
+    alignSelf: 'flex-start',
     fontSize: 24,
     lineHeight: 28,
     color: '#333333',

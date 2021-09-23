@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Alert, Image, Pressable, Text, View} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import authService from '../../../services/auth/auth.service';
-import {WEB_CLIENT_ID} from '../../../constants';
+import {EMAIL_VALID_ERROR, WEB_CLIENT_ID} from '../../../constants';
 import useIsAuthorized from '../../../hooks/useIsAuthorized';
 import styles from './main.styles';
 import {useNavigation} from '@react-navigation/native';
@@ -16,18 +16,24 @@ const MainScreen = () => {
   const {navigate} = useNavigation();
   const isAuthorized = useIsAuthorized();
 
+  useEffect(() => {
+    if (isAuthorized) {
+      navigate('rules');
+    }
+  }, [isAuthorized, navigate]);
+
   const onGoogleButtonPress = async () => {
     try {
       await authService.signInWithGoogle();
       userService.setUserData();
     } catch (error) {
-      Alert.alert(error.message);
+      if (error.message === EMAIL_VALID_ERROR) {
+        navigate('errorScreen');
+      } else {
+        Alert.alert(error.message);
+      }
     }
   };
-
-  if (isAuthorized) {
-    navigate('rules');
-  }
 
   return (
     <View style={styles.container}>
@@ -48,12 +54,10 @@ const MainScreen = () => {
           </Text>
         </View>
       </View>
-      <View style={styles.button_wrapper}>
-        <Pressable style={styles.button} onPress={onGoogleButtonPress}>
-          <Image source={require('../../../assets/img/Group.png')} />
-          <Text style={styles.button_content}>Continue with Google</Text>
-        </Pressable>
-      </View>
+      <Pressable style={styles.button} onPress={onGoogleButtonPress}>
+        <Image source={require('../../../assets/img/Group.png')} />
+        <Text style={styles.button_content}>Continue with Google</Text>
+      </Pressable>
     </View>
   );
 };

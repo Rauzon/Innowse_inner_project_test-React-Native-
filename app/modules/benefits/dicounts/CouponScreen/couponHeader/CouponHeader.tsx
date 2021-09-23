@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {FlatList, View, Text} from 'react-native';
 import {CategoriesType} from '../../../../../services/benefits/benefits.types';
-import CustomButton from './customButton/CustomButton';
+import CustomButton from '../../../../../components/customButton/CustomButton';
 import styles from './couponHeader.styles';
 
 interface ICouponProps {

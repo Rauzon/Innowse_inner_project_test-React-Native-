@@ -1,6 +1,5 @@
 import React, {memo} from 'react';
 import {FlatList, ViewStyle} from 'react-native';
-import styles from './discounts.styles';
 import CouponCard from './couponCard/CouponCard';
 import useGetBenefitsData from '../../../hooks/useGetBenefitsData';
 import CustomAppHeader from '../../../components/customAppHeader/CustomAppHeader';
@@ -36,7 +35,6 @@ const DiscountsScreen = memo(
           />
         )}
         renderItem={({item}) => <CouponCard key={item.id} item={item} />}
-        style={styles.container}
       />
     ) : (
       <></>

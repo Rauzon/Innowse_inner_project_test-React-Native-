@@ -1,16 +1,14 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import auth from '@react-native-firebase/auth';
 
 const useIsAuthorized = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
-  auth().onAuthStateChanged(user => {
-    if (user) {
-      setIsAuthorized(true);
-    } else {
-      setIsAuthorized(false);
-    }
-  });
+  useEffect(() => {
+    auth().onAuthStateChanged(user => {
+      setIsAuthorized(!!user);
+    });
+  }, []);
 
   return isAuthorized;
 };

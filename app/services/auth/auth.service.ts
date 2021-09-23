@@ -5,6 +5,7 @@ import {
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import {IAuthState} from './auth.types';
+import {ACCESSIBLE_EMAIL, EMAIL_VALID_ERROR} from '../../constants';
 
 class AuthService {
   public authState$: BehaviorSubject<IAuthState> =
@@ -54,22 +55,46 @@ class AuthService {
   };
   public signInWithGoogle = async () => {
     try {
-      await GoogleSignin.hasPlayServices();
-      const {idToken} = await GoogleSignin.signIn();
+      const {idToken, user} = await GoogleSignin.signIn();
+      await this.checkEmailValid(user);
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       return auth().signInWithCredential(googleCredential);
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        throw new Error('Sign In was canceled');
+        throw new Error(error.message);
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        throw new Error("called services isn't available");
+        throw new Error(error.message);
+      } else if (error.message === EMAIL_VALID_ERROR) {
+        throw new Error(error.message);
       }
     }
   };
-
+  private revokeUserAccess = async () => {
+    try {
+      await GoogleSignin.revokeAccess();
+    } catch (e) {
+      console.log(e);
+    }
+  };
   public signOut = async () => {
-    await GoogleSignin.revokeAccess();
-    auth().signOut();
+    try {
+      await this.revokeUserAccess();
+      await auth().signOut();
+    } catch (e) {
+      throw new Error(e.message);
+    }
+  };
+  private checkEmailValid = async (userData: {
+    [key: string]: string | null;
+  }): Promise<string | undefined> => {
+    const mailCharsArr = userData?.email?.split('@');
+    const emailDomain = mailCharsArr?.pop();
+    if (ACCESSIBLE_EMAIL.includes(emailDomain!)) {
+      return emailDomain;
+    } else {
+      await GoogleSignin.revokeAccess();
+      throw new Error(EMAIL_VALID_ERROR);
+    }
   };
 }
 

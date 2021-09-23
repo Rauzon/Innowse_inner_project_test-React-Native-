@@ -31,9 +31,9 @@ export default StyleSheet.create({
     borderRadius: 10,
   },
   logout__button_content: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
-    fontWeight: '500',
+    fontWeight: 'normal',
     fontSize: 16,
     lineHeight: 20,
     letterSpacing: 0.25,
@@ -41,7 +41,7 @@ export default StyleSheet.create({
   },
   content__block_name: {
     paddingTop: 20,
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: '600',
     fontSize: 16,
@@ -50,7 +50,7 @@ export default StyleSheet.create({
   },
   content__block_email: {
     marginTop: 4,
-    fontFamily: 'Roboto',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 14,

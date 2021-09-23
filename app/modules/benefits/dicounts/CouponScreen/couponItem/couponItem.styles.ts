@@ -29,9 +29,9 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   countSize_text: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 24,
     lineHeight: 29,
     letterSpacing: 0.25,
@@ -44,9 +44,9 @@ export default StyleSheet.create({
   },
   placeName: {
     paddingRight: '50%',
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 16,
     lineHeight: 20,
     letterSpacing: 0.25,
@@ -54,7 +54,7 @@ export default StyleSheet.create({
     marginBottom: 8,
   },
   text: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 14,
@@ -75,7 +75,7 @@ export default StyleSheet.create({
     marginTop: 8,
   },
   btn_content: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 16,

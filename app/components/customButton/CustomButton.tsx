@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {Pressable, Text} from 'react-native';
 import styles from './customButton.styles';
-import {CategoriesType} from '../../../../../../services/benefits/benefits.types';
+import {CategoriesType} from '../../services/benefits/benefits.types';
 
 interface ICustomButton {
   isLastItem?: boolean;

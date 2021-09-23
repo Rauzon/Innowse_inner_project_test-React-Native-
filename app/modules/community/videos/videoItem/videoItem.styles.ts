@@ -4,7 +4,6 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     marginBottom: 6,
-    height: 70,
     paddingRight: 16,
     paddingLeft: 16,
   },
@@ -31,7 +30,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   wrapper_title: {
-    // width: '85%',
     flexDirection: 'row',
     marginBottom: 4,
   },
@@ -39,18 +37,19 @@ export default StyleSheet.create({
     flexShrink: 1,
     flexWrap: 'wrap',
     flexBasis: 270,
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 14,
     lineHeight: 17,
     color: '#333333',
+    paddingRight: 10,
   },
   wrapper_date: {
     //
   },
   date: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 12,

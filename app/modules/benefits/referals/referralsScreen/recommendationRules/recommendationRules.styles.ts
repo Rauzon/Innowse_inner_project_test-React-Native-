@@ -7,7 +7,7 @@ export default StyleSheet.create({
   },
   text: {
     marginBottom: 24,
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 16,

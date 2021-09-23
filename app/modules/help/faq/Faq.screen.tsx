@@ -1,6 +1,5 @@
 import React, {memo} from 'react';
 import {View, ViewStyle} from 'react-native';
-import styles from './faq.styles';
 import useGetHelpData from '../../../hooks/useGetHelpData';
 import QuestionsList from './questionsList/QuestionsList';
 
@@ -22,7 +21,7 @@ const FaqScreen = memo(
     const faqData = helpData?.faq?.faqData;
 
     return (
-      <View style={styles.container}>
+      <View>
         <QuestionsList
           faqData={faqData}
           pressLeftButton={pressLeftButton}

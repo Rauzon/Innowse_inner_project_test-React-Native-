@@ -13,9 +13,9 @@ export default StyleSheet.create({
     marginBottom: 29,
   },
   title_content: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 20,
     lineHeight: 26,
     color: '#333333',
@@ -46,7 +46,7 @@ export default StyleSheet.create({
     marginLeft: 16,
   },
   policy_content: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 16,
@@ -65,9 +65,9 @@ export default StyleSheet.create({
     borderRadius: 10,
   },
   button_content: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'SFProDisplay Regular',
     fontStyle: 'normal',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 16,
     lineHeight: 20,
     letterSpacing: 0.25,
