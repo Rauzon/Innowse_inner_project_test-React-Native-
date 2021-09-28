@@ -26,23 +26,21 @@ const CustomAppHeader = memo(
           <View style={styles.inner}>
             <Pressable style={({pressed}) => pressLeftButton(pressed)}>
               <Text
-                style={[
-                  {
-                    color: isLeftButtonPressed ? '#FFF' : '#828282',
-                  },
-                  styles.button_content,
-                ]}>
+                style={
+                  isLeftButtonPressed
+                    ? [styles.button_content_selected]
+                    : styles.button_content
+                }>
                 {leftBtnContent}
               </Text>
             </Pressable>
             <Pressable style={({pressed}) => pressRightButton(pressed)}>
               <Text
-                style={[
-                  {
-                    color: isRightButtonPressed ? '#FFF' : '#828282',
-                  },
-                  styles.button_content,
-                ]}>
+                style={
+                  isRightButtonPressed
+                    ? [styles.button_content_selected]
+                    : styles.button_content
+                }>
                 {rightBtnContent}
               </Text>
             </Pressable>

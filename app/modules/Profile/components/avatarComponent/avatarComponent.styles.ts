@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  container: {
+  button_wrapper: {
     width: 80,
     height: 80,
     justifyContent: 'center',

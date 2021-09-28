@@ -5,6 +5,7 @@ import authService from '../../services/auth/auth.service';
 import useSetUserData from '../../hooks/useSetUserData';
 import styles from './profile.styles';
 import {useNavigation} from '@react-navigation/native';
+import {ROUTES} from '../../constants';
 
 const ProfileScreen = (): JSX.Element => {
   const user = useSetUserData();
@@ -12,7 +13,7 @@ const ProfileScreen = (): JSX.Element => {
 
   const onSignOut = async () => {
     await authService.signOut();
-    navigate('login');
+    navigate(ROUTES.LOGIN);
   };
 
   return (

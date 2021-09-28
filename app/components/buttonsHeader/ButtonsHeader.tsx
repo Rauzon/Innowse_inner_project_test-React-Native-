@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {FlatList, View, Text} from 'react-native';
-import {CategoriesType} from '../../../../../services/benefits/benefits.types';
-import CustomButton from '../../../../../components/customButton/CustomButton';
-import styles from './couponHeader.styles';
+import {CategoriesType} from '../../services/benefits/benefits.types';
+import CustomButton from '../customButton/CustomButton';
+import styles from './buttonsHeader.styles';
 
 interface ICouponProps {
   categories: CategoriesType[];
@@ -10,7 +10,7 @@ interface ICouponProps {
   chosenCategory: string;
 }
 
-const CouponHeader = memo(
+const ButtonsHeader = memo(
   ({categories, onBtnPress, chosenCategory}: ICouponProps): JSX.Element => {
     return (
       <View style={styles.container}>
@@ -41,4 +41,4 @@ const CouponHeader = memo(
   },
 );
 
-export default CouponHeader;
+export default ButtonsHeader;

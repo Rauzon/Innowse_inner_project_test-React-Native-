@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {DiscountsDataType} from '../../../../services/benefits/benefits.types';
 import styles from './couponCard.styles';
-import {DISCOUNT_CARDS_ICON_URL_DATA} from '../../../../constants';
+import {DISCOUNT_CARDS_ICON_URL_DATA, ROUTES} from '../../../../constants';
 import {useNavigation} from '@react-navigation/native';
 
 interface ICouponProps {
@@ -11,10 +11,11 @@ interface ICouponProps {
 
 const CouponCard = memo(({item}: ICouponProps): JSX.Element => {
   const {shortDescription, city, icon} = item;
+  const {DISCOUNTS} = ROUTES;
   const {navigate} = useNavigation();
 
   const onCardPress = () => {
-    navigate('Discounts', item);
+    navigate(DISCOUNTS, item);
   };
 
   return (

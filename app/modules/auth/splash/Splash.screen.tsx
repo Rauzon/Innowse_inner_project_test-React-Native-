@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Image, View} from 'react-native';
+import {View} from 'react-native';
 import useIsAuthorized from '../../../hooks/useIsAuthorized';
 import styles from './splash.styles';
 import {useNavigation} from '@react-navigation/native';
 import userService from '../../../services/users/user.service';
-import { BigLogoIcon } from "../../../Icons";
+import {BigLogoIcon} from '../../../Icons';
+import {ROUTES} from '../../../constants';
 
 const SplashScreen = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,9 +25,9 @@ const SplashScreen = (): JSX.Element => {
 
   useEffect(() => {
     if (isAuthorized && !isLoading) {
-      navigate('app');
+      navigate(ROUTES.APP);
     } else if (!isAuthorized && !isLoading) {
-      navigate('login');
+      navigate(ROUTES.LOGIN);
     }
   }, [isAuthorized, isLoading, navigate]);
 

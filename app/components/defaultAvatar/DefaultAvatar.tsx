@@ -4,14 +4,14 @@ import React, {memo} from 'react';
 interface IDefaultAvatarProps {
   initials?: string | null;
   componentStyle: {
-    container: ViewStyle;
+    button_wrapper: ViewStyle;
     content: TextStyle;
   };
 }
 
 const DefaultAvatar = memo(
   ({initials = 'US', componentStyle}: IDefaultAvatarProps): JSX.Element => (
-    <View style={componentStyle?.container}>
+    <View style={componentStyle?.button_wrapper}>
       <Text style={componentStyle?.content}>{initials}</Text>
     </View>
   ),

@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {useState} from 'react';
 import {Image, ScrollView, View, Text, Modal, Pressable} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import styles from './article.styles';
@@ -6,20 +6,21 @@ import useGetMetaData from '../../hooks/useGetMetaData';
 import SubstanceList from '../substanceList/SubstanceList';
 import ContentList from '../contentList/ContentList';
 import VideoModal from '../videoModal/VideoModal';
-import { PlayIcon } from "../../Icons";
+import {PlayIcon} from '../../Icons';
 
-const ArticleScreen = memo((): JSX.Element => {
+const ArticleScreen = (): JSX.Element => {
   const {params} = useRoute();
   const {title, precontent, content, headers, videoId} = params;
   const metaData = useGetMetaData(videoId);
   const [modalVisible, setVisibleModal] = useState<boolean>(false);
+  const posterUrl = metaData?.thumbnail_url;
 
   return (
     <ScrollView style={styles.container}>
       <Pressable
         style={styles.poster_wrapper}
         onPress={() => setVisibleModal(true)}>
-        <Image style={styles.poster} source={{uri: metaData?.thumbnail_url}} />
+        <Image style={styles.poster} source={{uri: posterUrl}} />
         <View style={styles.play_icon_wrapper}>
           <PlayIcon />
         </View>
@@ -43,6 +44,6 @@ const ArticleScreen = memo((): JSX.Element => {
       </Modal>
     </ScrollView>
   );
-});
+};
 
 export default ArticleScreen;

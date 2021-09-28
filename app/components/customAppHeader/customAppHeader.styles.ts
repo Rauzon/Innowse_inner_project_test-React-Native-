@@ -30,6 +30,9 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   button_content: {
-    //
+    color: '#828282',
+  },
+  button_content_selected: {
+    color: '#FFF',
   },
 });

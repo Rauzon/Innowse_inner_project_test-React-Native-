@@ -5,11 +5,13 @@ import TabBarIcon from './components/tabBarIcon/TabBarIcon';
 import CommunityContainer from '../modules/community/CommunityContainer';
 import BenefitsContainer from '../modules/benefits/BenefitsContainer';
 import HelpContainer from '../modules/help/HelpContainer';
+import {ROUTES} from '../constants';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
 const Tabs = () => {
   const {tabBarStyle, shadow} = styles;
+  const {FAQ_TAB, DISCOUNTS_TAB, VIDEOS_TAB} = ROUTES;
 
   return (
     <Navigator
@@ -24,7 +26,7 @@ const Tabs = () => {
         },
       }}>
       <Screen
-        name="videos"
+        name={VIDEOS_TAB}
         component={CommunityContainer}
         options={{
           tabBarIcon: ({focused}) => (
@@ -38,7 +40,7 @@ const Tabs = () => {
         }}
       />
       <Screen
-        name="discounts"
+        name={DISCOUNTS_TAB}
         component={BenefitsContainer}
         options={{
           tabBarIcon: ({focused}) => (
@@ -52,7 +54,7 @@ const Tabs = () => {
         }}
       />
       <Screen
-        name="faq"
+        name={FAQ_TAB}
         component={HelpContainer}
         options={{
           tabBarIcon: ({focused}) => (

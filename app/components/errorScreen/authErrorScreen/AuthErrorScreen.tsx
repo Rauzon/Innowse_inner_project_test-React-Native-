@@ -3,6 +3,7 @@ import ErrorScreenWrapper from '../errorScreenWrapper/ErrorScreenWrapper';
 import {Pressable, Text} from 'react-native';
 import styles from './authErrorScreen.styles';
 import {useNavigation} from '@react-navigation/native';
+import {ROUTES} from '../../../constants';
 
 const AuthErrorScreen = (): JSX.Element => {
   const {navigate} = useNavigation();
@@ -13,7 +14,7 @@ const AuthErrorScreen = (): JSX.Element => {
       <Text style={styles.message_error}>
         Попробуйте ещё раз, используя почту @gmail.com
       </Text>
-      <Pressable style={styles.button} onPress={() => navigate('login')}>
+      <Pressable style={styles.button} onPress={() => navigate(ROUTES.LOGIN)}>
         <Text style={styles.button_content}>Попробовать снова</Text>
       </Pressable>
     </ErrorScreenWrapper>

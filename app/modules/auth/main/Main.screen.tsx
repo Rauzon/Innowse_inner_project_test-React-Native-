@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import {Alert, Image, Pressable, Text, View} from 'react-native';
+import {Alert, Pressable, Text, View} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import authService from '../../../services/auth/auth.service';
-import {EMAIL_VALID_ERROR, WEB_CLIENT_ID} from '../../../constants';
+import {EMAIL_VALID_ERROR, ROUTES, WEB_CLIENT_ID} from '../../../constants';
 import useIsAuthorized from '../../../hooks/useIsAuthorized';
 import styles from './main.styles';
 import {useNavigation} from '@react-navigation/native';
@@ -19,8 +19,8 @@ const MainScreen = () => {
 
   useEffect(() => {
     if (isAuthorized) {
-      navigate('rules');
-    }
+      navigate(ROUTES.RULES);
+    } //eslint-disable-next-line
   }, [isAuthorized]);
 
   const onGoogleButtonPress = async () => {
@@ -29,7 +29,7 @@ const MainScreen = () => {
       userService.setUserData();
     } catch (error) {
       if (error.message === EMAIL_VALID_ERROR) {
-        navigate('errorScreen');
+        navigate(ROUTES.ERROR_SCREEN);
       } else {
         Alert.alert(error.message);
       }

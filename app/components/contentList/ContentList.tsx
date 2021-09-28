@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import styles from './contentList.styles';
+import ContentItem from '../contentItem/ContentItem';
 
 interface IContentListProps {
   preContent?: string;
@@ -18,14 +19,18 @@ const ContentList = memo(
         ) : (
           <></>
         )}
-        {content?.map(({subtitle, text}, index) => {
-          return (
-            <View key={index} style={styles.content_wrapper}>
-              <Text style={styles.content_subtitle}>{subtitle}</Text>
-              <Text style={styles.content_text}>{text}</Text>
-            </View>
-          );
-        })}
+        <FlatList
+          data={content}
+          renderItem={({item, index}) => {
+            return (
+              <ContentItem
+                key={index}
+                subtitle={item.subtitle}
+                text={item.text}
+              />
+            );
+          }}
+        />
       </View>
     );
   },

@@ -14,7 +14,7 @@ import styles from './rules.styles';
 import {useNavigation} from '@react-navigation/native';
 import CheckBox from '@react-native-community/checkbox';
 import OpenURLButton from '../../../components/openURLButton/OpenURLButton';
-import {POLICY_AGREEMENT_LINK} from '../../../constants';
+import {POLICY_AGREEMENT_LINK, ROUTES} from '../../../constants';
 
 const RulesScreen = () => {
   const [rules, setRules] = useState({} as RulesType);
@@ -30,7 +30,7 @@ const RulesScreen = () => {
 
   const onButtonPress = () => {
     if (isChecked) {
-      navigate('app');
+      navigate(ROUTES.APP);
     } else {
       Alert.alert('Ознакомьтесь с политикой конфиденциальности');
     }

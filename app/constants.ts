@@ -62,3 +62,31 @@ export const POLICY_AGREEMENT_LINK = 'https://reactnative.dev/';
 
 export const ACCESSIBLE_EMAIL = ['gmail.com'];
 export const EMAIL_VALID_ERROR = 'email is not valid';
+
+export enum DATE_CONSTANTS {
+  SECONDS_IN_MINUTE = 60,
+  SECONDS_IN_HOUR = 3600,
+}
+
+export enum ROUTES {
+  SPLASH = 'splash',
+  LOGIN = 'login',
+  RULES = 'rules',
+  APP = 'app',
+  ERROR_SCREEN = 'errorScreen',
+  PROFILE = 'profile',
+  NEWS = 'news',
+  DISCOUNTS = 'discounts',
+  FAQ = 'faq',
+  NOTIFICATION = 'notification',
+  VIDEOS_TAB = 'videos_tab',
+  DISCOUNTS_TAB = 'discounts_tab',
+  FAQ_TAB = 'faq_tab',
+}
+
+export const COUNTS_ITEMS_IN_LIST = 2;
+
+export enum NOTIFICATIONS_CATEGORIES {
+  NEWS = 'news',
+  FOOD = 'food',
+}

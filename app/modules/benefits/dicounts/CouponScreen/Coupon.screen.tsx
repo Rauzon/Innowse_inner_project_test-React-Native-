@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {FlatList} from 'react-native';
 import {CategoriesType} from '../../../../services/benefits/benefits.types';
 import CouponItem from './couponItem/CouponItem';
-import CouponHeader from './couponHeader/CouponHeader';
+import ButtonsHeader from '../../../../components/buttonsHeader/ButtonsHeader';
 import useButtonsSwitchAndGetFilteredData from '../../../../hooks/useButtonsSwitchAndGetFilteredData';
 import {useRoute} from '@react-navigation/native';
 
@@ -19,7 +19,7 @@ const CouponScreen = memo(({categories}: ICouponProps): JSX.Element => {
   return (
     <FlatList
       ListHeaderComponent={() => (
-        <CouponHeader
+        <ButtonsHeader
           chosenCategory={chosenCategory}
           onBtnPress={onBtnPress}
           categories={categories}

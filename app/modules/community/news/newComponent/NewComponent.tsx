@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {Image, View, Text, TouchableOpacity} from 'react-native';
 import styles from './newComponent.styles';
 import {NewType} from '../../../../services/news/news.types';
-import {NEWS_ICON_URL_DATA} from '../../../../constants';
+import {NEWS_ICON_URL_DATA, ROUTES} from '../../../../constants';
 import {useNavigation} from '@react-navigation/native';
 
 interface INewComponentProps {
@@ -15,14 +15,16 @@ const NewComponent = memo(
     const {navigate} = useNavigation();
 
     const onNewPress = () => {
-      navigate('News', newItem);
+      navigate(ROUTES.NEWS, newItem);
     };
 
     return (
       <TouchableOpacity
         key={newItem.id}
         onPress={onNewPress}
-        style={isFirstItem ? [styles.container, {marginTop: 8}] : styles.container}>
+        style={
+          isFirstItem ? [styles.container, {marginTop: 8}] : styles.container
+        }>
         <View
           style={
             !isFirstItem
@@ -30,7 +32,10 @@ const NewComponent = memo(
               : [styles.wrapper, {paddingBottom: 14}]
           }>
           <View style={styles.icon_wrapper}>
-            <Image source={NEWS_ICON_URL_DATA[newItem.icon]} style={styles.icon} />
+            <Image
+              source={NEWS_ICON_URL_DATA[newItem.icon]}
+              style={styles.icon}
+            />
           </View>
           <View style={styles.content_wrapper}>
             <Text style={styles.title}>{newItem.title}</Text>
