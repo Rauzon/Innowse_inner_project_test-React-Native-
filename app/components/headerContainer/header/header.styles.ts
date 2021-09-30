@@ -17,6 +17,14 @@ export default StyleSheet.create({
     height: 14,
     position: 'relative',
   },
+  container_wrapper: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  notification_wrapper: {
+    marginRight: 18,
+  },
   unreadMessage_icon: {
     position: 'absolute',
     backgroundColor: '#C63031',
@@ -28,10 +36,18 @@ export default StyleSheet.create({
     top: -3.5,
     right: -7.5,
   },
-  container_wrapper: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+  unreadMessage_icon_content: {
+    fontFamily: 'Montserrat-Bold',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: 12,
+    lineHeight: 12,
+    color: '#FFFFFF',
+  },
+  avatar_icon: {
+    width: 38,
+    height: 38,
+    borderRadius: 50,
   },
   button_wrapper: {
     padding: 9,
@@ -40,9 +56,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(195, 45, 44, 0.1)',
   },
-  notification_wrapper: {
-    marginRight: 18,
-  },
   content: {
     fontFamily: 'Montserrat-Bold',
     fontStyle: 'normal',
@@ -50,40 +63,5 @@ export default StyleSheet.create({
     fontSize: 15,
     lineHeight: 20,
     color: '#C32D2C',
-  },
-  avatar_icon: {
-    width: 38,
-    height: 38,
-    borderRadius: 50,
-  },
-  modal: {
-    position: 'absolute',
-    width: '100%',
-    zIndex: 999,
-    backgroundColor: '#FFF',
-  },
-  notification_button_wrapper: {
-    paddingTop: 17,
-    paddingBottom: 25,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  notification_button: {
-    fontFamily: 'SFProDisplay-Regular',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: 14,
-    lineHeight: 17,
-    color: '#C63031',
-    textTransform: 'uppercase',
-    letterSpacing: 1.5,
-  },
-  unreadMessage_icon_content: {
-    fontFamily: 'Montserrat-Bold',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: 12,
-    lineHeight: 12,
-    color: '#FFFFFF',
   },
 });

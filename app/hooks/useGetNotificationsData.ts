@@ -10,7 +10,12 @@ export interface INotificationDataType extends NotificationDataType {
   pastTime: string;
 }
 
-const useGetNotificationsData = (): INotificationDataType[] | null => {
+type ResultHookType = {
+  data: INotificationDataType[] | null;
+  categories: string[];
+};
+
+const useGetNotificationsData = (): ResultHookType => {
   const [initialData, setInitialData] = useState<INotificationState | null>(
     null,
   );
@@ -40,7 +45,7 @@ const useGetNotificationsData = (): INotificationDataType[] | null => {
       setData(newData);
     }
   }, [initialData]);
-  return data;
+  return {data, categories: initialData?.notificationsCategories!};
 };
 
 export default useGetNotificationsData;

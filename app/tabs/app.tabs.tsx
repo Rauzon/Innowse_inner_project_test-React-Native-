@@ -6,12 +6,19 @@ import CommunityContainer from '../modules/community/CommunityContainer';
 import BenefitsContainer from '../modules/benefits/BenefitsContainer';
 import HelpContainer from '../modules/help/HelpContainer';
 import {ROUTES} from '../constants';
+import {
+  BenefitsTabIcon,
+  CommunityTabIcon,
+  HelpTabIcon,
+  MoreTabIcon,
+} from '../Icons';
+import AddContentScreen from '../modules/addContent/AddContent.screen';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
 const Tabs = () => {
   const {tabBarStyle, shadow} = styles;
-  const {FAQ_TAB, DISCOUNTS_TAB, VIDEOS_TAB} = ROUTES;
+  const {FAQ_TAB, DISCOUNTS_TAB, VIDEOS_TAB, ADD_CONTENT_TAB} = ROUTES;
 
   return (
     <Navigator
@@ -32,7 +39,7 @@ const Tabs = () => {
           tabBarIcon: ({focused}) => (
             <TabBarIcon
               isFocused={focused}
-              icon={'community_icon'}
+              icon={<CommunityTabIcon isFocused={focused} />}
               label={'Сообщество'}
             />
           ),
@@ -46,7 +53,7 @@ const Tabs = () => {
           tabBarIcon: ({focused}) => (
             <TabBarIcon
               isFocused={focused}
-              icon={'benefits_icon'}
+              icon={<BenefitsTabIcon isFocused={focused} />}
               label={'Бонусы'}
             />
           ),
@@ -60,8 +67,22 @@ const Tabs = () => {
           tabBarIcon: ({focused}) => (
             <TabBarIcon
               isFocused={focused}
-              icon={'support_icon'}
+              icon={<HelpTabIcon isFocused={focused} />}
               label={'Помощь'}
+            />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name={ADD_CONTENT_TAB}
+        component={AddContentScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <TabBarIcon
+              isFocused={focused}
+              icon={<MoreTabIcon isFocused={focused} />}
+              label={'Еще'}
             />
           ),
           headerShown: false,

@@ -1,3 +1,9 @@
+export type NotificationsCategoriesType =
+  | 'Все'
+  | 'Непрочитанные'
+  | 'Еда'
+  | 'Новости';
+
 export type NotificationDataType = {
   id: string;
   isViewed: boolean;
@@ -12,4 +18,5 @@ export type NotificationDataType = {
 
 export interface INotificationState {
   notificationsData: NotificationDataType[];
+  notificationsCategories: NotificationsCategoriesType[];
 }

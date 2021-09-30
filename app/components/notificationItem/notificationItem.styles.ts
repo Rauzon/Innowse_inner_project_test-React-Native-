@@ -1,12 +1,14 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
+    width: Dimensions.get('screen').width,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingLeft: 19,
-    paddingRight: 20,
+    paddingTop: 10,
+    paddingLeft: 16,
+    paddingRight: 16,
     paddingBottom: 12,
   },
   container_border: {
@@ -19,7 +21,7 @@ export default StyleSheet.create({
   },
   content_wrapper: {
     flexDirection: 'column',
-    marginLeft: 16,
+    paddingLeft: 16,
   },
   time: {
     fontFamily: 'SFProDisplay-Regular',
@@ -46,6 +48,7 @@ export default StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     color: '#353535',
+    paddingRight: '5%',
   },
   button_wrapper: {
     marginTop: 8,

@@ -13,6 +13,7 @@ const Vacancies = memo(({vacancies}: IVacanciesProps): JSX.Element => {
     <View style={styles.container}>
       {vacancies?.map((item, i, arr) => (
         <VacancyItem
+          key={i}
           isFirstItem={i === 0}
           isLastItem={i === arr.length - 1}
           item={item}

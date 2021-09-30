@@ -25,11 +25,7 @@ export default StyleSheet.create({
   button: {
     paddingLeft: 90,
     paddingRight: 90,
-    paddingTop: 15,
-    paddingBottom: 15,
     position: 'absolute',
-    backgroundColor: '#C63031',
-    borderRadius: 10,
     bottom: 40,
   },
   button_content: {

@@ -56,13 +56,8 @@ export default StyleSheet.create({
   },
   button: {
     paddingRight: 84,
-    paddingTop: 15,
     paddingLeft: 84,
     paddingBottom: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#C32D2C',
-    borderRadius: 10,
   },
   button_content: {
     fontFamily: 'SFProDisplay Regular',

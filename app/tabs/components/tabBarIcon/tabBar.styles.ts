@@ -18,13 +18,13 @@ export default StyleSheet.create({
     backgroundColor: '#C32D2C',
   },
   img_wrapper: {
-    width: 22,
-    height: 20,
-    marginTop: '12.5%',
-  },
-  img: {
     width: '100%',
     height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text_wrapper: {
+    marginTop: -25,
   },
   text: {
     fontFamily: 'SF Pro Display',
@@ -33,5 +33,11 @@ export default StyleSheet.create({
     fontSize: 12,
     lineHeight: 14,
     textAlign: 'center',
+  },
+  text_focused: {
+    color: '#C63031',
+  },
+  text_unfocused: {
+    color: '#828282',
   },
 });

@@ -1,12 +1,17 @@
 import React from 'react';
 import ErrorScreenWrapper from '../errorScreenWrapper/ErrorScreenWrapper';
-import {Pressable, Text} from 'react-native';
+import {Text} from 'react-native';
 import styles from './authErrorScreen.styles';
 import {useNavigation} from '@react-navigation/native';
 import {ROUTES} from '../../../constants';
+import ConfirmButton from '../../confirmButton/ConfirmButton';
 
 const AuthErrorScreen = (): JSX.Element => {
   const {navigate} = useNavigation();
+
+  const onBtnPress = () => {
+    navigate(ROUTES.LOGIN);
+  };
 
   return (
     <ErrorScreenWrapper>
@@ -14,9 +19,9 @@ const AuthErrorScreen = (): JSX.Element => {
       <Text style={styles.message_error}>
         Попробуйте ещё раз, используя почту @gmail.com
       </Text>
-      <Pressable style={styles.button} onPress={() => navigate(ROUTES.LOGIN)}>
+      <ConfirmButton onPress={onBtnPress} style={styles.button}>
         <Text style={styles.button_content}>Попробовать снова</Text>
-      </Pressable>
+      </ConfirmButton>
     </ErrorScreenWrapper>
   );
 };

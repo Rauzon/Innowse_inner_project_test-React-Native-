@@ -8,19 +8,16 @@ import notificationService from '../../services/notifications/notification.servi
 
 interface INotificationItemProps {
   item: INotificationDataType;
-  isFirstItem?: boolean;
   isLastItem?: boolean;
 }
 
 const NotificationItem = memo(
-  ({item, isFirstItem, isLastItem}: INotificationItemProps): JSX.Element => {
+  ({item, isLastItem}: INotificationItemProps): JSX.Element => {
     const {isViewed, category, pastTime, title, id} = item;
 
-    const styleConditions = isFirstItem
-      ? [styles.container, {paddingTop: 10}]
-      : isLastItem
+    const styleConditions = isLastItem
       ? [styles.container, styles.container_border]
-      : styles.container;
+      : [styles.container, styles.container_border];
 
     const onButtonPress = () => {};
 

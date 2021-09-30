@@ -3,7 +3,7 @@ import {UserType} from '../services/users/user.types';
 import userService from '../services/users/user.service';
 import {of} from 'rxjs';
 
-const useSetUserData = () => {
+const useSetUserData = (): UserType | null => {
   const [userData, setUserData] = useState<UserType | null>(null);
 
   //eslint-disable-next-line

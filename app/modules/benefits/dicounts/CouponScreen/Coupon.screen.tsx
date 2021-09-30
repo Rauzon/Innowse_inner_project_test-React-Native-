@@ -1,20 +1,24 @@
-import React, {memo} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
 import {CategoriesType} from '../../../../services/benefits/benefits.types';
 import CouponItem from './couponItem/CouponItem';
 import ButtonsHeader from '../../../../components/buttonsHeader/ButtonsHeader';
 import useButtonsSwitchAndGetFilteredData from '../../../../hooks/useButtonsSwitchAndGetFilteredData';
 import {useRoute} from '@react-navigation/native';
+import benefitsService from '../../../../services/benefits/benefits.service';
+import styles from './couponScreen.styles';
 
-interface ICouponProps {
-  // discount: DiscountsDataType;
-  categories: CategoriesType[];
-}
-
-const CouponScreen = memo(({categories}: ICouponProps): JSX.Element => {
+const CouponScreen = (): JSX.Element => {
   const {params} = useRoute();
   const {chosenCategory, onBtnPress, filteredCoupons} =
     useButtonsSwitchAndGetFilteredData(params?.coupons);
+  const [categoriesItems, setCategories] = useState<CategoriesType[]>([]);
+
+  useEffect(() => {
+    const data = benefitsService.getDiscountsState();
+    const categories = data.discounts?.categories;
+    setCategories(categories);
+  }, []);
 
   return (
     <FlatList
@@ -22,14 +26,15 @@ const CouponScreen = memo(({categories}: ICouponProps): JSX.Element => {
         <ButtonsHeader
           chosenCategory={chosenCategory}
           onBtnPress={onBtnPress}
-          categories={categories}
+          categories={categoriesItems}
+          isBenefitsScreen={true}
         />
       )}
       data={filteredCoupons}
-      style={{paddingBottom: 14}}
+      style={styles.list_container}
       renderItem={({item, index}) => <CouponItem key={index} coupon={item} />}
     />
   );
-});
+};
 
 export default CouponScreen;

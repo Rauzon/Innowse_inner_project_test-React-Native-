@@ -1,11 +1,10 @@
 import React, {memo} from 'react';
-import {Image, View, Text} from 'react-native';
+import {Text, View} from 'react-native';
 import styles from './tabBar.styles';
-import {TABS_BAR_URL_DATA} from '../../../constants';
 
 interface ITabBarIconProps {
-  isFocused: boolean;
-  icon: string;
+  isFocused?: boolean;
+  icon: JSX.Element;
   label: string;
 }
 
@@ -15,14 +14,15 @@ const TabBarIcon = memo(
       <View style={styles.container}>
         {isFocused && <View style={styles.top_line} />}
         <View style={styles.img_wrapper}>
-          <Image
-            source={TABS_BAR_URL_DATA[icon]}
-            style={[{tintColor: isFocused ? '#C32D2C' : '#828282'}, styles.img]}
-            resizeMode="contain"
-          />
+          <Text>{icon}</Text>
         </View>
-        <View>
-          <Text style={[{color: isFocused ? '#C32D2C' : '#828282'}, styles.text]}>
+        <View style={styles.text_wrapper}>
+          <Text
+            style={
+              isFocused
+                ? [styles.text, styles.text_focused]
+                : [styles.text, styles.text_unfocused]
+            }>
             {label}
           </Text>
         </View>

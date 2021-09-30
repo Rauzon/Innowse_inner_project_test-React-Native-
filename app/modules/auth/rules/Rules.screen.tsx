@@ -1,12 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  Alert,
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  View,
-} from 'react-native';
+import {Alert, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import RuleComponent from './components/RuleComponent';
 import authService from '../../../services/auth/auth.service';
 import {RulesType} from '../../../services/auth/auth.types';
@@ -15,6 +8,7 @@ import {useNavigation} from '@react-navigation/native';
 import CheckBox from '@react-native-community/checkbox';
 import OpenURLButton from '../../../components/openURLButton/OpenURLButton';
 import {POLICY_AGREEMENT_LINK, ROUTES} from '../../../constants';
+import ConfirmButton from '../../../components/confirmButton/ConfirmButton';
 
 const RulesScreen = () => {
   const [rules, setRules] = useState({} as RulesType);
@@ -76,9 +70,9 @@ const RulesScreen = () => {
             </Text>
           </View>
         </View>
-        <Pressable style={styles.button} onPress={onButtonPress}>
+        <ConfirmButton style={styles.button} onPress={onButtonPress}>
           <Text style={styles.button_content}>Я принимаю правила</Text>
-        </Pressable>
+        </ConfirmButton>
       </View>
     </View>
   );

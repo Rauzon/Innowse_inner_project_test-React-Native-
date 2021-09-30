@@ -1,11 +1,11 @@
 import React, {memo} from 'react';
 import Tabs from './app.tabs';
-import Header from '../components/header/Header';
+import HeaderContainer from '../components/headerContainer/HeaderContainer';
 
 const TabsComponentContainer = memo((): JSX.Element => {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <Tabs />
     </>
   );

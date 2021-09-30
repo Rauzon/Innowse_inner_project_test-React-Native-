@@ -1,22 +1,29 @@
 import React, {memo} from 'react';
 import {FlatList, View, Text} from 'react-native';
-import {CategoriesType} from '../../services/benefits/benefits.types';
 import CustomButton from '../customButton/CustomButton';
 import styles from './buttonsHeader.styles';
 
 interface ICouponProps {
-  categories: CategoriesType[];
+  categories: string[];
   onBtnPress(btnContent: string): void;
   chosenCategory: string;
+  isBenefitsScreen?: boolean;
 }
 
 const ButtonsHeader = memo(
-  ({categories, onBtnPress, chosenCategory}: ICouponProps): JSX.Element => {
+  ({
+    categories,
+    onBtnPress,
+    chosenCategory,
+    isBenefitsScreen,
+  }: ICouponProps): JSX.Element => {
     return (
       <View style={styles.container}>
-        <View style={styles.title_wrapper}>
-          <Text style={styles.title}>Забирай свою скидку прямо сейчас!</Text>
-        </View>
+        {isBenefitsScreen && (
+          <View style={styles.title_wrapper}>
+            <Text style={styles.title}>Забирай свою скидку прямо сейчас!</Text>
+          </View>
+        )}
         <FlatList
           data={categories}
           horizontal={true}
