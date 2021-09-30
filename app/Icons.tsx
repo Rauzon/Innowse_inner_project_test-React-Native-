@@ -1,6 +1,10 @@
 import Svg, {Circle, ClipPath, Defs, G, Path} from 'react-native-svg';
 import React from 'react';
 
+type TabBarIconPropsType = {
+  isFocused: boolean;
+};
+
 export const DashedLineIcon = (props: any) => {
   return (
     <Svg
@@ -300,6 +304,84 @@ export const FoodNotificationIcon = (props: any) => {
         d="M5.994 11.472a.724.724 0 01-.665-1.01l.27-.633a.724.724 0 111.332.57l-.272.634a.725.725 0 01-.665.439zm10.805-6.85a.724.724 0 01-.291-1.389l.482-.211a.723.723 0 11.581 1.327l-.482.211a.72.72 0 01-.29.061zm-11.77-.03a.725.725 0 01-.162-.02l-.393-.09A.725.725 0 014.8 3.072l.393.09a.725.725 0 01-.162 1.43z"
         fill="#55ACEE"
       />
+    </Svg>
+  );
+};
+
+export const CommunityTabIcon = ({
+  isFocused,
+  ...props
+}: TabBarIconPropsType): JSX.Element => {
+  return (
+    <Svg
+      width={20}
+      height={20}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M10.867 1.61a.95.95 0 00-1.734 0L7.044 6.263l-4.784.67a.95.95 0 00-.543 1.61l3.535 3.565-.89 5.107a.95.95 0 001.41.986L10 15.762l4.228 2.438a.95.95 0 001.41-.986l-.89-5.107 3.535-3.565a.95.95 0 00-.543-1.61l-4.784-.67-2.09-4.651z"
+        stroke={isFocused ? '#C63031' : '#828282'}
+        strokeWidth={1.9}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const BenefitsTabIcon = ({
+  isFocused,
+  ...props
+}: TabBarIconPropsType): JSX.Element => {
+  return (
+    <Svg
+      width={22}
+      height={18}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M11.3 9.22A4.92 4.92 0 0013 5.5a5 5 0 00-10 0 4.92 4.92 0 001.7 3.72A8 8 0 000 16.5a1 1 0 102 0 6 6 0 1112 0 1 1 0 002 0 8 8 0 00-4.7-7.28zM8 8.5a3 3 0 110-6 3 3 0 010 6zm9.74.32A5 5 0 0014 .5a1 1 0 100 2 3 3 0 013 3 3 3 0 01-1.5 2.59 1 1 0 00-.05 1.7l.39.26.13.07a7 7 0 014 6.38 1 1 0 002 0 9 9 0 00-4.23-7.68z"
+        fill={isFocused ? '#C63031' : '#828282'}
+      />
+    </Svg>
+  );
+};
+
+export const HelpTabIcon = ({
+  isFocused,
+  ...props
+}: TabBarIconPropsType): JSX.Element => {
+  return (
+    <Svg
+      width={19}
+      height={19}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M9.5 8.55a.95.95 0 00-.95.95v3.8a.95.95 0 101.9 0V9.5a.95.95 0 00-.95-.95zm.361-3.724a.95.95 0 00-.722 0 .95.95 0 00-.313.2 1.093 1.093 0 00-.2.313.95.95 0 00.2 1.035c.092.084.198.152.313.2A.95.95 0 0010.45 5.7a.997.997 0 00-.275-.675.95.95 0 00-.314-.199zM9.5 0a9.5 9.5 0 100 19 9.5 9.5 0 000-19zm0 17.1a7.6 7.6 0 110-15.2 7.6 7.6 0 010 15.2z"
+        fill={isFocused ? '#C63031' : '#828282'}
+      />
+    </Svg>
+  );
+};
+
+export const MoreTabIcon = ({
+  isFocused,
+  ...props
+}: TabBarIconPropsType): JSX.Element => {
+  return (
+    <Svg
+      width={20}
+      height={4}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Circle cx={2} cy={2} r={2} fill={isFocused ? '#C63031' : '#828282'} />
+      <Circle cx={10} cy={2} r={2} fill={isFocused ? '#C63031' : '#828282'} />
+      <Circle cx={18} cy={2} r={2} fill={isFocused ? '#C63031' : '#828282'} />
     </Svg>
   );
 };
