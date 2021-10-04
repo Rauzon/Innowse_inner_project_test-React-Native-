@@ -3,7 +3,7 @@ import {View, ViewStyle} from 'react-native';
 import useGetHelpData from '../../../hooks/useGetHelpData';
 import QuestionsList from './questionsList/QuestionsList';
 
-interface IFaqScreenProps {
+interface IFaqScreen {
   isRightButtonPressed: boolean;
   isLeftButtonPressed: boolean;
   pressRightButton: (pressed: boolean) => ViewStyle[];
@@ -16,7 +16,7 @@ const FaqScreen = memo(
     pressRightButton,
     isLeftButtonPressed,
     isRightButtonPressed,
-  }: IFaqScreenProps): JSX.Element => {
+  }: IFaqScreen): JSX.Element => {
     const helpData = useGetHelpData();
     const faqData = helpData?.faq?.faqData;
 

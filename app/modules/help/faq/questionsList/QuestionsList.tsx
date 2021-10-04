@@ -4,7 +4,7 @@ import {FaqType} from '../../../../services/help/help.types';
 import QuestionItem from './questionItem/QuestionItem';
 import CustomAppHeader from '../../../../components/customAppHeader/CustomAppHeader';
 
-interface IQuestionsListProps {
+interface IQuestionsList {
   faqData: FaqType[] | undefined;
   isRightButtonPressed: boolean;
   isLeftButtonPressed: boolean;
@@ -19,7 +19,7 @@ const QuestionsList = memo(
     isRightButtonPressed,
     pressLeftButton,
     pressRightButton,
-  }: IQuestionsListProps): JSX.Element => {
+  }: IQuestionsList): JSX.Element => {
     return (
       <View>
         <FlatList
@@ -38,7 +38,7 @@ const QuestionsList = memo(
             <QuestionItem
               questionItem={item}
               key={item.id}
-              isLastItem={index === faqData?.length - 1}
+              isLastItem={index === faqData?.length! - 1}
             />
           )}
         />

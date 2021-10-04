@@ -5,11 +5,11 @@ import {NewType} from '../../../services/news/news.types';
 import NewComponent from './newComponent/NewComponent';
 import CustomAppHeader from '../../../components/customAppHeader/CustomAppHeader';
 
-interface INewsProps {
-  isRightButtonPressed?: boolean;
-  isLeftButtonPressed?: boolean;
-  pressRightButton?: (pressed: boolean) => ViewStyle[];
-  pressLeftButton?: (pressed: boolean) => ViewStyle[];
+interface INews {
+  isRightButtonPressed: boolean;
+  isLeftButtonPressed: boolean;
+  pressRightButton: (pressed: boolean) => ViewStyle[];
+  pressLeftButton: (pressed: boolean) => ViewStyle[];
 }
 
 const NewsScreen = memo(
@@ -18,7 +18,7 @@ const NewsScreen = memo(
     pressLeftButton,
     isRightButtonPressed,
     isLeftButtonPressed,
-  }: INewsProps): JSX.Element => {
+  }: INews): JSX.Element => {
     const [newsData, setNewsData] = useState([] as NewType[]);
 
     useEffect(() => {

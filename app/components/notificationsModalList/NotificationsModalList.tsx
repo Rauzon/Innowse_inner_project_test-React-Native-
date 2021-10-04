@@ -5,7 +5,7 @@ import NotificationsList from '../notificationsList/NotificationsList';
 import {Pressable, Text} from 'react-native';
 import {INotificationDataType} from '../../hooks/useGetNotificationsData';
 
-interface NotificationsModalListProps {
+interface NotificationsModalList {
   visibleModal: boolean;
   onGetAllNotificationsPress(): void;
   data: INotificationDataType[] | null;
@@ -16,7 +16,7 @@ const NotificationsModalList = memo(
     visibleModal,
     onGetAllNotificationsPress,
     data,
-  }: NotificationsModalListProps): JSX.Element => {
+  }: NotificationsModalList): JSX.Element => {
     return (
       <DroppedAndFadeView isOpened={visibleModal} style={styles.modal}>
         <>

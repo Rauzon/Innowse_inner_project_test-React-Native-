@@ -1,48 +1,53 @@
-import React, {useState} from 'react';
-import {Image, ScrollView, View, Text, Modal, Pressable} from 'react-native';
-import {useRoute} from '@react-navigation/native';
-import styles from './article.styles';
+import React, {useCallback, useState} from 'react';
+import {FlatList, Modal, View} from 'react-native';
+import {Route, useRoute} from '@react-navigation/native';
 import useGetMetaData from '../../hooks/useGetMetaData';
 import SubstanceList from '../substanceList/SubstanceList';
-import ContentList from '../contentList/ContentList';
 import VideoModal from '../videoModal/VideoModal';
-import {PlayIcon} from '../../Icons';
+import {ROUTES} from '../../constants';
+import {FaqType} from '../../services/help/help.types';
+import ArticleHeader from '../articleHeader/ArticleHeader';
+import ContentItem from '../contentItem/ContentItem';
 
 const ArticleScreen = (): JSX.Element => {
-  const {params} = useRoute();
+  const {params} = useRoute<Route<ROUTES.FAQ, FaqType>>();
   const {title, precontent, content, headers, videoId} = params;
   const metaData = useGetMetaData(videoId);
   const [modalVisible, setVisibleModal] = useState<boolean>(false);
   const posterUrl = metaData?.thumbnail_url;
 
+  const onSetOpenModal = useCallback((isOpened: boolean) => {
+    setVisibleModal(isOpened);
+  }, []);
+
   return (
-    <ScrollView style={styles.container}>
-      <Pressable
-        style={styles.poster_wrapper}
-        onPress={() => setVisibleModal(true)}>
-        <Image style={styles.poster} source={{uri: posterUrl}} />
-        <View style={styles.play_icon_wrapper}>
-          <PlayIcon />
-        </View>
-      </Pressable>
-      <View style={styles.title_wrapper}>
-        <Text style={styles.title}>{title}</Text>
-      </View>
-      {precontent && (
-        <View style={styles.precontent_wrapper}>
-          <Text style={styles.precontent}>
-            Мы предлагаем сотрудникам медицинское страхование (ДМС) от компании
-            Asoba. Страхование доступно для сотрудников, которые прошли
-            испытательный срок.
-          </Text>
-        </View>
-      )}
-      <SubstanceList headers={headers} />
-      <ContentList content={content} />
+    <View>
+      <FlatList
+        ListHeaderComponent={() => (
+          <>
+            <ArticleHeader
+              title={title}
+              onSetOpenVideoNodal={onSetOpenModal}
+              posterUrl={posterUrl}
+              precontent={precontent}
+            />
+            <SubstanceList headers={headers} />
+          </>
+        )}
+        data={content}
+        renderItem={({item, index}) => (
+          <ContentItem
+            isFirstItem={index === 0}
+            key={index}
+            subtitle={item.subtitle}
+            text={item.text}
+          />
+        )}
+      />
       <Modal visible={modalVisible} transparent={true}>
         <VideoModal videoId={videoId} onClose={() => setVisibleModal(false)} />
       </Modal>
-    </ScrollView>
+    </View>
   );
 };
 

@@ -6,7 +6,7 @@ import DefaultAvatar from '../../defaultAvatar/DefaultAvatar';
 import {UserType} from '../../../services/users/user.types';
 import styles from './header.styles';
 
-interface IHeaderProps {
+interface IHeader {
   onBtnPress(): void;
   unreadMessagesCount: number;
   onProfileIconPress(): void;
@@ -19,7 +19,7 @@ const Header = memo(
     unreadMessagesCount,
     onProfileIconPress,
     userData,
-  }: IHeaderProps): JSX.Element => {
+  }: IHeader): JSX.Element => {
     return (
       <View style={styles.wrapper}>
         <View style={styles.logo}>

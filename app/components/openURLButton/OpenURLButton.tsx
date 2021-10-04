@@ -1,12 +1,12 @@
 import React, {ReactNode, useCallback} from 'react';
-import {Alert, Linking, Text} from 'react-native';
+import {Alert, Linking, StyleSheet, Text} from 'react-native';
 
-interface IOpenURLButtonProps {
+interface IOpenURLButton {
   url: string;
   children: ReactNode;
 }
 
-const OpenURLButton = ({url, children}: IOpenURLButtonProps): JSX.Element => {
+const OpenURLButton = ({url, children}: IOpenURLButton): JSX.Element => {
   const handlePress = useCallback(async () => {
     const supported = await Linking.canOpenURL(url);
     if (supported) {
@@ -17,10 +17,16 @@ const OpenURLButton = ({url, children}: IOpenURLButtonProps): JSX.Element => {
   }, [url]);
 
   return (
-    <Text style={{color: '#C63031'}} onPress={handlePress}>
+    <Text style={styles.content} onPress={handlePress}>
       {children}
     </Text>
   );
 };
+
+const styles = StyleSheet.create({
+  content: {
+    color: '#C63031',
+  },
+});
 
 export default OpenURLButton;

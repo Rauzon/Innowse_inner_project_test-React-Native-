@@ -1,16 +1,16 @@
 import React, {memo} from 'react';
 import {View, Text} from 'react-native';
-import {VacancyType} from '../../../../../../services/benefits/benefits.types';
+import {VacancyType} from '../../services/benefits/benefits.types';
 import styles from './vacancyItem.styles';
 
-interface IVacancyItemProps {
+interface IVacancyItem {
   item: VacancyType;
   isLastItem?: boolean;
   isFirstItem?: boolean;
 }
 
 const VacancyItem = memo(
-  ({item, isLastItem, isFirstItem}: IVacancyItemProps): JSX.Element => {
+  ({item, isLastItem, isFirstItem}: IVacancyItem): JSX.Element => {
     const {vacancy, salary, cities} = item;
     const style = isFirstItem
       ? [styles.container, styles.container_firstItem]

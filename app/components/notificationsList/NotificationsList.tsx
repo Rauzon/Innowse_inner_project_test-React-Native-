@@ -5,7 +5,7 @@ import NotificationItem from '../notificationItem/NotificationItem';
 import {COUNTS_ITEMS_IN_MODAL_LIST} from '../../constants';
 import ButtonsHeader from '../buttonsHeader/ButtonsHeader';
 
-interface INotificationsListProps {
+interface INotificationsList {
   isNotificationScreen: boolean;
   data: INotificationDataType[] | null;
   categories?: string[];
@@ -20,7 +20,7 @@ const NotificationsList = memo(
     onChangeCategoryPress,
     categories,
     chosenCategory,
-  }: INotificationsListProps): JSX.Element => {
+  }: INotificationsList): JSX.Element => {
     const [sortedData, setSortedData] = useState<INotificationDataType[]>([]);
     useEffect(() => {
       const resultData = !isNotificationScreen

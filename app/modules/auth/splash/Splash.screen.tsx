@@ -6,11 +6,18 @@ import {useNavigation} from '@react-navigation/native';
 import userService from '../../../services/users/user.service';
 import {BigLogoIcon} from '../../../Icons';
 import {ROUTES} from '../../../constants';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../navigator/navigator.types';
+
+type splashScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  ROUTES.SPLASH
+>;
 
 const SplashScreen = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
   const isAuthorized = useIsAuthorized();
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<splashScreenProp>();
 
   useEffect(() => {
     const timeOut = setTimeout(() => setIsLoading(false), 3000);
@@ -25,9 +32,9 @@ const SplashScreen = (): JSX.Element => {
 
   useEffect(() => {
     if (isAuthorized && !isLoading) {
-      navigate(ROUTES.APP);
+      navigate(ROUTES.APP as never);
     } else if (!isAuthorized && !isLoading) {
-      navigate(ROUTES.LOGIN);
+      navigate(ROUTES.LOGIN as never);
     }
   }, [isAuthorized, isLoading, navigate]);
 

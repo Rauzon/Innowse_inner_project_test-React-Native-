@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
-import {View, ViewStyle, Text} from 'react-native';
+import {View, ViewStyle} from 'react-native';
 import CustomAppHeader from '../../../components/customAppHeader/CustomAppHeader';
 
-interface ISupportScreenProps {
+interface ISupportScreen {
   isRightButtonPressed: boolean;
   isLeftButtonPressed: boolean;
   pressRightButton: (pressed: boolean) => ViewStyle[];
@@ -15,7 +15,7 @@ const SupportScreen = memo(
     pressRightButton,
     isLeftButtonPressed,
     isRightButtonPressed,
-  }: ISupportScreenProps): JSX.Element => {
+  }: ISupportScreen): JSX.Element => {
     return (
       <View>
         <CustomAppHeader

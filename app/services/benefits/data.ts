@@ -1,11 +1,12 @@
 import {CouponType, ReferralsDataType} from './benefits.types';
+import {BENEFITS_DISCOUNTS_CATEGORY} from '../../constants';
 
 export const MinskCouponsData: CouponType[] = [
   {
     id: '1',
     sizeOfDiscount: '-25%',
     placeName: 'Сеть пиццерий Domino’s Pizza',
-    category: 'Еда',
+    category: BENEFITS_DISCOUNTS_CATEGORY.FOOD,
     discountMetaData: {
       condition: 'на доставку при онлайн заказе',
       login: 'innowise1@gmail.com',
@@ -25,7 +26,7 @@ export const MinskCouponsData: CouponType[] = [
     id: '2',
     sizeOfDiscount: '-10%',
     placeName: 'Сеть пиццерий Papa Johns',
-    category: 'Еда',
+    category: BENEFITS_DISCOUNTS_CATEGORY.FOOD,
     discountMetaData: {
       condition: 'на доставку при онлайн заказе',
       login: 'innowise1@gmail.com',
@@ -45,7 +46,7 @@ export const MinskCouponsData: CouponType[] = [
     id: '3',
     sizeOfDiscount: '-10%',
     placeName: 'Кафе Rosegose',
-    category: 'Еда',
+    category: BENEFITS_DISCOUNTS_CATEGORY.FOOD,
     discountMetaData: {
       description: 'Скидка по промокоду Innowise',
     },
@@ -63,7 +64,7 @@ export const MinskCouponsData: CouponType[] = [
     id: '4',
     sizeOfDiscount: '-10%',
     placeName: 'Адреналин',
-    category: 'Спорт',
+    category: BENEFITS_DISCOUNTS_CATEGORY.SPORT,
     discountMetaData: {
       description: 'Скидка по промокоду Innowise',
     },
@@ -84,7 +85,7 @@ export const VitebskCouponsData: CouponType[] = [
     id: '1',
     sizeOfDiscount: '-65%',
     placeName: 'Лисица',
-    category: 'Еда',
+    category: BENEFITS_DISCOUNTS_CATEGORY.FOOD,
     discountMetaData: {
       condition: 'на доставку при онлайн заказе',
       login: 'innowise1@gmail.com',
@@ -104,7 +105,7 @@ export const VitebskCouponsData: CouponType[] = [
     id: '2',
     sizeOfDiscount: '-50%',
     placeName: 'Теремок',
-    category: 'Еда',
+    category: BENEFITS_DISCOUNTS_CATEGORY.FOOD,
     discountMetaData: {
       condition: 'на доставку при онлайн заказе',
       login: 'innowise1@gmail.com',
@@ -124,7 +125,7 @@ export const VitebskCouponsData: CouponType[] = [
     id: '3',
     sizeOfDiscount: '-60%',
     placeName: 'Кафе Rosegose',
-    category: 'Еда',
+    category: BENEFITS_DISCOUNTS_CATEGORY.FOOD,
     discountMetaData: {
       description: 'Скидка по промокоду Innowise',
     },
@@ -142,7 +143,7 @@ export const VitebskCouponsData: CouponType[] = [
     id: '4',
     sizeOfDiscount: '-70%',
     placeName: 'Адреналин',
-    category: 'Спорт',
+    category: BENEFITS_DISCOUNTS_CATEGORY.SPORT,
     discountMetaData: {
       description: 'Скидка по промокоду Innowise',
     },

@@ -1,12 +1,12 @@
 import React, {memo} from 'react';
 import {FlatList, View, Text} from 'react-native';
-import CustomButton from '../customButton/CustomButton';
+import CustomTopButton from '../customTopButton/CustomTopButton';
 import styles from './buttonsHeader.styles';
 
-interface ICouponProps {
-  categories: string[];
-  onBtnPress(btnContent: string): void;
-  chosenCategory: string;
+interface ICoupon {
+  categories?: string[];
+  onBtnPress?(btnContent: string): void;
+  chosenCategory?: string;
   isBenefitsScreen?: boolean;
 }
 
@@ -16,7 +16,7 @@ const ButtonsHeader = memo(
     onBtnPress,
     chosenCategory,
     isBenefitsScreen,
-  }: ICouponProps): JSX.Element => {
+  }: ICoupon): JSX.Element => {
     return (
       <View style={styles.container}>
         {isBenefitsScreen && (
@@ -30,10 +30,11 @@ const ButtonsHeader = memo(
           scrollEnabled={true}
           showsHorizontalScrollIndicator={false}
           renderItem={({item, index}) => {
+            const indexElement = categories ? categories.length - 1 : 0;
             return (
-              <CustomButton
+              <CustomTopButton
                 isFirstItem={index === 0}
-                isLastItem={index === categories.length - 1}
+                isLastItem={index === indexElement}
                 key={index}
                 content={item}
                 onBtnPress={onBtnPress}

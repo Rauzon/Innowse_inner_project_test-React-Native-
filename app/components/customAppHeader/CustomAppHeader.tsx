@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View, Text, Pressable, ViewStyle} from 'react-native';
 import styles from './customAppHeader.styles';
 
-interface ICustomAppHeaderProps {
+interface ICustomAppHeader {
   rightBtnContent: string;
   leftBtnContent: string;
   isRightButtonPressed: boolean;
@@ -19,7 +19,7 @@ const CustomAppHeader = memo(
     pressRightButton,
     isRightButtonPressed,
     pressLeftButton,
-  }: ICustomAppHeaderProps): JSX.Element => {
+  }: ICustomAppHeader): JSX.Element => {
     return (
       <View style={styles.container}>
         <View style={styles.wrapper}>

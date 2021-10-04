@@ -1,10 +1,12 @@
 import {INotificationState, NotificationDataType} from './notification.types';
-import {BehaviorSubject} from 'rxjs';
 import {notificationData} from './data';
 import {NOTIFICATIONS_SCREEN_CATEGORIES} from '../../constants';
 import {SetStateAction} from 'react';
+//@ts-ignore
+import {BehaviorSubject} from 'rxjs';
 
 class NotificationService {
+  private static instance: NotificationService;
   private notificationState$: BehaviorSubject<INotificationState> =
     new BehaviorSubject<INotificationState>({
       notificationsData: notificationData,
@@ -15,13 +17,14 @@ class NotificationService {
         NOTIFICATIONS_SCREEN_CATEGORIES.NEWS,
       ],
     } as INotificationState);
-  constructor() {
-    if (NotificationService.exists) {
-      return NotificationService.instance;
+
+  public static getInstance = (): NotificationService => {
+    if (!NotificationService.instance) {
+      NotificationService.instance = new NotificationService();
     }
-    NotificationService.instance = this;
-    NotificationService.exists = true;
-  }
+    return NotificationService.instance;
+  };
+
   public getState = (): INotificationState => {
     return this.notificationState$.getValue();
   };
@@ -67,6 +70,6 @@ class NotificationService {
   public calcTime = () => {};
 }
 
-const notificationService = new NotificationService();
+const notificationService = NotificationService.getInstance();
 
 export default notificationService;

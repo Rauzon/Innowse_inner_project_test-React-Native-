@@ -1,18 +1,18 @@
 import React, {memo} from 'react';
-import {SafeAreaView, ScrollView} from 'react-native';
-import styles from '../videoItem/videoItem.styles';
+import {SafeAreaView, ScrollView, ViewStyle} from 'react-native';
+import style from '../videoItem/videoItem.styles';
 import VideoItem from '../videoItem/VideoItem';
 
-interface IListHeaderProps {
+interface IListHeader {
   dataSeries: string[];
-  styles: typeof styles;
+  styles: ViewStyle | ViewStyle[] | typeof style;
   onVideoPress(videoId: string): void;
 }
 
 const ListHeader = memo(
-  ({dataSeries, styles, onVideoPress}: IListHeaderProps): JSX.Element => {
+  ({dataSeries, styles, onVideoPress}: IListHeader): JSX.Element => {
     return (
-      <SafeAreaView style={{marginBottom: 16}}>
+      <SafeAreaView style={style.list_wrapper}>
         <ScrollView
           horizontal={true}
           pagingEnabled={false}
@@ -23,6 +23,7 @@ const ListHeader = memo(
                 key={index}
                 videoId={item}
                 onVideoPress={onVideoPress}
+                //@ts-ignore
                 styles={styles}
                 isLastItem={index === array.length - 1}
                 isFirstItem={index === 0}

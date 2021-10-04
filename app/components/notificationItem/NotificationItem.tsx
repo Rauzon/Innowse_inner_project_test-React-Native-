@@ -6,13 +6,13 @@ import {FoodNotificationIcon, NewsNotificationIcon} from '../../Icons';
 import {INotificationDataType} from '../../hooks/useGetNotificationsData';
 import notificationService from '../../services/notifications/notification.service';
 
-interface INotificationItemProps {
+interface INotificationItem {
   item: INotificationDataType;
   isLastItem?: boolean;
 }
 
 const NotificationItem = memo(
-  ({item, isLastItem}: INotificationItemProps): JSX.Element => {
+  ({item, isLastItem}: INotificationItem): JSX.Element => {
     const {isViewed, category, pastTime, title, id} = item;
 
     const styleConditions = isLastItem

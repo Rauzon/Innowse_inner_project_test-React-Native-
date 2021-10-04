@@ -2,14 +2,14 @@ import React, {memo} from 'react';
 import {Text, View} from 'react-native';
 import styles from './tabBar.styles';
 
-interface ITabBarIconProps {
+interface ITabBarIcon {
   isFocused?: boolean;
   icon: JSX.Element;
   label: string;
 }
 
 const TabBarIcon = memo(
-  ({isFocused, icon, label}: ITabBarIconProps): JSX.Element => {
+  ({isFocused, icon, label}: ITabBarIcon): JSX.Element => {
     return (
       <View style={styles.container}>
         {isFocused && <View style={styles.top_line} />}

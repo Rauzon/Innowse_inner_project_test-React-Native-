@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {UserType} from '../services/users/user.types';
 import userService from '../services/users/user.service';
+//@ts-ignore
 import {of} from 'rxjs';
 
 const useSetUserData = (): UserType | null => {

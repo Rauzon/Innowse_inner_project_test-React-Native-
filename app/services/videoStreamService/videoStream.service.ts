@@ -1,8 +1,10 @@
-import {BehaviorSubject} from 'rxjs';
 import {IVideoStream} from './videoStrime.types';
 import {getYoutubeMeta} from 'react-native-youtube-iframe';
+//@ts-ignore
+import {BehaviorSubject} from 'rxjs';
 
 class VideoStreamService {
+  private static instance: VideoStreamService;
   private videoState$: BehaviorSubject<IVideoStream> =
     new BehaviorSubject<IVideoStream>({
       videoSeries: [
@@ -13,14 +15,15 @@ class VideoStreamService {
         '6ASD8gHrDeE',
       ],
       metaData: {},
-    });
-  public constructor() {
-    if (VideoStreamService.exists) {
-      return VideoStreamService.instance;
+    } as IVideoStream);
+
+  public static getInstance = (): VideoStreamService => {
+    if (!VideoStreamService.instance) {
+      VideoStreamService.instance = new VideoStreamService();
     }
-    VideoStreamService.instance = this;
-    VideoStreamService.exists = true;
-  }
+    return VideoStreamService.instance;
+  };
+
   public setMetaData(videoId: string): Promise<void> {
     return getYoutubeMeta(videoId).then(data => {
       const currentData = this.videoState$.getValue();
@@ -39,6 +42,6 @@ class VideoStreamService {
   };
 }
 
-const videoStreamService = new VideoStreamService();
+const videoStreamService = VideoStreamService.getInstance();
 
 export default videoStreamService;

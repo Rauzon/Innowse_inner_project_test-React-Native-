@@ -1,22 +1,23 @@
 import React, {memo} from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import styles from './substanceList.styles';
 
-interface ISubstanceProps {
+interface ISubstance {
   headers: string[];
 }
 
-const SubstanceList = memo(({headers}: ISubstanceProps): JSX.Element => {
+const SubstanceList = memo(({headers}: ISubstance): JSX.Element => {
   return headers.length ? (
     <View style={styles.container}>
-      <Text style={styles.title}>Содержание</Text>
-      {headers.map((header, index) => {
-        return (
+      <FlatList
+        ListHeaderComponent={() => <Text style={styles.title}>Содержание</Text>}
+        data={headers}
+        renderItem={({item, index}) => (
           <Text style={styles.subtitle} key={index}>
-            {header}
+            {item}
           </Text>
-        );
-      })}
+        )}
+      />
     </View>
   ) : (
     <></>

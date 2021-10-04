@@ -3,12 +3,12 @@ import {Pressable, View} from 'react-native';
 import YoutubeIframe from 'react-native-youtube-iframe';
 import styles from './videoModal.styles';
 
-interface IVideoModalProps {
+interface IVideoModal {
   videoId: string;
   onClose(): void;
 }
 
-const VideoModal = memo(({videoId, onClose}: IVideoModalProps): JSX.Element => {
+const VideoModal = memo(({videoId, onClose}: IVideoModal): JSX.Element => {
   return (
     <View style={styles.modal_wrapper}>
       <Pressable onPress={onClose} style={styles.close_btn}>

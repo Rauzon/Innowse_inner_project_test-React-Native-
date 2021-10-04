@@ -1,21 +1,18 @@
 import React, {memo, useEffect, useState} from 'react';
 import {Text, View} from 'react-native';
-import {PlaceDataType} from '../../../../../../services/benefits/benefits.types';
+import {PlaceDataType} from '../../services/benefits/benefits.types';
 import styles from './contentModal.styles';
 
-interface IContentModalProps {
+interface IContentModal {
   placeName: string;
   placeData: PlaceDataType;
 }
 
 const ContentModal = memo(
-  ({placeName, placeData}: IContentModalProps): JSX.Element => {
-    const {
-      socials,
-      address,
-      phoneNumber,
-      workTime: {workDays, weekend},
-    } = placeData;
+  ({placeName, placeData}: IContentModal): JSX.Element => {
+    const {socials, address, phoneNumber, workTime} = placeData;
+    const workDays = workTime?.workDays;
+    const weekend = workTime?.weekend;
     const [socialsKeys, setSocialsKeys] = useState<string[]>([]);
 
     useEffect(() => {

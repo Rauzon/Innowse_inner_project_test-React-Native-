@@ -1,16 +1,16 @@
 import React, {memo} from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './recommendRule.styles';
-import {REFERRALS_ICONS_URL_DATA} from '../../../../../../constants';
-import {RecommendationRuleType} from '../../../../../../services/benefits/benefits.types';
+import {REFERRALS_ICONS_URL_DATA} from '../../constants';
+import {RecommendationRuleType} from '../../services/benefits/benefits.types';
 
-interface IRecommendRuleProps {
+interface IRecommendRule {
   isLastItem?: boolean;
   item: RecommendationRuleType;
 }
 
 const RecommendRule = memo(
-  ({isLastItem, item}: IRecommendRuleProps): JSX.Element => {
+  ({isLastItem, item}: IRecommendRule): JSX.Element => {
     const {rule, iconName} = item;
     return (
       <View

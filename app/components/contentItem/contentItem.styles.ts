@@ -2,7 +2,12 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   content_wrapper: {
+    paddingRight: 16,
+    paddingLeft: 16,
     marginBottom: 24,
+  },
+  top_gap: {
+    marginTop: 16,
   },
   content_subtitle: {
     marginBottom: 10,

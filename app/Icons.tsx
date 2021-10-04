@@ -317,6 +317,7 @@ export const CommunityTabIcon = ({
       width={20}
       height={20}
       fill="none"
+      //@ts-ignore
       xmlns="http://www.w3.org/2000/svg"
       {...props}>
       <Path
@@ -339,6 +340,7 @@ export const BenefitsTabIcon = ({
       width={22}
       height={18}
       fill="none"
+      //@ts-ignore
       xmlns="http://www.w3.org/2000/svg"
       {...props}>
       <Path
@@ -358,6 +360,7 @@ export const HelpTabIcon = ({
       width={19}
       height={19}
       fill="none"
+      //@ts-ignore
       xmlns="http://www.w3.org/2000/svg"
       {...props}>
       <Path
@@ -377,11 +380,111 @@ export const MoreTabIcon = ({
       width={20}
       height={4}
       fill="none"
+      //@ts-ignore
       xmlns="http://www.w3.org/2000/svg"
       {...props}>
       <Circle cx={2} cy={2} r={2} fill={isFocused ? '#C63031' : '#828282'} />
       <Circle cx={10} cy={2} r={2} fill={isFocused ? '#C63031' : '#828282'} />
       <Circle cx={18} cy={2} r={2} fill={isFocused ? '#C63031' : '#828282'} />
+    </Svg>
+  );
+};
+
+export const AboutCompanyIcon = (props: any) => {
+  return (
+    <Svg
+      width={19}
+      height={19}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M9.5 8.55a.95.95 0 00-.95.95v3.8a.95.95 0 101.9 0V9.5a.95.95 0 00-.95-.95zm.361-3.724a.95.95 0 00-.722 0 .95.95 0 00-.313.2 1.093 1.093 0 00-.2.313.95.95 0 00.2 1.035c.092.084.198.152.313.2A.95.95 0 0010.45 5.7a.997.997 0 00-.275-.675.95.95 0 00-.314-.199zM9.5 0a9.5 9.5 0 100 19 9.5 9.5 0 000-19zm0 17.1a7.6 7.6 0 110-15.2 7.6 7.6 0 010 15.2z"
+        fill="#C63031"
+      />
+    </Svg>
+  );
+};
+
+export const CalendarIcon = (props: any) => {
+  return (
+    <Svg
+      width={17}
+      height={18}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M15.111 18H1.89A1.894 1.894 0 010 16.1V3.8c0-1.05.846-1.9 1.889-1.9h1.889V0h1.889v1.9h5.666V0h1.89v1.9h1.888C16.154 1.9 17 2.75 17 3.8v12.3c0 1.05-.846 1.9-1.889 1.9zM1.89 7.6v8.5H15.11V7.6H1.89zm0-3.8v1.9H15.11V3.8H1.89zm11.333 7.6H3.778V9.5h9.444v1.9z"
+        fill="#C63031"
+      />
+    </Svg>
+  );
+};
+
+export const OfferAndIssueIcon = (props: any) => {
+  return (
+    <Svg
+      width={19}
+      height={19}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path d="M16 8h-2V5h-3V3h3V0h2v3h3v2h-3v3z" fill="#C63031" />
+      <Path
+        d="M18 10h-2v3H5.334a1.984 1.984 0 00-1.2.4L2 15V3h7V1H2a2 2 0 00-2 2v16l4.8-3.6c.346-.26.767-.4 1.2-.4h10a2 2 0 002-2v-3z"
+        fill="#C63031"
+      />
+    </Svg>
+  );
+};
+
+export const RequestOnOutIcon = (props: any) => {
+  return (
+    <Svg
+      width={17}
+      height={17}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M9.444 17H1.89A1.889 1.889 0 010 15.111V1.89C0 .846.846 0 1.889 0H15.11C16.154 0 17 .846 17 1.889v7.555c0 .011-.002.022-.006.033a.14.14 0 00-.005.026.963.963 0 01-.049.245l-.008.025a.931.931 0 01-.212.34l-6.612 6.61a.945.945 0 01-.664.277zM1.89 1.889V15.11H8.5V9.444c0-.521.423-.944.944-.944h5.667V1.889H1.89zm8.5 8.5v3.388l3.387-3.388h-3.387z"
+        fill="#C63031"
+      />
+    </Svg>
+  );
+};
+
+export const FoodMessageIcon = (props: any) => {
+  return (
+    <Svg
+      width={18}
+      height={18}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M2.238 11.902a3.001 3.001 0 01-.795-5.467c.328-.2.557-.551.557-.935A5.5 5.5 0 0110.559.928c.371.25.855.275 1.287.158A2.503 2.503 0 0115 3.5c0 .338.197.667.51.795a4.001 4.001 0 01.294 7.276l-.694 5.553a1 1 0 01-.993.876H3.883a1 1 0 01-.993-.876l-.652-5.222zM4 5.5c0 1.19-.69 2.14-1.518 2.644A1 1 0 003 10h11a2 2 0 00.754-3.853C13.6 5.676 13 4.55 13 3.5a.5.5 0 00-.632-.483c-.81.22-1.935.235-2.923-.428A3.5 3.5 0 004 5.5zm.266 6.5l.5 4H6v-4H4.266zM10 16v-4H8v4h2zm2 0h1.234l.5-4H12v4z"
+        fill="#C63031"
+      />
+    </Svg>
+  );
+};
+
+export const DropDownSelectIcon = (props: any) => {
+  return (
+    <Svg
+      width={16}
+      height={9}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M1 1l7 7 7-7"
+        stroke="#BFBFBF"
+        strokeWidth={1.8}
+        strokeLinejoin="round"
+      />
     </Svg>
   );
 };

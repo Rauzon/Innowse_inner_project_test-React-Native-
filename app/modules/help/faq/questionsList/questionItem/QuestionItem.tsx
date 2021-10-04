@@ -4,23 +4,27 @@ import styles from './questionItem.styles';
 import {FaqType} from '../../../../../services/help/help.types';
 import {FAQ_ICONS_URL_DATA, ROUTES} from '../../../../../constants';
 import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../../../navigator/navigator.types';
 
-interface QuestionItemProps {
+type FAQScreenProp = NativeStackNavigationProp<RootStackParamList, ROUTES.FAQ>;
+
+interface QuestionItem {
   questionItem: FaqType;
   isLastItem?: boolean;
 }
 
 const QuestionItem = memo(
-  ({questionItem, isLastItem}: QuestionItemProps): JSX.Element => {
+  ({questionItem, isLastItem}: QuestionItem): JSX.Element => {
     const {title, subtitle, icon} = questionItem;
-    const {navigate} = useNavigation();
+    const {navigate} = useNavigation<FAQScreenProp>();
 
     return (
       <TouchableOpacity
         style={
           isLastItem ? [styles.wrapper, {borderBottomWidth: 0}] : styles.wrapper
         }
-        onPress={() => navigate(ROUTES.FAQ, questionItem)}>
+        onPress={() => navigate({name: ROUTES.FAQ, params: questionItem})}>
         <View style={styles.img_wrapper}>
           <Image style={styles.img} source={FAQ_ICONS_URL_DATA[icon]} />
         </View>

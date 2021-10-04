@@ -4,11 +4,11 @@ import {ContactType} from '../../../../../services/benefits/benefits.types';
 import styles from './contacts.styles';
 import InformationModal from '../../../../../components/informationModal/InformationModal';
 
-interface IContactsProps {
+interface IContacts {
   contacts: ContactType[] | undefined;
 }
 
-const Contacts = memo(({contacts}: IContactsProps): JSX.Element => {
+const Contacts = memo(({contacts}: IContacts): JSX.Element => {
   const [modalVisible, setVisibleModal] = useState<boolean>(false);
 
   return (

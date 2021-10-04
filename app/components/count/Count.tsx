@@ -1,12 +1,12 @@
 import React, {memo} from 'react';
 import {View, ViewStyle} from 'react-native';
 
-interface ICountProps {
+interface ICount {
   children: JSX.Element;
   style: ViewStyle;
 }
 
-const Count = memo(({children, style}: ICountProps): JSX.Element => {
+const Count = memo(({children, style}: ICount): JSX.Element => {
   return <View style={style}>{children}</View>;
 });
 

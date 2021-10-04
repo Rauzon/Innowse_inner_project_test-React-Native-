@@ -3,16 +3,16 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import styles from './ruleComponent.styles';
 import {RULES_ICON_URL_DATA} from '../../../../constants';
 
-type RuleComponentPropsType = {
+interface IRuleComponent {
   title: string;
   content?: string;
   icon: string;
   isLastItem?: boolean;
   id: string;
-};
+}
 
 const RuleComponent = memo(
-  ({id, title, content, icon, isLastItem}: RuleComponentPropsType) => {
+  ({id, title, content, icon, isLastItem}: IRuleComponent) => {
     return (
       <View
         key={id}

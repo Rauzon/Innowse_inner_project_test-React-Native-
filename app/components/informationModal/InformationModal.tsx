@@ -2,13 +2,13 @@ import React, {memo, ReactNode} from 'react';
 import {Pressable, View} from 'react-native';
 import styles from './informationModal.styles';
 
-interface IPlaceInfoModalProps {
+interface IPlaceInfoModal {
   onModalClose(visibleModal: boolean): void;
   children: ReactNode;
 }
 
 const InformationModal = memo(
-  ({onModalClose, children}: IPlaceInfoModalProps): JSX.Element => {
+  ({onModalClose, children}: IPlaceInfoModal): JSX.Element => {
     return (
       <View style={styles.modal_wrapper}>
         <View style={styles.modal_inner}>

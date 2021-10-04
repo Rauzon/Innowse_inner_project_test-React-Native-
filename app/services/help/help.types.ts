@@ -3,10 +3,10 @@ export type FaqType = {
   title: string;
   subtitle: string;
   icon: string;
-  content?: Array<{id: string; subtitle: string; text: string}>;
-  headers?: string[];
+  content: Array<{id: string; subtitle: string; text: string}>;
+  headers: string[];
   precontent?: string;
-  videoId?: string;
+  videoId: string;
 };
 
 export interface IHelpState {

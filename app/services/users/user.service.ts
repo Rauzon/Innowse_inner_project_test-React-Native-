@@ -1,17 +1,21 @@
-import {BehaviorSubject} from 'rxjs';
 import auth from '@react-native-firebase/auth';
 import {IUserState, TransformNameType} from './user.types';
+//@ts-ignore
+import {BehaviorSubject} from 'rxjs';
+import errorHandler from '../../helpers/errorHandler';
 
 class UserService {
+  private static instance: UserService;
   public userState$: BehaviorSubject<IUserState> =
-    new BehaviorSubject<IUserState>({user: null});
-  public constructor() {
-    if (UserService.exists) {
-      return UserService.instance;
+    new BehaviorSubject<IUserState>({user: null} as IUserState);
+
+  public static getInstance = (): UserService => {
+    if (!UserService.instance) {
+      UserService.instance = new UserService();
     }
-    UserService.instance = this;
-    UserService.exists = true;
-  }
+    return UserService.instance;
+  };
+
   public setUserData = () => {
     try {
       const userData = auth().currentUser;
@@ -30,7 +34,7 @@ class UserService {
         },
       });
     } catch (err) {
-      console.log(err);
+      console.log(errorHandler(err));
     }
   };
   private transformName = (userName: string): TransformNameType => {
@@ -44,6 +48,6 @@ class UserService {
   };
 }
 
-const userService = new UserService();
+const userService = UserService.getInstance();
 
 export default userService;

@@ -8,11 +8,11 @@ import videoListStyle from '../videoItem/videoItem.styles';
 import videoCarouselStyle from '../listHeader/listHeader.styles';
 import CustomAppHeader from '../../../../components/customAppHeader/CustomAppHeader';
 
-interface IVideoListProps {
-  isRightButtonPressed?: boolean;
-  isLeftButtonPressed?: boolean;
-  pressRightButton?: (pressed: boolean) => ViewStyle[];
-  pressLeftButton?: (pressed: boolean) => ViewStyle[];
+interface IVideoList {
+  isRightButtonPressed: boolean;
+  isLeftButtonPressed: boolean;
+  pressRightButton: (pressed: boolean) => ViewStyle[];
+  pressLeftButton: (pressed: boolean) => ViewStyle[];
 }
 
 const VideoList = memo(
@@ -21,7 +21,7 @@ const VideoList = memo(
     pressLeftButton,
     isRightButtonPressed,
     isLeftButtonPressed,
-  }: IVideoListProps): JSX.Element => {
+  }: IVideoList): JSX.Element => {
     const [dataSeries, setDataSeries] = useState<string[]>([]);
     const [modalVisible, showModal] = useState<boolean>(false);
     const [selectedVideo, setSelectedVideo] = useState<string>('');
@@ -58,6 +58,7 @@ const VideoList = memo(
               />
               <ListHeader
                 dataSeries={dataSeries}
+                //@ts-ignore
                 styles={videoCarouselStyle}
                 onVideoPress={onVideoPress}
               />

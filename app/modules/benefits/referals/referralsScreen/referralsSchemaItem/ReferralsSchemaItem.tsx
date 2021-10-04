@@ -3,12 +3,12 @@ import {View, Text} from 'react-native';
 import styles from './referralsSchemaItem.styles';
 import {RecommendationSchemaType} from '../../../../../services/benefits/benefits.types';
 
-interface IReferralsSchemaItemProps {
+interface IReferralsSchemaItem {
   items: RecommendationSchemaType[] | undefined;
 }
 
 const ReferralsSchemaItem = memo(
-  ({items}: IReferralsSchemaItemProps): JSX.Element => {
+  ({items}: IReferralsSchemaItem): JSX.Element => {
     return (
       <View style={styles.container}>
         {items?.map(({id, position, bonus}) => {

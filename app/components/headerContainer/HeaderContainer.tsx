@@ -5,9 +5,13 @@ import {ROUTES} from '../../constants';
 import useGetNotificationsData from '../../hooks/useGetNotificationsData';
 import NotificationsModalList from '../notificationsModalList/NotificationsModalList';
 import Header from './header/Header';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../navigator/navigator.types';
+
+type AppScreenProp = NativeStackNavigationProp<RootStackParamList, ROUTES.APP>;
 
 const HeaderContainer = (): JSX.Element => {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<AppScreenProp>();
   const userData = useSetUserData();
   const {data} = useGetNotificationsData();
   const [visibleModal, setModalVisible] = useState<boolean>(false);
@@ -22,7 +26,7 @@ const HeaderContainer = (): JSX.Element => {
   }, [data]);
 
   const onProfileIconPress = useCallback(() => {
-    navigate(ROUTES.PROFILE);
+    navigate(ROUTES.PROFILE as never);
   }, [navigate]);
 
   const onBtnPress = useCallback(() => {
@@ -33,7 +37,7 @@ const HeaderContainer = (): JSX.Element => {
   }, [firstModalOpen]);
 
   const onGetAllNotificationsPress = useCallback(() => {
-    navigate(ROUTES.NOTIFICATION);
+    navigate(ROUTES.NOTIFICATION as never);
   }, [navigate]);
 
   return (

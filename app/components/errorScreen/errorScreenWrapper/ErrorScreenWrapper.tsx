@@ -3,21 +3,19 @@ import styles from './errorScreenWrapper.styles';
 import {View} from 'react-native';
 import {EmojiIcon} from '../../../Icons';
 
-interface IErrorWrapperProps {
+interface IErrorWrapper {
   children: ReactNode;
 }
 
-const ErrorScreenWrapper = memo(
-  ({children}: IErrorWrapperProps): JSX.Element => {
-    return (
-      <View style={styles.container}>
-        <View style={styles.icon_wrapper}>
-          <EmojiIcon />
-        </View>
-        {children}
+const ErrorScreenWrapper = memo(({children}: IErrorWrapper): JSX.Element => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.icon_wrapper}>
+        <EmojiIcon />
       </View>
-    );
-  },
-);
+      {children}
+    </View>
+  );
+});
 
 export default ErrorScreenWrapper;

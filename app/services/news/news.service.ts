@@ -1,7 +1,9 @@
-import {BehaviorSubject} from 'rxjs';
 import {INewsState} from './news.types';
+//@ts-ignore
+import {BehaviorSubject} from 'rxjs';
 
 class NewsService {
+  private static instance: NewsService;
   public newsState$ = new BehaviorSubject({
     news: [
       {
@@ -84,18 +86,19 @@ class NewsService {
       },
     ],
   } as INewsState);
-  constructor() {
-    if (NewsService.exists) {
-      return NewsService.instance;
+
+  public static getInstance = (): NewsService => {
+    if (!NewsService.instance) {
+      NewsService.instance = new NewsService();
     }
-    NewsService.instance = this;
-    NewsService.exists = true;
-  }
+    return NewsService.instance;
+  };
+
   public getNews = () => {
     return this.newsState$.value.news;
   };
 }
 
-const newsService = new NewsService();
+const newsService = NewsService.getInstance();
 
 export default newsService;

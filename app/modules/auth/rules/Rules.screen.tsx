@@ -9,10 +9,17 @@ import CheckBox from '@react-native-community/checkbox';
 import OpenURLButton from '../../../components/openURLButton/OpenURLButton';
 import {POLICY_AGREEMENT_LINK, ROUTES} from '../../../constants';
 import ConfirmButton from '../../../components/confirmButton/ConfirmButton';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../navigator/navigator.types';
 
-const RulesScreen = () => {
+type RulesScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  ROUTES.RULES
+>;
+
+const RulesScreen = (): JSX.Element => {
+  const {navigate} = useNavigation<RulesScreenProp>();
   const [rules, setRules] = useState({} as RulesType);
-  const {navigate} = useNavigation();
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
   useEffect(() => {
@@ -24,7 +31,7 @@ const RulesScreen = () => {
 
   const onButtonPress = () => {
     if (isChecked) {
-      navigate(ROUTES.APP);
+      navigate(ROUTES.APP as never);
     } else {
       Alert.alert('Ознакомьтесь с политикой конфиденциальности');
     }

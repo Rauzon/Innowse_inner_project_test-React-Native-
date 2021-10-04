@@ -4,18 +4,25 @@ import {DiscountsDataType} from '../../../../services/benefits/benefits.types';
 import styles from './couponCard.styles';
 import {DISCOUNT_CARDS_ICON_URL_DATA, ROUTES} from '../../../../constants';
 import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../../navigator/navigator.types';
 
-interface ICouponProps {
+type DiscountsScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  ROUTES.DISCOUNTS
+>;
+
+interface ICoupon {
   item: DiscountsDataType;
 }
 
-const CouponCard = memo(({item}: ICouponProps): JSX.Element => {
+const CouponCard = memo(({item}: ICoupon): JSX.Element => {
   const {shortDescription, city, icon} = item;
   const {DISCOUNTS} = ROUTES;
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<DiscountsScreenProp>();
 
   const onCardPress = () => {
-    navigate(DISCOUNTS, item);
+    navigate({name: DISCOUNTS, params: item});
   };
 
   return (

@@ -4,7 +4,7 @@ import CouponCard from './couponCard/CouponCard';
 import useGetBenefitsData from '../../../hooks/useGetBenefitsData';
 import CustomAppHeader from '../../../components/customAppHeader/CustomAppHeader';
 
-interface IDiscountsProps {
+interface IDiscounts {
   isRightButtonPressed: boolean;
   isLeftButtonPressed: boolean;
   pressRightButton: (pressed: boolean) => ViewStyle[];
@@ -17,7 +17,7 @@ const DiscountsScreen = memo(
     isLeftButtonPressed,
     pressRightButton,
     pressLeftButton,
-  }: IDiscountsProps): JSX.Element => {
+  }: IDiscounts): JSX.Element => {
     const data = useGetBenefitsData();
     const discounts = data?.discounts;
 

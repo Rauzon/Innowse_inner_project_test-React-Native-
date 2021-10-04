@@ -1,10 +1,10 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 import useButtonsSwitch from '../../hooks/useButtonsSwitch';
 import FaqScreen from './faq/Faq.screen';
 import SupportScreen from './support/Support.screen';
 
-const BenefitsContainer = memo((): JSX.Element => {
+const BenefitsContainer = (): JSX.Element => {
   const {
     isRightButtonPressed,
     isLeftButtonPressed,
@@ -30,6 +30,6 @@ const BenefitsContainer = memo((): JSX.Element => {
       )}
     </View>
   );
-});
+};
 
 export default BenefitsContainer;

@@ -2,11 +2,11 @@ import React, {memo} from 'react';
 import {View, ViewStyle} from 'react-native';
 import VideoList from './videoList/VideoList';
 
-interface IVideosProps {
-  isRightButtonPressed?: boolean;
-  isLeftButtonPressed?: boolean;
-  pressRightButton?: (pressed: boolean) => ViewStyle[];
-  pressLeftButton?: (pressed: boolean) => ViewStyle[];
+interface IVideos {
+  isRightButtonPressed: boolean;
+  isLeftButtonPressed: boolean;
+  pressRightButton: (pressed: boolean) => ViewStyle[];
+  pressLeftButton: (pressed: boolean) => ViewStyle[];
 }
 
 const VideosScreen = memo(
@@ -15,7 +15,7 @@ const VideosScreen = memo(
     pressRightButton,
     isLeftButtonPressed,
     isRightButtonPressed,
-  }: IVideosProps): JSX.Element => {
+  }: IVideos): JSX.Element => {
     return (
       <View>
         <VideoList

@@ -2,14 +2,14 @@ import React, {memo} from 'react';
 import {View, Text} from 'react-native';
 import styles from './recommendationRules.styles';
 import {RecommendationRuleType} from '../../../../../services/benefits/benefits.types';
-import RecommendRule from './recommendRule/RecommendRule';
+import RecommendRule from '../../../../../components/recommendRule/RecommendRule';
 
-interface IRecommendationRulesProps {
+interface IRecommendationRules {
   rules: RecommendationRuleType[] | undefined;
 }
 
 const RecommendationRules = memo(
-  ({rules}: IRecommendationRulesProps): JSX.Element => {
+  ({rules}: IRecommendationRules): JSX.Element => {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>

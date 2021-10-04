@@ -120,6 +120,8 @@ export const faqCardsData: FaqType[] = [
       'Программа страхования',
       'Как пользоваться страховкой',
     ],
+    content: [],
+    precontent: '',
   },
   {
     id: '5',
@@ -132,6 +134,8 @@ export const faqCardsData: FaqType[] = [
       'Программа страхования',
       'Как пользоваться страховкой',
     ],
+    content: [],
+    precontent: '',
   },
   {
     id: '6',
@@ -144,6 +148,8 @@ export const faqCardsData: FaqType[] = [
       'Программа страхования',
       'Как пользоваться страховкой',
     ],
+    content: [],
+    precontent: '',
   },
   {
     id: '7',
@@ -156,5 +162,7 @@ export const faqCardsData: FaqType[] = [
       'Программа страхования',
       'Как пользоваться страховкой',
     ],
+    content: [],
+    precontent: '',
   },
 ];

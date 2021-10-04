@@ -8,20 +8,28 @@ import styles from './main.styles';
 import {useNavigation} from '@react-navigation/native';
 import userService from '../../../services/users/user.service';
 import {GoogleIcon, MainScreenIcon} from '../../../Icons';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../navigator/navigator.types';
+import errorHandler from '../../../helpers/errorHandler';
+
+type LoginScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  ROUTES.LOGIN
+>;
 
 GoogleSignin.configure({
   webClientId: WEB_CLIENT_ID,
 });
 
 const MainScreen = () => {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<LoginScreenProp>();
   const isAuthorized = useIsAuthorized();
 
   useEffect(() => {
     if (isAuthorized) {
-      navigate(ROUTES.RULES);
-    } //eslint-disable-next-line
-  }, [isAuthorized]);
+      navigate(ROUTES.RULES as never);
+    }
+  }, [isAuthorized, navigate]);
 
   const onGoogleButtonPress = async () => {
     try {
@@ -29,9 +37,9 @@ const MainScreen = () => {
       userService.setUserData();
     } catch (error) {
       if (error.message === EMAIL_VALID_ERROR) {
-        navigate(ROUTES.ERROR_SCREEN);
+        navigate(ROUTES.ERROR_SCREEN as never);
       } else {
-        Alert.alert(error.message);
+        Alert.alert(errorHandler(error));
       }
     }
   };

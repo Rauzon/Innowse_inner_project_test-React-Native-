@@ -6,7 +6,7 @@ export const notificationData: NotificationDataType[] = [
     title:
       '“Как сделать SRS документ?”. Переходи по ссылке, чтобы узнать подробности',
     category: 'Новости',
-    timeOfGetting: '',
+    timeOfGetting: new Date(),
     isViewed: false,
     newContent: {
       headers: [],
@@ -18,7 +18,7 @@ export const notificationData: NotificationDataType[] = [
     title:
       'В твоём офисе появилась еда! Приходи в 206 офис скорее, если хочешь успеть. И не забудь сказать спасибо Анна Петрова.',
     category: 'Еда',
-    timeOfGetting: '',
+    timeOfGetting: new Date(),
     isViewed: false,
     newContent: {
       headers: [],
@@ -30,7 +30,7 @@ export const notificationData: NotificationDataType[] = [
     title:
       'Как сделать SRS документ?. Переходи по ссылке, чтобы узнать подробности',
     category: 'Новости',
-    timeOfGetting: '',
+    timeOfGetting: new Date(),
     isViewed: false,
     newContent: {
       headers: [],
@@ -41,7 +41,7 @@ export const notificationData: NotificationDataType[] = [
     id: '4',
     title: 'Еда в офисе!',
     category: 'Еда',
-    timeOfGetting: '',
+    timeOfGetting: new Date(),
     isViewed: false,
     newContent: {
       headers: [],

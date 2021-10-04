@@ -1,16 +1,16 @@
 import React, {memo} from 'react';
 import {Pressable, Text} from 'react-native';
-import styles from './customButton.styles';
+import styles from './customTopButton.styles';
 
 interface ICustomButton {
   isLastItem?: boolean;
   content: string;
   isFirstItem: boolean;
-  onBtnPress(btnContent: string): void;
+  onBtnPress?(btnContent: string): void;
   isPressed: boolean;
 }
 
-const CustomButton = memo(
+const CustomTopButton = memo(
   ({
     content,
     isLastItem,
@@ -18,6 +18,11 @@ const CustomButton = memo(
     onBtnPress,
     isPressed,
   }: ICustomButton): JSX.Element => {
+    const onPress = () => {
+      if (onBtnPress) {
+        onBtnPress(content);
+      }
+    };
     const conditionStyle = isLastItem
       ? [styles.btn_wrapper, {marginRight: 16}]
       : isFirstItem
@@ -30,7 +35,7 @@ const CustomButton = memo(
             ? [conditionStyle, {backgroundColor: '#C32D2C'}]
             : [conditionStyle, {backgroundColor: '#F0F0F0'}]
         }
-        onPress={() => onBtnPress(content)}>
+        onPress={onPress}>
         <Text
           style={
             isPressed
@@ -44,4 +49,4 @@ const CustomButton = memo(
   },
 );
 
-export default CustomButton;
+export default CustomTopButton;

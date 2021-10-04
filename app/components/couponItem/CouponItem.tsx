@@ -3,22 +3,22 @@ import {Modal, Pressable, Text, View} from 'react-native';
 import {
   CouponType,
   DiscountMetaDataType,
-} from '../../../../../services/benefits/benefits.types';
+} from '../../services/benefits/benefits.types';
 import styles from './couponItem.styles';
-import {DashedLineIcon} from '../../../../../Icons';
-import InformationModal from '../../../../../components/informationModal/InformationModal';
-import ContentModal from './contentModal/ContentModal';
+import {DashedLineIcon} from '../../Icons';
+import InformationModal from '../informationModal/InformationModal';
+import ContentModal from '../contentModal/ContentModal';
 
-interface ICouponItemProps {
+interface ICouponItem {
   coupon: CouponType;
 }
 
-interface ICouponContentProps {
+interface ICouponContent {
   placeName: string;
   data: DiscountMetaDataType;
 }
 
-const CouponItem = memo(({coupon}: ICouponItemProps): JSX.Element => {
+const CouponItem = memo(({coupon}: ICouponItem): JSX.Element => {
   const {sizeOfDiscount, placeName, discountMetaData, placeData} = coupon;
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -55,31 +55,29 @@ const CouponTitle = memo(
   },
 );
 
-const CouponContent = memo(
-  ({placeName, data}: ICouponContentProps): JSX.Element => {
-    const {condition, password, login, description} = data;
-    return (
-      <View style={styles.content_wrapper}>
-        <Text style={styles.placeName}>{placeName}</Text>
-        {condition && <Text style={styles.text}>{condition}</Text>}
-        {login && (
-          <Text style={styles.text}>
-            Логин:<Text style={[styles.text, styles.bold_text]}> {login}</Text>
-          </Text>
-        )}
-        {password && (
-          <Text style={styles.text}>
-            Пароль:
-            <Text style={[styles.text, styles.bold_text]}> {password}</Text>
-          </Text>
-        )}
-        {description && <Text style={styles.text}>{description}</Text>}
-        <View style={styles.btn}>
-          <Text style={styles.btn_content}>Подробнее</Text>
-        </View>
+const CouponContent = memo(({placeName, data}: ICouponContent): JSX.Element => {
+  const {condition, password, login, description} = data;
+  return (
+    <View style={styles.content_wrapper}>
+      <Text style={styles.placeName}>{placeName}</Text>
+      {condition && <Text style={styles.text}>{condition}</Text>}
+      {login && (
+        <Text style={styles.text}>
+          Логин:<Text style={[styles.text, styles.bold_text]}> {login}</Text>
+        </Text>
+      )}
+      {password && (
+        <Text style={styles.text}>
+          Пароль:
+          <Text style={[styles.text, styles.bold_text]}> {password}</Text>
+        </Text>
+      )}
+      {description && <Text style={styles.text}>{description}</Text>}
+      <View style={styles.btn}>
+        <Text style={styles.btn_content}>Подробнее</Text>
       </View>
-    );
-  },
-);
+    </View>
+  );
+});
 
 export default CouponItem;

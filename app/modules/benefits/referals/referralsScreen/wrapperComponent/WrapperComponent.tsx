@@ -2,12 +2,12 @@ import React, {ReactNode} from 'react';
 import {View, Text} from 'react-native';
 import styles from './wrapperComponent.styles';
 
-interface IWrapperProps {
+interface IWrapper {
   title: string;
   children: ReactNode;
 }
 
-const WrapperComponent = ({title, children}: IWrapperProps): JSX.Element => {
+const WrapperComponent = ({title, children}: IWrapper): JSX.Element => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.title_wrapper}>

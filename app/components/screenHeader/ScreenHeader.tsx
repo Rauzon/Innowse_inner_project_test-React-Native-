@@ -4,11 +4,11 @@ import {useNavigation} from '@react-navigation/native';
 import styles from './screenHeader.styles';
 import {BackIcon} from '../../Icons';
 
-interface IHeaderPops {
+interface IHeader {
   title?: string;
 }
 
-const ScreenHeader = ({title}: IHeaderPops) => {
+const ScreenHeader = ({title}: IHeader) => {
   const navigation = useNavigation();
   return (
     <View style={styles.header}>

@@ -1,17 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
-import {CategoriesType} from '../../../../services/benefits/benefits.types';
-import CouponItem from './couponItem/CouponItem';
+import {
+  CategoriesType,
+  DiscountsDataType,
+} from '../../../../services/benefits/benefits.types';
+import CouponItem from '../../../../components/couponItem/CouponItem';
 import ButtonsHeader from '../../../../components/buttonsHeader/ButtonsHeader';
 import useButtonsSwitchAndGetFilteredData from '../../../../hooks/useButtonsSwitchAndGetFilteredData';
-import {useRoute} from '@react-navigation/native';
+import {Route, useRoute} from '@react-navigation/native';
 import benefitsService from '../../../../services/benefits/benefits.service';
 import styles from './couponScreen.styles';
+import {ROUTES} from '../../../../constants';
 
 const CouponScreen = (): JSX.Element => {
-  const {params} = useRoute();
+  const {params} = useRoute<Route<ROUTES.DISCOUNTS, DiscountsDataType>>();
   const {chosenCategory, onBtnPress, filteredCoupons} =
-    useButtonsSwitchAndGetFilteredData(params?.coupons);
+    useButtonsSwitchAndGetFilteredData(params.coupons);
   const [categoriesItems, setCategories] = useState<CategoriesType[]>([]);
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import React, {memo} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import useGetMetaData from '../../../../hooks/useGetMetaData';
-import styles from './videoItem.styles';
+import style from './videoItem.styles';
 import {VIDEOS_ICON_URL_DATA} from '../../../../constants';
 
-interface IVideoItemProps {
+interface IVideoItem {
   videoId: string;
   onVideoPress(videoId: string): void;
-  styles: typeof styles;
+  styles: typeof style;
   isLastItem?: boolean;
   isFirstItem?: boolean;
   iconName: string;
@@ -21,7 +21,7 @@ const VideoItem = memo(
     isLastItem,
     iconName,
     isFirstItem,
-  }: IVideoItemProps): JSX.Element => {
+  }: IVideoItem): JSX.Element => {
     const metaData = useGetMetaData(videoId);
 
     const {

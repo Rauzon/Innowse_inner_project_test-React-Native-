@@ -2,13 +2,13 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import styles from './vacancies.styles';
 import {VacancyType} from '../../../../../services/benefits/benefits.types';
-import VacancyItem from './vacancyItem/VacancyItem';
+import VacancyItem from '../../../../../components/vacancyItem/VacancyItem';
 
-interface IVacanciesProps {
+interface IVacancies {
   vacancies: VacancyType[] | undefined;
 }
 
-const Vacancies = memo(({vacancies}: IVacanciesProps): JSX.Element => {
+const Vacancies = memo(({vacancies}: IVacancies): JSX.Element => {
   return (
     <View style={styles.container}>
       {vacancies?.map((item, i, arr) => (

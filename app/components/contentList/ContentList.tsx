@@ -1,39 +1,53 @@
 import React, {memo} from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {FlatList, Image, Text, View} from 'react-native';
 import styles from './contentList.styles';
 import ContentItem from '../contentItem/ContentItem';
+import {NEWS_ICON_URL_DATA} from '../../constants';
+import SubstanceList from '../substanceList/SubstanceList';
+import {NewType} from '../../services/news/news.types';
 
-interface IContentListProps {
-  preContent?: string;
-  content: Array<{subtitle?: string; text?: string}>;
+interface IContentList {
+  newContent: NewType;
 }
 
-const ContentList = memo(
-  ({preContent, content}: IContentListProps): JSX.Element => {
-    return (
-      <View style={styles.container}>
-        {preContent ? (
-          <View style={styles.precontent_wrapper}>
-            <Text style={styles.content_text}>{preContent}</Text>
-          </View>
-        ) : (
-          <></>
+const ContentList = memo(({newContent}: IContentList): JSX.Element => {
+  const {content, icon, date, title, headers, preContent} = newContent;
+  return (
+    <View>
+      <FlatList
+        ListHeaderComponent={() => (
+          <>
+            <Image source={NEWS_ICON_URL_DATA[icon]} style={styles.poster} />
+            <View style={styles.date_wrapper}>
+              <Text style={styles.date}>{date}</Text>
+            </View>
+            <View style={styles.title_wrapper}>
+              <Text style={styles.title}>{title}</Text>
+            </View>
+            <SubstanceList headers={headers} />
+            {preContent ? (
+              <View style={styles.precontent_wrapper}>
+                <Text>{preContent}</Text>
+              </View>
+            ) : (
+              <></>
+            )}
+          </>
         )}
-        <FlatList
-          data={content}
-          renderItem={({item, index}) => {
-            return (
-              <ContentItem
-                key={index}
-                subtitle={item.subtitle}
-                text={item.text}
-              />
-            );
-          }}
-        />
-      </View>
-    );
-  },
-);
+        data={content}
+        renderItem={({item, index}) => {
+          return (
+            <ContentItem
+              isFirstItem={index === 0}
+              key={index}
+              subtitle={item.subtitle}
+              text={item.text}
+            />
+          );
+        }}
+      />
+    </View>
+  );
+});
 
 export default ContentList;

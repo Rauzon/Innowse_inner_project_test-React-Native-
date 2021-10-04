@@ -3,7 +3,7 @@ import {ScrollView, ViewStyle} from 'react-native';
 import CustomAppHeader from '../../../components/customAppHeader/CustomAppHeader';
 import Referrals from './referralsScreen/Referrals';
 
-interface IReferralProps {
+interface IReferral {
   isRightButtonPressed: boolean;
   isLeftButtonPressed: boolean;
   pressRightButton: (pressed: boolean) => ViewStyle[];
@@ -16,7 +16,7 @@ const ReferralScreen = memo(
     isRightButtonPressed,
     pressLeftButton,
     pressRightButton,
-  }: IReferralProps): JSX.Element => {
+  }: IReferral): JSX.Element => {
     return (
       <ScrollView>
         <CustomAppHeader

@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import AppNavigator from './app/app.navigator';
+import AppNavigator from './app/navigator/app.navigator';
 
 const App = () => {
   return (

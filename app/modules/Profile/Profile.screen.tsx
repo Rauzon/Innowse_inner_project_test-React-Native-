@@ -6,14 +6,21 @@ import useSetUserData from '../../hooks/useSetUserData';
 import styles from './profile.styles';
 import {useNavigation} from '@react-navigation/native';
 import {ROUTES} from '../../constants';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../navigator/navigator.types';
+
+type ProfileScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  ROUTES.PROFILE
+>;
 
 const ProfileScreen = (): JSX.Element => {
   const user = useSetUserData();
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<ProfileScreenProp>();
 
   const onSignOut = async () => {
     await authService.signOut();
-    navigate(ROUTES.LOGIN);
+    navigate(ROUTES.LOGIN as never);
   };
 
   return (

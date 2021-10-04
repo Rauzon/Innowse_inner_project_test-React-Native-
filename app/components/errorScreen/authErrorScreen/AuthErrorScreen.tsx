@@ -5,12 +5,19 @@ import styles from './authErrorScreen.styles';
 import {useNavigation} from '@react-navigation/native';
 import {ROUTES} from '../../../constants';
 import ConfirmButton from '../../confirmButton/ConfirmButton';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../navigator/navigator.types';
+
+type AuthErrorScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  ROUTES.ERROR_SCREEN
+>;
 
 const AuthErrorScreen = (): JSX.Element => {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<AuthErrorScreenProp>();
 
   const onBtnPress = () => {
-    navigate(ROUTES.LOGIN);
+    navigate(ROUTES.LOGIN as never);
   };
 
   return (
