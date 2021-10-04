@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  list_wrapper: {
+    marginBottom: 16,
+  },
   container: {
     flexDirection: 'row',
     marginBottom: 6,
