@@ -7,6 +7,7 @@ import {ROUTES} from '../../../constants';
 import ConfirmButton from '../../confirmButton/ConfirmButton';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../navigator/navigator.types';
+import {useTranslation} from 'react-i18next';
 
 type AuthErrorScreenProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -14,6 +15,7 @@ type AuthErrorScreenProp = NativeStackNavigationProp<
 >;
 
 const AuthErrorScreen = (): JSX.Element => {
+  const {t} = useTranslation();
   const {navigate} = useNavigation<AuthErrorScreenProp>();
 
   const onBtnPress = () => {
@@ -22,12 +24,14 @@ const AuthErrorScreen = (): JSX.Element => {
 
   return (
     <ErrorScreenWrapper>
-      <Text style={styles.title_error}>Не получилось войти</Text>
+      <Text style={styles.title_error}>{t('authErrorScreen.errMessage')}</Text>
       <Text style={styles.message_error}>
-        Попробуйте ещё раз, используя почту @gmail.com
+        {t('authErrorScreen.notification')}
       </Text>
       <ConfirmButton onPress={onBtnPress} style={styles.button}>
-        <Text style={styles.button_content}>Попробовать снова</Text>
+        <Text style={styles.button_content}>
+          {t('authErrorScreen.button_text')}
+        </Text>
       </ConfirmButton>
     </ErrorScreenWrapper>
   );

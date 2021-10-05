@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
 import {View, ViewStyle} from 'react-native';
 import CustomAppHeader from '../../../components/customAppHeader/CustomAppHeader';
+import {useTranslation} from 'react-i18next';
 
 interface ISupportScreen {
   isRightButtonPressed: boolean;
@@ -16,11 +17,12 @@ const SupportScreen = memo(
     isLeftButtonPressed,
     isRightButtonPressed,
   }: ISupportScreen): JSX.Element => {
+    const {t} = useTranslation();
     return (
       <View>
         <CustomAppHeader
-          rightBtnContent={'Служба Поддержки'}
-          leftBtnContent={'FAQ'}
+          rightBtnContent={t('TabsAndButtonsHeaders.support')}
+          leftBtnContent={t('TabsAndButtonsHeaders.faq')}
           isLeftButtonPressed={isLeftButtonPressed}
           isRightButtonPressed={isRightButtonPressed}
           pressRightButton={pressRightButton}

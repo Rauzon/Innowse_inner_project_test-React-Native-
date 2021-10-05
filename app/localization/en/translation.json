@@ -1,0 +1,59 @@
+{
+  "_comment": "app/localization/en/translation.json",
+  "profileScreen": {
+    "user": "User",
+    "logOut": "Logout",
+   "profile": "Profile",
+    "watchNew": "View news",
+    "mogilev": "Mogilev",
+    "minsk": "Minsk",
+    "vitebsk": "Vitebsk",
+    "gomel": "Gomel",
+    "iBroughtFood": "I brought food"
+  },
+  "mainScreen": {
+    "welcome": "Welcome",
+    "innowiseName": "to my Innowise",
+    "subtitle": "Be aware of the latest company events, find the discounts you need",
+    "continueWithGoogle": "Continue with Google"
+  },
+  "authErrorScreen": {
+    "errMessage": "Access was denied",
+    "notification": "Let's try again using @gmail.com email",
+    "button_text": "Try again"
+  },
+  "rulesScreen": {
+    "applicationRules": "Application rules",
+    "notificationMessage": "Read the privacy policy",
+    "ruleTitle": "Rule",
+    "rules": {
+      "rule_1": "Be aware of the latest company events, find the discounts you need. Be aware of the latest company events, find the discounts you need",
+      "rule_2": "Be aware of the latest company events, find the discounts you need. Be aware of the latest company events, find the discounts you need",
+      "rule_3": "Be aware of the latest company events, find the discounts you need. Be aware of the latest company events, find the discounts you need",
+      "rule_4": "Be aware of the latest company events, find the discounts you need. Be aware of the latest company events, find the discounts you need"
+    },
+    "policyContent": "I agree with",
+    "policyAgreementLink": "Confidence Policy and Application Rules",
+    "button_text": "I agree with rules"
+  },
+  "TabsAndButtonsHeaders": {
+    "community": "Community",
+    "benefits": "Benefits",
+    "help": "Help",
+    "more": "More",
+    "news": "News",
+    "video": "Video",
+    "referrals": "Referrals",
+    "discounts": "Discounts",
+    "faq": "FAQ",
+    "support": "Support service"
+  },
+  "addContentScreen": {
+    "info": "Information",
+    "aboutCompany": "About company",
+    "calendarEvents": "Calendar of events",
+    "actions": "Actions",
+    "complaints": "Complaints and offers",
+    "requestOnOff": "Request for absence"
+  }
+}

@@ -3,6 +3,7 @@ import {FlatList, View, ViewStyle} from 'react-native';
 import {FaqType} from '../../../../services/help/help.types';
 import QuestionItem from './questionItem/QuestionItem';
 import CustomAppHeader from '../../../../components/customAppHeader/CustomAppHeader';
+import {useTranslation} from 'react-i18next';
 
 interface IQuestionsList {
   faqData: FaqType[] | undefined;
@@ -20,14 +21,15 @@ const QuestionsList = memo(
     pressLeftButton,
     pressRightButton,
   }: IQuestionsList): JSX.Element => {
+    const {t} = useTranslation();
     return (
       <View>
         <FlatList
           data={faqData}
           ListHeaderComponent={() => (
             <CustomAppHeader
-              rightBtnContent={'Служба Поддержки'}
-              leftBtnContent={'FAQ'}
+              rightBtnContent={t('TabsAndButtonsHeaders.support')}
+              leftBtnContent={t('TabsAndButtonsHeaders.faq')}
               isLeftButtonPressed={isLeftButtonPressed}
               isRightButtonPressed={isRightButtonPressed}
               pressRightButton={pressRightButton}

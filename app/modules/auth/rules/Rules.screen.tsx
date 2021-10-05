@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Alert, SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {Alert, FlatList, SafeAreaView, Text, View} from 'react-native';
 import RuleComponent from './components/RuleComponent';
 import authService from '../../../services/auth/auth.service';
 import {RulesType} from '../../../services/auth/auth.types';
@@ -11,6 +11,7 @@ import {POLICY_AGREEMENT_LINK, ROUTES} from '../../../constants';
 import ConfirmButton from '../../../components/confirmButton/ConfirmButton';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../navigator/navigator.types';
+import {useTranslation} from 'react-i18next';
 
 type RulesScreenProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -18,6 +19,7 @@ type RulesScreenProp = NativeStackNavigationProp<
 >;
 
 const RulesScreen = (): JSX.Element => {
+  const {t} = useTranslation();
   const {navigate} = useNavigation<RulesScreenProp>();
   const [rules, setRules] = useState({} as RulesType);
   const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -33,33 +35,33 @@ const RulesScreen = (): JSX.Element => {
     if (isChecked) {
       navigate(ROUTES.APP as never);
     } else {
-      Alert.alert('Ознакомьтесь с политикой конфиденциальности');
+      Alert.alert(t('rulesScreen.notificationMessage'));
     }
   };
 
   return (
     <View>
-      <ScrollView style={styles.container}>
-        <View style={styles.title}>
-          <Text style={styles.title_content}>
-            Правила пользования приложением
-          </Text>
-        </View>
-        <SafeAreaView>
-          {rules.rulesData?.map(({id, content, title, icon}, index, arr) => {
-            return (
-              <RuleComponent
-                title={title}
-                content={content}
-                key={id}
-                id={id}
-                icon={icon}
-                isLastItem={index === arr.length - 1}
-              />
-            );
-          })}
-        </SafeAreaView>
-      </ScrollView>
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          ListHeaderComponent={() => (
+            <View style={styles.title}>
+              <Text style={styles.title_content}>
+                {t('rulesScreen.applicationRules')}
+              </Text>
+            </View>
+          )}
+          data={rules?.rulesData}
+          renderItem={({item, index}) => (
+            <RuleComponent
+              title={`${t('rulesScreen.ruleTitle')} №${index + 1}`}
+              content={t(`rulesScreen.rules.rule_${index + 1}`)}
+              key={item.id}
+              icon={item.icon}
+              isLastItem={index === rules?.rulesData.length - 1}
+            />
+          )}
+        />
+      </SafeAreaView>
       <View style={styles.wrapper}>
         <View style={styles.policy_wrapper}>
           <CheckBox
@@ -70,15 +72,17 @@ const RulesScreen = (): JSX.Element => {
           />
           <View style={styles.policy_content_wrapper}>
             <Text style={styles.policy_content}>
-              Я соглашаюсь с{' '}
+              {t('rulesScreen.policyContent')}{' '}
               <OpenURLButton url={POLICY_AGREEMENT_LINK}>
-                Политикой Конфиденциальности и Условиями использования
+                {t('rulesScreen.policyAgreementLink')}
               </OpenURLButton>
             </Text>
           </View>
         </View>
         <ConfirmButton style={styles.button} onPress={onButtonPress}>
-          <Text style={styles.button_content}>Я принимаю правила</Text>
+          <Text style={styles.button_content}>
+            {t('rulesScreen.button_text')}
+          </Text>
         </ConfirmButton>
       </View>
     </View>

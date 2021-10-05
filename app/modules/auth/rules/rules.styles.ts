@@ -3,11 +3,10 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     flexDirection: 'column',
-    paddingTop: 19,
     marginLeft: 16,
-    paddingRight: 16,
   },
   title: {
+    marginTop: 19,
     width: 276,
     height: 52,
     marginBottom: 29,

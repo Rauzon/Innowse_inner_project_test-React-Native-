@@ -6,6 +6,7 @@ import {DISCOUNT_CARDS_ICON_URL_DATA, ROUTES} from '../../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../../navigator/navigator.types';
+import {useTranslation} from 'react-i18next';
 
 type DiscountsScreenProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -19,6 +20,7 @@ interface ICoupon {
 const CouponCard = memo(({item}: ICoupon): JSX.Element => {
   const {shortDescription, city, icon} = item;
   const {DISCOUNTS} = ROUTES;
+  const {t} = useTranslation();
   const {navigate} = useNavigation<DiscountsScreenProp>();
 
   const onCardPress = () => {
@@ -28,7 +30,7 @@ const CouponCard = memo(({item}: ICoupon): JSX.Element => {
   return (
     <TouchableOpacity style={styles.wrapper} onPress={onCardPress}>
       <View style={styles.content_wrapper}>
-        <Text style={styles.title}>{city}</Text>
+        <Text style={styles.title}>{t(`profileScreen.${city}`)}</Text>
         <Text style={styles.description}>{shortDescription}</Text>
       </View>
       <View>

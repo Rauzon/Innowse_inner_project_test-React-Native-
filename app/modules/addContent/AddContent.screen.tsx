@@ -11,32 +11,39 @@ import {
   RequestOnOutIcon,
 } from '../../Icons';
 import {ROUTES} from '../../constants';
+import {useTranslation} from 'react-i18next';
 
 const AddContentScreen = (): JSX.Element => {
   const {FOOD_MESSAGE} = ROUTES;
-
+  const {t} = useTranslation();
   return (
     <View>
       <AddContentTitleWrapper style={[styles.title_wrapper, styles.topBorder]}>
-        <Text style={styles.title}>Информация</Text>
+        <Text style={styles.title}>{t('addContentScreen.info')}</Text>
       </AddContentTitleWrapper>
       <AddContentItemWrapper route={''} icon={<AboutCompanyIcon />}>
-        <Text style={styles.text_item}>О компании</Text>
+        <Text style={styles.text_item}>
+          {t('addContentScreen.aboutCompany')}
+        </Text>
       </AddContentItemWrapper>
       <AddContentItemWrapper route={''} icon={<CalendarIcon />}>
-        <Text style={styles.text_item}>Календарь событий</Text>
+        <Text style={styles.text_item}>
+          {t('addContentScreen.calendarEvents')}
+        </Text>
       </AddContentItemWrapper>
       <AddContentTitleWrapper style={[styles.title_wrapper]}>
-        <Text style={styles.title}>Действия</Text>
+        <Text style={styles.title}>{t('addContentScreen.actions')}</Text>
       </AddContentTitleWrapper>
       <AddContentItemWrapper route={''} icon={<OfferAndIssueIcon />}>
-        <Text style={styles.text_item}>Жалоба или предложение</Text>
+        <Text style={styles.text_item}>{t('addContentScreen.complaints')}</Text>
       </AddContentItemWrapper>
       <AddContentItemWrapper route={''} icon={<RequestOnOutIcon />}>
-        <Text style={styles.text_item}>Запрос на отсутствие</Text>
+        <Text style={styles.text_item}>
+          {t('addContentScreen.requestOnOff')}
+        </Text>
       </AddContentItemWrapper>
       <AddContentItemWrapper route={FOOD_MESSAGE} icon={<FoodMessageIcon />}>
-        <Text style={styles.text_item}>Я принёс еду</Text>
+        <Text style={styles.text_item}>{t('profileScreen.iBroughtFood')}</Text>
       </AddContentItemWrapper>
     </View>
   );

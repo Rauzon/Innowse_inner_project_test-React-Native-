@@ -7,6 +7,7 @@ import ListHeader from '../listHeader/ListHeader';
 import videoListStyle from '../videoItem/videoItem.styles';
 import videoCarouselStyle from '../listHeader/listHeader.styles';
 import CustomAppHeader from '../../../../components/customAppHeader/CustomAppHeader';
+import {useTranslation} from 'react-i18next';
 
 interface IVideoList {
   isRightButtonPressed: boolean;
@@ -22,6 +23,7 @@ const VideoList = memo(
     isRightButtonPressed,
     isLeftButtonPressed,
   }: IVideoList): JSX.Element => {
+    const {t} = useTranslation();
     const [dataSeries, setDataSeries] = useState<string[]>([]);
     const [modalVisible, showModal] = useState<boolean>(false);
     const [selectedVideo, setSelectedVideo] = useState<string>('');
@@ -49,8 +51,8 @@ const VideoList = memo(
           ListHeaderComponent={() => (
             <>
               <CustomAppHeader
-                rightBtnContent={'Новости'}
-                leftBtnContent={'Видео'}
+                rightBtnContent={t('TabsAndButtonsHeaders.news')}
+                leftBtnContent={t('TabsAndButtonsHeaders.video')}
                 isLeftButtonPressed={isLeftButtonPressed}
                 isRightButtonPressed={isRightButtonPressed}
                 pressRightButton={pressRightButton}

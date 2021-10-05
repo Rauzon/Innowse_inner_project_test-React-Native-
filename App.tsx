@@ -10,6 +10,7 @@
 
 import React from 'react';
 import AppNavigator from './app/navigator/app.navigator';
+import './app/localization/i18n';
 
 const App = () => {
   return (

@@ -11,6 +11,7 @@ import {GoogleIcon, MainScreenIcon} from '../../../Icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../navigator/navigator.types';
 import errorHandler from '../../../helpers/errorHandler';
+import {useTranslation} from 'react-i18next';
 
 type LoginScreenProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -22,6 +23,7 @@ GoogleSignin.configure({
 });
 
 const MainScreen = () => {
+  const {t} = useTranslation();
   const {navigate} = useNavigation<LoginScreenProp>();
   const isAuthorized = useIsAuthorized();
 
@@ -51,21 +53,22 @@ const MainScreen = () => {
       </View>
       <View style={styles.title_wrapper}>
         <View>
-          <Text style={styles.top_title}>Добро пожаловать</Text>
+          <Text style={styles.top_title}>{t('mainScreen.welcome')}</Text>
         </View>
         <View>
-          <Text style={styles.bottom_title}>в my Innowise</Text>
+          <Text style={styles.bottom_title}>
+            {t('mainScreen.innowiseName')}
+          </Text>
         </View>
         <View style={styles.subtitle_wrapper}>
-          <Text style={styles.subtitle}>
-            Будьте в курсе последних событий компании, находите нужные вам
-            скидки
-          </Text>
+          <Text style={styles.subtitle}>{t('mainScreen.subtitle')}</Text>
         </View>
       </View>
       <Pressable style={styles.button} onPress={onGoogleButtonPress}>
         <GoogleIcon />
-        <Text style={styles.button_content}>Continue with Google</Text>
+        <Text style={styles.button_content}>
+          {t('mainScreen.continueWithGoogle')}
+        </Text>
       </Pressable>
     </View>
   );

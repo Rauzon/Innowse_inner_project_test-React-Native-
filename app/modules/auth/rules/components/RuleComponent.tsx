@@ -8,15 +8,12 @@ interface IRuleComponent {
   content?: string;
   icon: string;
   isLastItem?: boolean;
-  id: string;
 }
 
 const RuleComponent = memo(
-  ({id, title, content, icon, isLastItem}: IRuleComponent) => {
+  ({title, content, icon, isLastItem}: IRuleComponent) => {
     return (
-      <View
-        key={id}
-        style={!isLastItem ? styles.rule_block : styleWithoutBorder}>
+      <View style={!isLastItem ? styles.rule_block : styleWithoutBorder}>
         <View style={styles.image_block}>
           <Image source={RULES_ICON_URL_DATA[icon]} />
         </View>

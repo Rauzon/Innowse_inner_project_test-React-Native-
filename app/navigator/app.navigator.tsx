@@ -48,9 +48,8 @@ const AppNavigator = () => {
         <Screen
           name={PROFILE}
           options={{
-            title: 'Профиль',
             headerShown: true,
-            header: props => <ScreenHeader title={'Профиль'} {...props} />,
+            header: props => <ScreenHeader title={'profile'} {...props} />,
           }}
           component={ProfileScreen}
         />
@@ -58,9 +57,7 @@ const AppNavigator = () => {
           name={NEWS}
           options={{
             headerShown: true,
-            header: props => (
-              <ScreenHeader title={'Просмотр новости'} {...props} />
-            ),
+            header: props => <ScreenHeader title={'watchNew'} {...props} />,
           }}
           component={ArticleScreen}
         />
@@ -84,7 +81,7 @@ const AppNavigator = () => {
           name={NOTIFICATION}
           options={{
             headerShown: true,
-            header: () => <ScreenHeader title={'Уведомления'} />,
+            header: () => <ScreenHeader title={'Notifications'} />,
           }}
           component={NotificationScreen}
         />
@@ -92,7 +89,7 @@ const AppNavigator = () => {
           name={FOOD_MESSAGE}
           options={{
             headerShown: true,
-            header: () => <ScreenHeader title={'Я принёс еду'} />,
+            header: () => <ScreenHeader title={'iBroughtFood'} />,
           }}
           component={FoodMessageScreen}
         />

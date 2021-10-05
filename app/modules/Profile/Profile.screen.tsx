@@ -8,6 +8,7 @@ import {useNavigation} from '@react-navigation/native';
 import {ROUTES} from '../../constants';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../navigator/navigator.types';
+import {useTranslation} from 'react-i18next';
 
 type ProfileScreenProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -15,6 +16,7 @@ type ProfileScreenProp = NativeStackNavigationProp<
 >;
 
 const ProfileScreen = (): JSX.Element => {
+  const {t} = useTranslation();
   const user = useSetUserData();
   const {navigate} = useNavigation<ProfileScreenProp>();
 
@@ -35,12 +37,16 @@ const ProfileScreen = (): JSX.Element => {
         <View style={styles.content__block}>
           <View>
             <Text style={styles.content__block_name}>
-              {user?.name ? `${user.name} ${user.surname}` : 'User'}
+              {user?.name
+                ? `${user.name} ${user.surname}`
+                : t('profileScreen.user')}
             </Text>
             <Text style={styles.content__block_email}>{user?.email}</Text>
           </View>
           <Pressable style={styles.logout__button} onPress={onSignOut}>
-            <Text style={styles.logout__button_content}>Logout</Text>
+            <Text style={styles.logout__button_content}>
+              {t('profileScreen.logOut')}
+            </Text>
           </Pressable>
         </View>
       </View>

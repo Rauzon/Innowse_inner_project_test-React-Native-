@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
 import {Text, View} from 'react-native';
 import styles from './tabBar.styles';
+import {useTranslation} from 'react-i18next';
 
 interface ITabBarIcon {
   isFocused?: boolean;
@@ -10,6 +11,7 @@ interface ITabBarIcon {
 
 const TabBarIcon = memo(
   ({isFocused, icon, label}: ITabBarIcon): JSX.Element => {
+    const {t} = useTranslation();
     return (
       <View style={styles.container}>
         {isFocused && <View style={styles.top_line} />}
@@ -23,7 +25,7 @@ const TabBarIcon = memo(
                 ? [styles.text, styles.text_focused]
                 : [styles.text, styles.text_unfocused]
             }>
-            {label}
+            {t(`TabsAndButtonsHeaders.${label}`)}
           </Text>
         </View>
       </View>

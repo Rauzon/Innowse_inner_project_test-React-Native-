@@ -41,7 +41,7 @@ const Tabs = () => {
             <TabBarIcon
               isFocused={focused}
               icon={<CommunityTabIcon isFocused={focused} />}
-              label={'Сообщество'}
+              label={'community'}
             />
           ),
           headerShown: false,
@@ -55,7 +55,7 @@ const Tabs = () => {
             <TabBarIcon
               isFocused={focused}
               icon={<BenefitsTabIcon isFocused={focused} />}
-              label={'Бонусы'}
+              label={'benefits'}
             />
           ),
           headerShown: false,
@@ -69,7 +69,7 @@ const Tabs = () => {
             <TabBarIcon
               isFocused={focused}
               icon={<HelpTabIcon isFocused={focused} />}
-              label={'Помощь'}
+              label={'help'}
             />
           ),
           headerShown: false,
@@ -83,7 +83,7 @@ const Tabs = () => {
             <TabBarIcon
               isFocused={focused}
               icon={<MoreTabIcon isFocused={focused} />}
-              label={'Еще'}
+              label={'more'}
             />
           ),
           headerShown: false,
