@@ -6,7 +6,7 @@ export default StyleSheet.create({
     borderRadius: 6,
     marginRight: 8,
   },
-  btn: {
+  btn_text: {
     fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
@@ -17,5 +17,18 @@ export default StyleSheet.create({
     paddingLeft: 12,
     paddingBottom: 8,
     paddingTop: 8,
+    color: '#262B2F',
+  },
+  btn_text_chosen: {
+    color: '#FFFFFF',
+  },
+  right_gap: {
+    marginRight: 16,
+  },
+  left_gap: {
+    marginLeft: 16,
+  },
+  backgroundColor_chosen: {
+    backgroundColor: '#C32D2C',
   },
 });

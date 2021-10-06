@@ -4,6 +4,7 @@ import styles from './notificationsModal.styles';
 import NotificationsList from '../notificationsList/NotificationsList';
 import {Pressable, Text} from 'react-native';
 import {INotificationDataType} from '../../hooks/useGetNotificationsData';
+import {useTranslation} from 'react-i18next';
 
 interface NotificationsModalList {
   visibleModal: boolean;
@@ -17,6 +18,7 @@ const NotificationsModalList = memo(
     onGetAllNotificationsPress,
     data,
   }: NotificationsModalList): JSX.Element => {
+    const {t} = useTranslation();
     return (
       <DroppedAndFadeView isOpened={visibleModal} style={styles.modal}>
         <>
@@ -24,7 +26,9 @@ const NotificationsModalList = memo(
           <Pressable
             onPress={onGetAllNotificationsPress}
             style={styles.notification_button_wrapper}>
-            <Text style={styles.notification_button}>Все уведомления</Text>
+            <Text style={styles.notification_button}>
+              {t('notificationScreen.allNotifications')}
+            </Text>
           </Pressable>
         </>
       </DroppedAndFadeView>

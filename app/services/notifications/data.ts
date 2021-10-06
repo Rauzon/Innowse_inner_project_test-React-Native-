@@ -1,11 +1,12 @@
 import {NotificationDataType} from './notification.types';
+import {NOTIFICATIONS_CATEGORIES} from '../../constants';
 
 export const notificationData: NotificationDataType[] = [
   {
     id: '1',
     title:
       '“Как сделать SRS документ?”. Переходи по ссылке, чтобы узнать подробности',
-    category: 'Новости',
+    category: NOTIFICATIONS_CATEGORIES.NEWS,
     timeOfGetting: new Date(),
     isViewed: false,
     newContent: {
@@ -17,7 +18,7 @@ export const notificationData: NotificationDataType[] = [
     id: '2',
     title:
       'В твоём офисе появилась еда! Приходи в 206 офис скорее, если хочешь успеть. И не забудь сказать спасибо Анна Петрова.',
-    category: 'Еда',
+    category: NOTIFICATIONS_CATEGORIES.FOOD,
     timeOfGetting: new Date(),
     isViewed: false,
     newContent: {
@@ -29,7 +30,7 @@ export const notificationData: NotificationDataType[] = [
     id: '3',
     title:
       'Как сделать SRS документ?. Переходи по ссылке, чтобы узнать подробности',
-    category: 'Новости',
+    category: NOTIFICATIONS_CATEGORIES.NEWS,
     timeOfGetting: new Date(),
     isViewed: false,
     newContent: {
@@ -40,7 +41,7 @@ export const notificationData: NotificationDataType[] = [
   {
     id: '4',
     title: 'Еда в офисе!',
-    category: 'Еда',
+    category: NOTIFICATIONS_CATEGORIES.FOOD,
     timeOfGetting: new Date(),
     isViewed: false,
     newContent: {

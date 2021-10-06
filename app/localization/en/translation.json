@@ -9,7 +9,14 @@
     "minsk": "Minsk",
     "vitebsk": "Vitebsk",
     "gomel": "Gomel",
-    "iBroughtFood": "I brought food"
+    "iBroughtFood": "I brought food",
+    "Как оформить отпуск": "Organize arranging of vacation",
+    "Медицинское страхование": "Medical insurance",
+    "Удалёнка": "Remote work",
+    "Как оформить Sick Day": "Organize arranging of Sick Day",
+    "Йога практика": "Yoga practice",
+    "Спортивный абонемент": "Sport abonnement",
+    "Полезные ссылки": "Useful links"
   },
   "mainScreen": {
     "welcome": "Welcome",
@@ -55,5 +62,39 @@
     "actions": "Actions",
     "complaints": "Complaints and offers",
     "requestOnOff": "Request for absence"
+  },
+  "couponScreen": {
+    "couponCardTitle": "Get your own discount right now!",
+    "all": "All",
+    "food": "Food",
+    "drink": "Drink",
+    "sport": "Sport",
+    "beauty": "Beauty",
+    "more": "More",
+    "news": "News",
+    "unreadMessage": "Unread Message"
+  },
+  "notificationScreen": {
+    "freshNew": "Fresh news available",
+    "foodInOffice": "Food in the office!",
+    "allNotifications": "All notifications",
+    "goToNews": "Go to news",
+    "markAllRead": "Mark all as read"
+  },
+  "timeNaming": {
+    "seconds": "sec",
+    "minutes": "min"
+  },
+  "faqScreen": {
+    "subtitle_1": "The employee is obliged to use his labor leave annually",
+    "subtitle_2": "Medical insurance of employees from company Asoba",
+    "subtitle_3": "Medical insurance of employees from company Asoba",
+    "subtitle_4": "Medical insurance of employees from company Asoba",
+    "subtitle_5": "The employee is obliged to use his labor leave annually",
+    "subtitle_6": "The employee is obliged to use his labor leave annually",
+    "subtitle_7": "The employee is obliged to use his labor leave annually"
+  },
+  "foodMessageScreen": {
+    "foodMessage": "Let's inform colleagues about the availability of food"
   }
 }

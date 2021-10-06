@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
 import {Pressable, Text} from 'react-native';
 import styles from './customTopButton.styles';
+import {useTranslation} from 'react-i18next';
 
 interface ICustomButton {
   isLastItem?: boolean;
@@ -18,31 +19,32 @@ const CustomTopButton = memo(
     onBtnPress,
     isPressed,
   }: ICustomButton): JSX.Element => {
+    const {t} = useTranslation();
     const onPress = () => {
       if (onBtnPress) {
         onBtnPress(content);
       }
     };
     const conditionStyle = isLastItem
-      ? [styles.btn_wrapper, {marginRight: 16}]
+      ? [styles.btn_wrapper, styles.right_gap]
       : isFirstItem
-      ? [styles.btn_wrapper, {marginLeft: 16}]
+      ? [styles.btn_wrapper, styles.left_gap]
       : styles.btn_wrapper;
     return (
       <Pressable
         style={
           isPressed
-            ? [conditionStyle, {backgroundColor: '#C32D2C'}]
-            : [conditionStyle, {backgroundColor: '#F0F0F0'}]
+            ? [conditionStyle, styles.backgroundColor_chosen]
+            : conditionStyle
         }
         onPress={onPress}>
         <Text
           style={
             isPressed
-              ? [styles.btn, {color: '#FFFFFF'}]
-              : [styles.btn, {color: '#262B2F'}]
+              ? [styles.btn_text, styles.btn_text_chosen]
+              : styles.btn_text
           }>
-          {content}
+          {t(`couponScreen.${content}`)}
         </Text>
       </Pressable>
     );

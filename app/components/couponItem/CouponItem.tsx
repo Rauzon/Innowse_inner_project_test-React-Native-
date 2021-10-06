@@ -8,6 +8,7 @@ import styles from './couponItem.styles';
 import {DashedLineIcon} from '../../Icons';
 import InformationModal from '../informationModal/InformationModal';
 import ContentModal from '../contentModal/ContentModal';
+import {useTranslation} from 'react-i18next';
 
 interface ICouponItem {
   coupon: CouponType;
@@ -57,6 +58,7 @@ const CouponTitle = memo(
 
 const CouponContent = memo(({placeName, data}: ICouponContent): JSX.Element => {
   const {condition, password, login, description} = data;
+  const {t} = useTranslation();
   return (
     <View style={styles.content_wrapper}>
       <Text style={styles.placeName}>{placeName}</Text>
@@ -74,7 +76,7 @@ const CouponContent = memo(({placeName, data}: ICouponContent): JSX.Element => {
       )}
       {description && <Text style={styles.text}>{description}</Text>}
       <View style={styles.btn}>
-        <Text style={styles.btn_content}>Подробнее</Text>
+        <Text style={styles.btn_content}>{t('couponScreen.more')}</Text>
       </View>
     </View>
   );

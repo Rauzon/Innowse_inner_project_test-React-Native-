@@ -38,6 +38,7 @@ const QuestionsList = memo(
           )}
           renderItem={({item, index}) => (
             <QuestionItem
+              index={index}
               questionItem={item}
               key={item.id}
               isLastItem={index === faqData?.length! - 1}

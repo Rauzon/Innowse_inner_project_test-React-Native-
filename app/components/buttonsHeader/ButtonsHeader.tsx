@@ -2,6 +2,7 @@ import React, {memo} from 'react';
 import {FlatList, View, Text} from 'react-native';
 import CustomTopButton from '../customTopButton/CustomTopButton';
 import styles from './buttonsHeader.styles';
+import {useTranslation} from 'react-i18next';
 
 interface ICoupon {
   categories?: string[];
@@ -17,11 +18,14 @@ const ButtonsHeader = memo(
     chosenCategory,
     isBenefitsScreen,
   }: ICoupon): JSX.Element => {
+    const {t} = useTranslation();
     return (
       <View style={styles.container}>
         {isBenefitsScreen && (
           <View style={styles.title_wrapper}>
-            <Text style={styles.title}>Забирай свою скидку прямо сейчас!</Text>
+            <Text style={styles.title}>
+              {t('couponScreen.couponCardTitle')}
+            </Text>
           </View>
         )}
         <FlatList

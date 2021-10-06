@@ -49,11 +49,11 @@ export const FAQ_ICONS_URL_DATA: {[key: string]: ImageSourcePropType} = {
 };
 
 export enum BENEFITS_DISCOUNTS_CATEGORY {
-  ALL = 'Все',
-  FOOD = 'Еда',
-  DRINK = 'Алкоголь',
-  SPORT = 'Спорт',
-  BEAUTY = 'Красота',
+  ALL = 'all',
+  FOOD = 'food',
+  DRINK = 'drink',
+  SPORT = 'sport',
+  BEAUTY = 'beauty',
 }
 
 export const POLICY_AGREEMENT_LINK = 'https://reactnative.dev/';
@@ -87,13 +87,13 @@ export enum ROUTES {
 export const COUNTS_ITEMS_IN_MODAL_LIST = 2;
 
 export enum NOTIFICATIONS_CATEGORIES {
-  NEWS = 'Новости',
-  FOOD = 'Еда',
+  NEWS = 'news',
+  FOOD = 'food',
 }
 
 export enum NOTIFICATIONS_SCREEN_CATEGORIES {
-  ALL = 'Все',
-  UNREAD_MESSAGES = 'Непрочитанные',
-  FOOD = 'Еда',
-  NEWS = 'Новости',
+  ALL = 'all',
+  UNREAD_MESSAGES = 'unreadMessage',
+  FOOD = 'food',
+  NEWS = 'news',
 }

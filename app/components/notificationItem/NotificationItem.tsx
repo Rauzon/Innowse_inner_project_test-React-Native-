@@ -5,6 +5,7 @@ import {NOTIFICATIONS_CATEGORIES} from '../../constants';
 import {FoodNotificationIcon, NewsNotificationIcon} from '../../Icons';
 import {INotificationDataType} from '../../hooks/useGetNotificationsData';
 import notificationService from '../../services/notifications/notification.service';
+import {useTranslation} from 'react-i18next';
 
 interface INotificationItem {
   item: INotificationDataType;
@@ -14,7 +15,7 @@ interface INotificationItem {
 const NotificationItem = memo(
   ({item, isLastItem}: INotificationItem): JSX.Element => {
     const {isViewed, category, pastTime, title, id} = item;
-
+    const {t} = useTranslation();
     const styleConditions = isLastItem
       ? [styles.container, styles.container_border]
       : [styles.container, styles.container_border];
@@ -40,14 +41,18 @@ const NotificationItem = memo(
         <View style={styles.content_wrapper}>
           <Text style={styles.time}>{pastTime}</Text>
           {category === NOTIFICATIONS_CATEGORIES.NEWS ? (
-            <Text style={styles.title}>Появилась свежая новость</Text>
+            <Text style={styles.title}>{t('notificationScreen.freshNew')}</Text>
           ) : (
-            <Text style={styles.title}>Еда в офисе!</Text>
+            <Text style={styles.title}>
+              {t('notificationScreen.foodInOffice')}
+            </Text>
           )}
           <Text style={styles.content}>{title}</Text>
           {category === NOTIFICATIONS_CATEGORIES.NEWS && (
             <Pressable onPress={onButtonPress} style={styles.button_wrapper}>
-              <Text style={styles.button_content}>Перейти к новости</Text>
+              <Text style={styles.button_content}>
+                {t('notificationScreen.goToNews')}
+              </Text>
             </Pressable>
           )}
         </View>

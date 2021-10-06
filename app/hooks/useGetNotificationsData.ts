@@ -5,6 +5,7 @@ import {
   NotificationDataType,
 } from '../services/notifications/notification.types';
 import getPastTimeValue from '../helpers/getPastTimeValue';
+import {useTranslation} from 'react-i18next';
 
 export interface INotificationDataType extends NotificationDataType {
   pastTime: string;
@@ -20,6 +21,7 @@ const useGetNotificationsData = (): ResultHookType => {
     null,
   );
   const [data, setData] = useState<INotificationDataType[] | null>(null);
+  const {t} = useTranslation();
 
   useEffect(() => {
     notificationService.setTimeOfGetting();
@@ -35,7 +37,10 @@ const useGetNotificationsData = (): ResultHookType => {
       notifications.map((item: NotificationDataType): INotificationDataType => {
         return {
           ...item,
-          pastTime: getPastTimeValue(item.timeOfGetting),
+          pastTime: getPastTimeValue(item.timeOfGetting, {
+            min: t('timeNaming.minutes'),
+            sec: t('timeNaming.seconds'),
+          }),
         };
       });
     if (initialData) {
@@ -44,7 +49,7 @@ const useGetNotificationsData = (): ResultHookType => {
       );
       setData(newData);
     }
-  }, [initialData]);
+  }, [initialData, t]);
   return {data, categories: initialData?.notificationsCategories!};
 };
 
