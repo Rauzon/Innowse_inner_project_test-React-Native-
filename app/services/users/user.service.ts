@@ -6,7 +6,7 @@ import errorHandler from '../../helpers/errorHandler';
 
 class UserService {
   private static instance: UserService;
-  public userState$: BehaviorSubject<IUserState> =
+  private userState$: BehaviorSubject<IUserState> =
     new BehaviorSubject<IUserState>({user: null} as IUserState);
 
   public static getInstance = (): UserService => {
@@ -14,6 +14,10 @@ class UserService {
       UserService.instance = new UserService();
     }
     return UserService.instance;
+  };
+
+  public getState = () => {
+    return userService.userState$.getValue();
   };
 
   public setUserData = () => {
@@ -37,6 +41,7 @@ class UserService {
       console.log(errorHandler(err));
     }
   };
+
   private transformName = (userName: string): TransformNameType => {
     const [name, surname] = userName.split(' ');
     const initials = `${name?.charAt(0)}${surname.charAt(0)}`;
@@ -45,6 +50,10 @@ class UserService {
       surname,
       initials,
     };
+  };
+
+  public subscribe = <T>(callback: T): void => {
+    this.userState$.subscribe(callback);
   };
 }
 

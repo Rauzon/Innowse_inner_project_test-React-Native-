@@ -7,13 +7,12 @@ import {of} from 'rxjs';
 const useSetUserData = (): UserType | null => {
   const [userData, setUserData] = useState<UserType | null>(null);
 
-  //eslint-disable-next-line
   useEffect(() => {
-    const data = userService.userState$.getValue();
+    const data = userService.getState();
     const observer = of(data.user);
     const subscription = observer.subscribe(setUserData);
-    return () => subscription.unsubscribe();
-  });
+    return () => subscription.unsubscribe(observer);
+  }, []);
 
   return userData;
 };

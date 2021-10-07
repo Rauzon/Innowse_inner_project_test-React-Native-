@@ -1,5 +1,5 @@
 import {CouponType, ReferralsDataType} from './benefits.types';
-import {BENEFITS_DISCOUNTS_CATEGORY} from '../../constants';
+import {BENEFITS_DISCOUNTS_CATEGORY, CITIES} from '../../constants';
 
 export const MinskCouponsData: CouponType[] = [
   {
@@ -165,31 +165,31 @@ export const ReferralsData: ReferralsDataType = {
       id: '1',
       vacancy: 'Tech Lead React',
       salary: '1000$',
-      cities: ['Минск', 'Витебск'],
+      cities: [CITIES.MINSK, CITIES.VITEBSK],
     },
     {
       id: '2',
       vacancy: 'Tech Lead QA',
       salary: '1000$',
-      cities: ['Минск', 'Могилев'],
+      cities: [CITIES.MINSK, CITIES.MOGILEV],
     },
     {
       id: '3',
       vacancy: 'Tech Lead Android',
       salary: '1000$',
-      cities: ['Минск'],
+      cities: [CITIES.MINSK],
     },
     {
       id: '4',
       vacancy: 'Tech Lead PHP',
       salary: '1000$',
-      cities: ['Минск'],
+      cities: [CITIES.MINSK],
     },
     {
       id: '5',
       vacancy: 'Tech Lead PHP',
       salary: '1000$',
-      cities: ['Минск', 'Гомель'],
+      cities: [CITIES.MINSK, CITIES.GOMEL],
     },
   ],
   recommendationRules: [
@@ -223,19 +223,19 @@ export const ReferralsData: ReferralsDataType = {
   contacts: [
     {
       id: '1',
-      city: ['Гомель'],
+      city: [CITIES.GOMEL],
       name: 'Виталий Ковальчук',
       mail: 'vitali@mail.ru',
     },
     {
       id: '2',
-      city: ['Витебск'],
+      city: [CITIES.VITEBSK],
       name: 'Лада Маханькова',
       mail: 'lada@gmail.com',
     },
     {
       id: '3',
-      city: ['Гомель', 'Минск', 'Могилев', 'Гродно'],
+      city: [CITIES.GOMEL, CITIES.MINSK, CITIES.MOGILEV, CITIES.GRODNO],
       name: 'Ольга Егорова',
       mail: 'olga@gmail.com',
     },

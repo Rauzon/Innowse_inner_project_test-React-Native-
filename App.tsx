@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import AppNavigator from './app/navigator/app.navigator';
+import AppNavigator from './app/navigator/App.navigator';
 import './app/localization/i18n';
 
 const App = () => {

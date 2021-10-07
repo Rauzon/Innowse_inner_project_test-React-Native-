@@ -1,4 +1,4 @@
-type RuleDataType = {
+export type RuleDataType = {
   id: string;
   icon: string;
   title: string;

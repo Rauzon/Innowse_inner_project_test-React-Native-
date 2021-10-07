@@ -1,7 +1,6 @@
 import {INotificationState, NotificationDataType} from './notification.types';
 import {notificationData} from './data';
 import {NOTIFICATIONS_SCREEN_CATEGORIES} from '../../constants';
-import {SetStateAction} from 'react';
 //@ts-ignore
 import {BehaviorSubject} from 'rxjs';
 
@@ -64,10 +63,9 @@ class NotificationService {
     };
     this.notificationState$.next(updatedData);
   };
-  public subscribe = (callback: SetStateAction<any>) => {
+  public subscribe = <T>(callback: T): void => {
     this.notificationState$.subscribe(callback);
   };
-  public calcTime = () => {};
 }
 
 const notificationService = NotificationService.getInstance();

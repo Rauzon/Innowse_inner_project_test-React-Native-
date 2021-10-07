@@ -1,4 +1,4 @@
-import s from '../components/customAppHeader/customAppHeader.styles';
+import s from '../components/CustomAppHeader/customAppHeader.styles';
 import {ViewStyle} from 'react-native';
 
 const getCurrentStyles = (isPressed: boolean): ViewStyle[] => {

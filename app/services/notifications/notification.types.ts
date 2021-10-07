@@ -1,8 +1,10 @@
+import {NOTIFICATIONS_SCREEN_CATEGORIES} from '../../constants';
+
 export type NotificationsCategoriesType =
-  | 'Все'
-  | 'Непрочитанные'
-  | 'Еда'
-  | 'Новости';
+  | NOTIFICATIONS_SCREEN_CATEGORIES.ALL
+  | NOTIFICATIONS_SCREEN_CATEGORIES.UNREAD_MESSAGES
+  | NOTIFICATIONS_SCREEN_CATEGORIES.FOOD
+  | NOTIFICATIONS_SCREEN_CATEGORIES.NEWS;
 
 export type NotificationDataType = {
   id: string;

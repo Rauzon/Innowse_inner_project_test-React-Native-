@@ -30,3 +30,16 @@ export type RootStackParamList = {
   [NOTIFICATION]: undefined;
   [FOOD_MESSAGE]: undefined;
 };
+
+export type RoutesType =
+  | ROUTES.RULES
+  | ROUTES.FOOD_MESSAGE
+  | ROUTES.FAQ
+  | ROUTES.APP
+  | ROUTES.NOTIFICATION
+  | ROUTES.NEWS
+  | ROUTES.LOGIN
+  | ROUTES.PROFILE
+  | ROUTES.DISCOUNTS
+  | ROUTES.ERROR_SCREEN
+  | ROUTES.SPLASH;

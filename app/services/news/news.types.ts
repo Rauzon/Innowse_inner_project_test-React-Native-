@@ -1,10 +1,15 @@
+export type NewContentItemType = {
+  subtitle?: string;
+  text?: string;
+};
+
 export type NewType = {
   id: string;
   icon: string;
   title: string;
   date: string;
   headers: string[];
-  content: Array<{subtitle?: string; text?: string}>;
+  content: NewContentItemType[];
   preContent?: string;
 };
 

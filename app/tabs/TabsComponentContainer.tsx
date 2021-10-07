@@ -1,6 +1,6 @@
 import React from 'react';
-import Tabs from './app.tabs';
-import HeaderContainer from '../components/headerContainer/HeaderContainer';
+import Tabs from './App.tabs';
+import HeaderContainer from '../components/HeaderContainer/HeaderContainer';
 
 const TabsComponentContainer = (): JSX.Element => {
   return (

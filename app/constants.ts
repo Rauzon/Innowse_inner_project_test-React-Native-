@@ -97,3 +97,11 @@ export enum NOTIFICATIONS_SCREEN_CATEGORIES {
   FOOD = 'food',
   NEWS = 'news',
 }
+
+export enum CITIES {
+  MINSK = 'minsk',
+  MOGILEV = 'mogilev',
+  GRODNO = 'grodno',
+  GOMEL = 'gomel',
+  VITEBSK = 'vitebsk',
+}

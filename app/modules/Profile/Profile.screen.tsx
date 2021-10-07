@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, Text, View} from 'react-native';
-import AvatarComponent from './components/avatarComponent/AvatarComponent';
+import AvatarComponent from '../../components/AvatarComponent/AvatarComponent';
 import authService from '../../services/auth/auth.service';
 import useSetUserData from '../../hooks/useSetUserData';
 import styles from './profile.styles';
@@ -22,7 +22,7 @@ const ProfileScreen = (): JSX.Element => {
 
   const onSignOut = async () => {
     await authService.signOut();
-    navigate(ROUTES.LOGIN as never);
+    navigate({name: ROUTES.LOGIN, params: undefined});
   };
 
   return (

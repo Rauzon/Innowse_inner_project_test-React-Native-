@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import notificationService from '../services/notifications/notification.service';
 import {
   INotificationState,
@@ -27,7 +27,9 @@ const useGetNotificationsData = (): ResultHookType => {
     notificationService.setTimeOfGetting();
   }, []);
   useEffect(() => {
-    notificationService.subscribe(setInitialData);
+    notificationService.subscribe<
+      Dispatch<SetStateAction<INotificationState | null>>
+    >(setInitialData);
   }, []);
 
   useEffect(() => {

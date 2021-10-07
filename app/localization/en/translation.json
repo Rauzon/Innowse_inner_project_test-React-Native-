@@ -8,8 +8,10 @@
     "mogilev": "Mogilev",
     "minsk": "Minsk",
     "vitebsk": "Vitebsk",
+    "grodno": "Grodno",
     "gomel": "Gomel",
     "iBroughtFood": "I brought food",
+    "Notifications": "Notifications",
     "Как оформить отпуск": "Organize arranging of vacation",
     "Медицинское страхование": "Medical insurance",
     "Удалёнка": "Remote work",
@@ -26,7 +28,7 @@
   },
   "authErrorScreen": {
     "errMessage": "Access was denied",
-    "notification": "Let's try again using @gmail.com email",
+    "notification": "Let's try again using @gmail.com",
     "button_text": "Try again"
   },
   "rulesScreen": {
@@ -96,5 +98,32 @@
   },
   "foodMessageScreen": {
     "foodMessage": "Let's inform colleagues about the availability of food"
+  },
+  "referralsScreen": {
+    "vacancies": "HOT Vacancies",
+    "howItWorks": "How does it work?",
+    "referralSchema": "Referral's program's schema",
+    "whoHaveToGo": "Who have I got to go to?",
+    "whoHaveToGoDescription": "If you have an acquaintance / friend and you are sure that he will become a great player of the Innowise Group team - call him to us! We will be happy to chat and arrange interviews.",
+    "rules": {
+      "rule_1": "Employees are eligible for a bonus for a candidate of any level",
+      "rule_2": "If several people act as a referral for the same candidate, the referral will be the one who first introduced the candidate.",
+      "rule_3": "Possibility to recommend to any location",
+      "rule_4": "The bonus is paid to the salary after the candidate has passed the probationary period"
+    },
+    "contacts": {
+      "contactsDescription": "Write a letter with the contacts of the candidate to the recruiter in your city",
+      "names": {
+        "Виталий Ковальчук": "Vitaly Kavalchuk",
+        "Лада Маханькова": "Lada Machankova",
+        "Ольга Егорова": "Olga Egorova"
+      }
+    }
+  },
+  "newsScreen": {
+    "content": "Content"
+  },
+  "errorMessages": {
+    "openUrlErrorMessage": "Don't know how to open this URL:"
   }
 }
