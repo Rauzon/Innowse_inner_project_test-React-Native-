@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import RuleComponent from '../../../components/RuleComponent/RuleComponent';
+import RuleComponent from '../authComponents/RuleComponent/RuleComponent';
 import authService from '../../../services/auth/auth.service';
 import {RuleDataType, RulesType} from '../../../services/auth/auth.types';
 import styles from './rules.styles';
@@ -17,7 +17,7 @@ import OpenURLButton from '../../../components/OpenURLButton/OpenURLButton';
 import {POLICY_AGREEMENT_LINK, ROUTES} from '../../../constants';
 import ConfirmButton from '../../../components/ConfirmButton/ConfirmButton';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../navigator/navigator.types';
+import {RootStackParamList} from '../../../navigation/appScreenNavigation/navigator.types';
 import {useTranslation} from 'react-i18next';
 
 type RulesScreenProp = NativeStackNavigationProp<

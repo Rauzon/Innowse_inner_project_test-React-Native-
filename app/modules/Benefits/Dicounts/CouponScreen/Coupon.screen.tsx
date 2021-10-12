@@ -5,7 +5,7 @@ import {
   CouponType,
   DiscountsDataType,
 } from '../../../../services/benefits/benefits.types';
-import CouponItem from '../../../../components/CouponItem/CouponItem';
+import CouponItem from '../../benefitsComponents/CouponItem/CouponItem';
 import ButtonsHeader from '../../../../components/ButtonsHeader/ButtonsHeader';
 import useButtonsSwitchAndGetFilteredData from '../../../../hooks/useButtonsSwitchAndGetFilteredData';
 import {Route, useRoute} from '@react-navigation/native';

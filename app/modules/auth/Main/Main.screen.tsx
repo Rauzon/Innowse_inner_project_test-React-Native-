@@ -9,7 +9,7 @@ import {useNavigation} from '@react-navigation/native';
 import userService from '../../../services/users/user.service';
 import {GoogleIcon, MainScreenIcon} from '../../../Icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../navigator/navigator.types';
+import {RootStackParamList} from '../../../navigation/appScreenNavigation/navigator.types';
 import errorHandler from '../../../helpers/errorHandler';
 import {useTranslation} from 'react-i18next';
 

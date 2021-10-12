@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View, Text} from 'react-native';
 import styles from './recommendationRules.styles';
 import {RecommendationRuleType} from '../../../../../services/benefits/benefits.types';
-import RecommendRule from '../../../../../components/RecommendRule/RecommendRule';
+import RecommendRule from '../../../benefitsComponents/RecommendRule/RecommendRule';
 import {useTranslation} from 'react-i18next';
 
 interface IRecommendationRules {

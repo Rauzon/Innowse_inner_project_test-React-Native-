@@ -5,7 +5,7 @@ import {NewType} from '../../../../services/news/news.types';
 import {NEWS_ICON_URL_DATA, ROUTES} from '../../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../../navigator/navigator.types';
+import {RootStackParamList} from '../../../../navigation/appScreenNavigation/navigator.types';
 
 export type NewsScreenProp = NativeStackNavigationProp<
   RootStackParamList,

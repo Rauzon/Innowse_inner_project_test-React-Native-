@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {FlatList, ListRenderItemInfo, View, ViewStyle} from 'react-native';
 import {FaqType} from '../../../../services/help/help.types';
-import QuestionItem from '../../../../components/QuestionItem/QuestionItem';
+import QuestionItem from '../../helpComponents/QuestionItem/QuestionItem';
 import CustomAppHeader from '../../../../components/CustomAppHeader/CustomAppHeader';
 import {useTranslation} from 'react-i18next';
 

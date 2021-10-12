@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import styles from './vacancies.styles';
 import {VacancyType} from '../../../../../services/benefits/benefits.types';
-import VacancyItem from '../../../../../components/VacancyItem/VacancyItem';
+import VacancyItem from '../../../benefitsComponents/VacancyItem/VacancyItem';
 
 interface IVacancies {
   vacancies: VacancyType[] | undefined;

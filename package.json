@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android-prod": "react-native run-android --variant=release",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -22,6 +23,7 @@
     "@types/rx": "^4.1.2",
     "i18next": "^21.2.4",
     "react": "17.0.2",
+    "react-hook-form": "^7.17.1",
     "react-i18next": "^11.12.0",
     "react-native": "0.65.1",
     "react-native-picker-select": "^8.0.4",

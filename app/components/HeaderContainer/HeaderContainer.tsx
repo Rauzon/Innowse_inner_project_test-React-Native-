@@ -3,10 +3,10 @@ import {useNavigation} from '@react-navigation/native';
 import useSetUserData from '../../hooks/useSetUserData';
 import {ROUTES} from '../../constants';
 import useGetNotificationsData from '../../hooks/useGetNotificationsData';
-import NotificationsModalList from '../NotificationsModalList/NotificationsModalList';
+import NotificationsModalList from '../../modules/Notifications/notificationsComponents/NotificationsModalList/NotificationsModalList';
 import Header from './Header/Header';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../navigator/navigator.types';
+import {RootStackParamList} from '../../navigation/appScreenNavigation/navigator.types';
 
 type AppScreenProp = NativeStackNavigationProp<RootStackParamList, ROUTES.APP>;
 

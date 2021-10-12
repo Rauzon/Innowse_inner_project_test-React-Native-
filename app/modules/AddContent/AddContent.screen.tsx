@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './addContentScreen.styles';
-import AddContentTitleWrapper from '../../components/addContentCommonComponents/AddContentTitleWrapper/AddContentTitleWrapper';
-import AddContentItemWrapper from '../../components/addContentCommonComponents/AddContentItemWrapper/AddContentItemWrapper';
+import AddContentTitleWrapper from './AddContentComponents/AddContentTitleWrapper/AddContentTitleWrapper';
+import AddContentItemWrapper from './AddContentComponents/AddContentItemWrapper/AddContentItemWrapper';
 import {
   AboutCompanyIcon,
   CalendarIcon,

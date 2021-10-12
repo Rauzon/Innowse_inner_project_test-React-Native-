@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import styles from './article.styles';
 import {ROUTES} from '../../../../constants';
-import ContentList from '../../../../components/ContentList/ContentList';
+import ContentList from '../../communityComponents/ContentList/ContentList';
 import {Route, useRoute} from '@react-navigation/native';
 import {NewType} from '../../../../services/news/news.types';
 

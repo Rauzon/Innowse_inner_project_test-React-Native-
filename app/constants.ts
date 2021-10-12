@@ -105,3 +105,24 @@ export enum CITIES {
   GOMEL = 'gomel',
   VITEBSK = 'vitebsk',
 }
+
+export enum COMPANY_OFFICES_MINSK {
+  SMOLYACHKOVA = 'smolyachkova',
+  ZHUKOVA = 'zhukova',
+}
+
+export enum COMPANY_OFFICES_VITEBSK {
+  SUVOROVA = 'suvorova',
+  POBEDITELEU = 'pobediteleu',
+}
+
+export enum FORM_FIELD_NAMES {
+  CITY = 'city',
+  OFFICE = 'office',
+  FLOOR = 'floor',
+  ROOM = 'room',
+}
+
+export enum ERRORS {
+  SELECT_FIELD_WAS_NOT_CHOSEN = 'selectFieldWasNotChosen',
+}

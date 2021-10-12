@@ -97,7 +97,17 @@
     "subtitle_7": "The employee is obliged to use his labor leave annually"
   },
   "foodMessageScreen": {
-    "foodMessage": "Let's inform colleagues about the availability of food"
+    "foodMessage": "Let's inform colleagues about the availability of food",
+    "cityLabel": "City",
+    "officeLabel": "Office",
+    "floorLabel": "Floor",
+    "roomLabel": "Cabinet number",
+    "choose":"Choose",
+    "sendNotification": "Send notification",
+    "smolyachkova":"Smolyachkova St.",
+    "zhukova": "Zhukova St.",
+    "suvorova": "Suvorova St.",
+    "pobediteleu": "Pobediteleu St."
   },
   "referralsScreen": {
     "vacancies": "HOT Vacancies",
@@ -124,6 +134,7 @@
     "content": "Content"
   },
   "errorMessages": {
-    "openUrlErrorMessage": "Don't know how to open this URL:"
+    "openUrlErrorMessage": "Don't know how to open this URL:",
+    "selectFieldWasNotChosen": "Value above was not chosen"
   }
 }

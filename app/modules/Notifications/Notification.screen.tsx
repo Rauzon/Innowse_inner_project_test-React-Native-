@@ -1,6 +1,6 @@
 import React from 'react';
 import useGetNotificationsData from '../../hooks/useGetNotificationsData';
-import NotificationsList from '../../components/NotificationsList/NotificationsList';
+import NotificationsList from './notificationsComponents/NotificationsList/NotificationsList';
 import {Text, View} from 'react-native';
 import ConfirmButton from '../../components/ConfirmButton/ConfirmButton';
 import useGetFilteredNotificationsData from '../../hooks/useGetFilteredNotificationsData';

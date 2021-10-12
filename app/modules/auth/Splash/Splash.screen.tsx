@@ -7,7 +7,7 @@ import userService from '../../../services/users/user.service';
 import {BigLogoIcon} from '../../../Icons';
 import {ROUTES} from '../../../constants';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../navigator/navigator.types';
+import {RootStackParamList} from '../../../navigation/appScreenNavigation/navigator.types';
 
 type splashScreenProp = NativeStackNavigationProp<
   RootStackParamList,

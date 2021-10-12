@@ -100,7 +100,13 @@
     "subtitle_7": "Сотрудник обязан ежегодно использовать свой трудовой отпуск"
   },
   "foodMessageScreen": {
-    "foodMessage": "Let's inform colleagues about the availability of food"
+    "foodMessage": "Давай оповестим коллег о появлении еды",
+    "cityLabel": "Город",
+    "officeLabel": "Офис",
+    "floorLabel": "Этаж",
+    "roomLabel": "Номер помещение",
+    "choose":"Выберите",
+    "sendNotification": "Отправить уведомление"
   },
   "referralsScreen": {
     "vacancies": "HOT Вакансии",
@@ -127,6 +133,7 @@
     "content": "Содержание"
   },
   "errorMessages": {
-    "openUrlErrorMessage": "Неизвестно как открыть эту ссылку:"
+    "openUrlErrorMessage": "Неизвестно как открыть эту ссылку:",
+    "selectFieldWasNotChosen": "Поле выше не было выбрано"
   }
 }

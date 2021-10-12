@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 import {ContactType} from '../../../../../services/benefits/benefits.types';
 import styles from './contacts.styles';
 import {useTranslation} from 'react-i18next';
-import ContactItem from '../../../../../components/ContactItem/ContactItem';
+import ContactItem from '../../../benefitsComponents/ContactItem/ContactItem';
 
 interface IContacts {
   contacts: ContactType[];

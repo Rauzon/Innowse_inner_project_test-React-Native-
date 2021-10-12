@@ -5,13 +5,17 @@ import styles from './confirmButton.styles';
 interface IConfirmButton {
   children: ReactNode;
   onPress(): void;
-  style: ViewStyle;
+  style: ViewStyle | ViewStyle[];
+  disabled?: boolean;
 }
 
 const ConfirmButton = memo(
-  ({children, onPress, style}: IConfirmButton): JSX.Element => {
+  ({children, onPress, style, disabled}: IConfirmButton): JSX.Element => {
     return (
-      <Pressable onPress={onPress} style={[styles.button_wrapper, style]}>
+      <Pressable
+        onPress={onPress}
+        style={[styles.button_wrapper, style]}
+        disabled={disabled}>
         {children}
       </Pressable>
     );

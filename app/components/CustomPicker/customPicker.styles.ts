@@ -2,7 +2,8 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    marginTop: 24,
+    height: 50,
+    marginTop: 48,
     flexDirection: 'column',
     justifyContent: 'center',
   },
@@ -30,11 +31,17 @@ export default StyleSheet.create({
   icon_wrapper: {
     display: 'flex',
     flexDirection: 'row',
+    paddingTop: '60%',
     paddingRight: 17,
-    paddingTop: '75%',
     alignItems: 'center',
   },
   placeholder: {
     color: '#828282',
+  },
+  error_message: {
+    marginTop: 5,
+    color: 'red',
+    fontSize: 14,
+    lineHeight: 18,
   },
 });

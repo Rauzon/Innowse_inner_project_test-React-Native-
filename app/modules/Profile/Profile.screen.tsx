@@ -1,13 +1,13 @@
 import React from 'react';
 import {Pressable, Text, View} from 'react-native';
-import AvatarComponent from '../../components/AvatarComponent/AvatarComponent';
+import AvatarComponent from './profileComponents/AvatarComponent/AvatarComponent';
 import authService from '../../services/auth/auth.service';
 import useSetUserData from '../../hooks/useSetUserData';
 import styles from './profile.styles';
 import {useNavigation} from '@react-navigation/native';
 import {ROUTES} from '../../constants';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../navigator/navigator.types';
+import {RootStackParamList} from '../../navigation/appScreenNavigation/navigator.types';
 import {useTranslation} from 'react-i18next';
 
 type ProfileScreenProp = NativeStackNavigationProp<
