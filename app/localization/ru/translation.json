@@ -18,7 +18,9 @@
     "Как оформить Sick Day": "Как оформить Sick Day",
     "Йога практика": "Йога практика",
     "Спортивный абонемент": "Спортивный абонемент",
-    "Полезные ссылки": "Полезные ссылки"
+    "Полезные ссылки": "Полезные ссылки",
+    "requests": "Запрос на отсутствие",
+    "creatingRequestHeader": "Создание запроса"
   },
   "mainScreen": {
     "welcome": "Добро Пожаловать",
@@ -135,5 +137,14 @@
   "errorMessages": {
     "openUrlErrorMessage": "Неизвестно как открыть эту ссылку:",
     "selectFieldWasNotChosen": "Поле выше не было выбрано"
+  },
+  "requestsScreen": {
+    "sickDay": "Sick day",
+    "countVacation": "Дней отпуска",
+    "createRequest": "Создать запрос"
+  },
+  "requestFormScreen": {
+    "startDate": "Дата начала *",
+    "endDate": "Дата окончания *"
   }
 }

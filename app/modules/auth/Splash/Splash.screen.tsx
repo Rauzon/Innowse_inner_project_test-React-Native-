@@ -9,7 +9,7 @@ import {ROUTES} from '../../../constants';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../navigation/appScreenNavigation/navigator.types';
 
-type splashScreenProp = NativeStackNavigationProp<
+type SplashScreenProp = NativeStackNavigationProp<
   RootStackParamList,
   ROUTES.SPLASH
 >;
@@ -17,7 +17,7 @@ type splashScreenProp = NativeStackNavigationProp<
 const SplashScreen = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
   const isAuthorized = useIsAuthorized();
-  const {navigate} = useNavigation<splashScreenProp>();
+  const {navigate} = useNavigation<SplashScreenProp>();
 
   useEffect(() => {
     const timeOut = setTimeout(() => setIsLoading(false), 3000);

@@ -14,7 +14,7 @@ import {ROUTES} from '../../constants';
 import {useTranslation} from 'react-i18next';
 
 const AddContentScreen = (): JSX.Element => {
-  const {FOOD_MESSAGE} = ROUTES;
+  const {FOOD_MESSAGE, REQUESTS} = ROUTES;
   const {t} = useTranslation();
   return (
     <View>
@@ -37,7 +37,7 @@ const AddContentScreen = (): JSX.Element => {
       <AddContentItemWrapper route={FOOD_MESSAGE} icon={<OfferAndIssueIcon />}>
         <Text style={styles.text_item}>{t('addContentScreen.complaints')}</Text>
       </AddContentItemWrapper>
-      <AddContentItemWrapper route={FOOD_MESSAGE} icon={<RequestOnOutIcon />}>
+      <AddContentItemWrapper route={REQUESTS} icon={<RequestOnOutIcon />}>
         <Text style={styles.text_item}>
           {t('addContentScreen.requestOnOff')}
         </Text>

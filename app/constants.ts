@@ -82,6 +82,8 @@ export enum ROUTES {
   FAQ_TAB = 'faq_tab',
   ADD_CONTENT_TAB = 'add_content_tab',
   FOOD_MESSAGE = 'food_message',
+  REQUESTS = 'requests',
+  REQUEST_FORM = 'requestForm',
 }
 
 export const COUNTS_ITEMS_IN_MODAL_LIST = 2;

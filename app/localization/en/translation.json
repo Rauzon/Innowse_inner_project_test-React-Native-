@@ -18,7 +18,9 @@
     "Как оформить Sick Day": "Organize arranging of Sick Day",
     "Йога практика": "Yoga practice",
     "Спортивный абонемент": "Sport abonnement",
-    "Полезные ссылки": "Useful links"
+    "Полезные ссылки": "Useful links",
+    "requests": "Request for absence",
+    "creatingRequestHeader": "Creating of request"
   },
   "mainScreen": {
     "welcome": "Welcome",
@@ -136,5 +138,14 @@
   "errorMessages": {
     "openUrlErrorMessage": "Don't know how to open this URL:",
     "selectFieldWasNotChosen": "Value above was not chosen"
+  },
+  "requestsScreen": {
+    "sickDay": "Sick day",
+    "countVacation": "Count of vacation",
+    "createRequest": "Create request"
+  },
+  "requestFormScreen": {
+    "startDate": "Start Data *",
+    "endDate": "End Data *"
   }
 }

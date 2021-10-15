@@ -65,7 +65,7 @@ const FoodMessageScreen = (): JSX.Element => {
         control={control}
         label={t('foodMessageScreen.cityLabel')}
         data={cities}
-        isRested={shouldBeRested}
+        isCleaned={shouldBeRested}
         setShouldBeRested={setShouldBeRested}
       />
       <CustomPicker
@@ -76,7 +76,7 @@ const FoodMessageScreen = (): JSX.Element => {
         control={control}
         label={t('foodMessageScreen.officeLabel')}
         data={offices}
-        isRested={shouldBeRested}
+        isCleaned={shouldBeRested}
         setShouldBeRested={setShouldBeRested}
       />
       <CustomPicker
@@ -86,7 +86,7 @@ const FoodMessageScreen = (): JSX.Element => {
         control={control}
         label={t('foodMessageScreen.floorLabel')}
         data={floors}
-        isRested={shouldBeRested}
+        isCleaned={shouldBeRested}
         setShouldBeRested={setShouldBeRested}
       />
       <CustomPicker
@@ -96,7 +96,7 @@ const FoodMessageScreen = (): JSX.Element => {
         control={control}
         label={t('foodMessageScreen.roomLabel')}
         data={rooms}
-        isRested={shouldBeRested}
+        isCleaned={shouldBeRested}
         setShouldBeRested={setShouldBeRested}
       />
       <ConfirmButton

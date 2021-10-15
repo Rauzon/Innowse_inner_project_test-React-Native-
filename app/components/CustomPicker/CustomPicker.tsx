@@ -4,7 +4,7 @@ import RNPickerSelect from 'react-native-picker-select';
 import {DropDownSelectIcon} from '../../Icons';
 import styles from './customPicker.styles';
 import {Control, useController, UseFormSetError} from 'react-hook-form';
-import {FoodMessageFormDataType} from '../../modules/AddContent/FoodMessage/FoodMessage.screen';
+import {FoodMessageFormDataType} from '../../modules/AddContent/FoodMessageScreen/FoodMessage.screen';
 import {ERRORS} from '../../constants';
 import {useTranslation} from 'react-i18next';
 
@@ -23,7 +23,7 @@ interface ICustomPicker {
   control: Control<FoodMessageFormDataType, object>;
   isDisabled?: boolean;
   setError?: UseFormSetError<FoodMessageFormDataType>;
-  isRested: boolean;
+  isCleaned: boolean;
   setShouldBeRested(value: boolean): void;
 }
 
@@ -36,7 +36,7 @@ const CustomPicker = memo(
     fieldFormName,
     isDisabled,
     setError,
-    isRested,
+    isCleaned,
     setShouldBeRested,
   }: ICustomPicker): JSX.Element => {
     const {t} = useTranslation();
@@ -60,10 +60,10 @@ const CustomPicker = memo(
     }, [isDisabled, setError, fieldFormName]);
 
     useEffect(() => {
-      if (isRested) {
+      if (isCleaned) {
         setShouldBeRested(false);
       }
-    }, [isRested, setShouldBeRested]);
+    }, [isCleaned, setShouldBeRested]);
 
     const icon = () => (
       <View style={styles.icon_wrapper}>
@@ -99,7 +99,7 @@ const CustomPicker = memo(
               placeholder: styles.placeholder,
             }}
             placeholder={{label: currentLabel}}
-            value={isRested ? '' : value}
+            value={isCleaned ? '' : value}
             useNativeAndroidPickerStyle={false}
             Icon={icon}
             onValueChange={onChange}

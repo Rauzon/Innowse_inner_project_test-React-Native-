@@ -15,6 +15,8 @@ const {
   DISCOUNTS,
   ERROR_SCREEN,
   SPLASH,
+  REQUESTS,
+  REQUEST_FORM,
 } = ROUTES;
 
 export type RootStackParamList = {
@@ -29,6 +31,8 @@ export type RootStackParamList = {
   [FAQ]: FaqType;
   [NOTIFICATION]: undefined;
   [FOOD_MESSAGE]: undefined;
+  [REQUESTS]: undefined;
+  [REQUEST_FORM]: undefined;
 };
 
 export type RoutesType =
@@ -42,4 +46,6 @@ export type RoutesType =
   | ROUTES.PROFILE
   | ROUTES.DISCOUNTS
   | ROUTES.ERROR_SCREEN
-  | ROUTES.SPLASH;
+  | ROUTES.SPLASH
+  | ROUTES.REQUESTS
+  | ROUTES.REQUEST_FORM;

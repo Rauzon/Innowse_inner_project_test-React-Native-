@@ -14,7 +14,7 @@ import {
   UseFormReset,
   UseFormSetError,
 } from 'react-hook-form';
-import {FoodMessageFormDataType} from '../modules/AddContent/FoodMessage/FoodMessage.screen';
+import {FoodMessageFormDataType} from '../modules/AddContent/FoodMessageScreen/FoodMessage.screen';
 import useCommonSelectForm from './useCommonSelectForm';
 
 type selectFormDataType = {

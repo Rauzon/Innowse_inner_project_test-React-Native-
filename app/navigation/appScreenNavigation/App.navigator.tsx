@@ -13,8 +13,10 @@ import commonArticleScreen from '../../modules/Help/helpComponents/ArticleScreen
 import AuthErrorScreen from '../../modules/auth/authComponents/AuthErrorScreen/AuthErrorScreen';
 import NotificationScreen from '../../modules/Notifications/Notification.screen';
 import {ROUTES} from '../../constants';
-import FoodMessageScreen from '../../modules/AddContent/FoodMessage/FoodMessage.screen';
+import FoodMessageScreen from '../../modules/AddContent/FoodMessageScreen/FoodMessage.screen';
 import {RootStackParamList} from './navigator.types';
+import RequestsScreen from '../../modules/AddContent/RequestsScreen/Requests.screen';
+import RequestFormScreen from '../../modules/AddContent/RequestFormScreen/RequestForm.screen';
 
 const {Navigator, Screen} = createNativeStackNavigator<RootStackParamList>();
 
@@ -31,6 +33,8 @@ const AppNavigator = () => {
     SPLASH,
     DISCOUNTS,
     FOOD_MESSAGE,
+    REQUESTS,
+    REQUEST_FORM,
   } = ROUTES;
 
   return (
@@ -102,6 +106,20 @@ const AppNavigator = () => {
             header: () => <ScreenHeader title={'iBroughtFood'} />,
           }}
           component={FoodMessageScreen}
+        />
+        <Screen
+          name={REQUESTS}
+          options={{
+            header: () => <ScreenHeader title={'requests'} />,
+          }}
+          component={RequestsScreen}
+        />
+        <Screen
+          name={REQUEST_FORM}
+          options={{
+            header: () => <ScreenHeader title={'creatingRequestHeader'} />,
+          }}
+          component={RequestFormScreen}
         />
       </Navigator>
     </NavigationContainer>

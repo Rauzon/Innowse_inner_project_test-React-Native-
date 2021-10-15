@@ -52,6 +52,9 @@ class AdditionalContentService {
   public getState = (): IAdditionalContentState => {
     return this.addContentState$.getValue();
   };
+  public subscribe = <T>(callback: T): void => {
+    this.addContentState$.subscribe(callback);
+  };
 }
 
 const additionalContentService = AdditionalContentService.getInstance();
