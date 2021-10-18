@@ -45,10 +45,10 @@ const FoodMessageScreen = (): JSX.Element => {
 
   useEffect(() => {
     const formValues = Object.values(watcher);
-    const isComplitedForm = formValues.reduce((acc, item) => {
+    const isCompletedForm = formValues.reduce((acc, item) => {
       return !item;
     }, false);
-    setDisableButton(isComplitedForm);
+    setDisableButton(isCompletedForm);
   }, [watcher]);
 
   const conditionButtonStyle = isButtonDisabled

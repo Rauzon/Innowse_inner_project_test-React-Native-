@@ -137,7 +137,9 @@
   },
   "errorMessages": {
     "openUrlErrorMessage": "Don't know how to open this URL:",
-    "selectFieldWasNotChosen": "Value above was not chosen"
+    "selectFieldWasNotChosen": "Value above was not chosen",
+    "dateHasToBeMoreThanCurrent": "Date has to be more than current",
+    "hasToBeMoreThanStartDate": "Date has to be more than start date"
   },
   "requestsScreen": {
     "sickDay": "Sick day",
@@ -146,6 +148,8 @@
   },
   "requestFormScreen": {
     "startDate": "Start Data *",
-    "endDate": "End Data *"
+    "endDate": "End Data *",
+    "sendRequest": "Send request",
+    "countOfDays": "Type off days"
   }
 }

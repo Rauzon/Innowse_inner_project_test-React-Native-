@@ -50,12 +50,10 @@ const CustomPicker = memo(
     });
     useEffect(() => {
       if (setError && !isDisabled) {
-        if (setError) {
-          setError(fieldFormName, {
-            type: 'manual',
-            message: undefined,
-          });
-        }
+        setError(fieldFormName, {
+          type: 'manual',
+          message: undefined,
+        });
       }
     }, [isDisabled, setError, fieldFormName]);
 

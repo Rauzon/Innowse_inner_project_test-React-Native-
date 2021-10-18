@@ -136,7 +136,9 @@
   },
   "errorMessages": {
     "openUrlErrorMessage": "Неизвестно как открыть эту ссылку:",
-    "selectFieldWasNotChosen": "Поле выше не было выбрано"
+    "selectFieldWasNotChosen": "Поле выше не было выбрано",
+    "dateHasToBeMoreThanCurrent": "Дата должна больше текущей",
+    "hasToBeMoreThanStartDate": "Дата должна быть больше чем дата начала"
   },
   "requestsScreen": {
     "sickDay": "Sick day",
@@ -145,6 +147,8 @@
   },
   "requestFormScreen": {
     "startDate": "Дата начала *",
-    "endDate": "Дата окончания *"
+    "endDate": "Дата окончания *",
+    "sendRequest": "Отправить запрос",
+    "daysOffType": "Type off days"
   }
 }

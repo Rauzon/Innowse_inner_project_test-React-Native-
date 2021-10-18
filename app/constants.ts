@@ -127,4 +127,14 @@ export enum FORM_FIELD_NAMES {
 
 export enum ERRORS {
   SELECT_FIELD_WAS_NOT_CHOSEN = 'selectFieldWasNotChosen',
+  DATE_HAS_TO_BE_MORE_THAN_CURRENT = 'dateHasToBeMoreThanCurrent',
+  HAS_TO_BE_MORE_THAN_START_DATE = 'hasToBeMoreThanStartDate',
+}
+
+export enum DATE_PICKER_FIELDS {
+  START_DATE = 'startDate',
+  END_DATE = 'endDate',
+  DAY_OFF_TYPE = 'dayOffType',
+  COUNT_OF_DAYS = 'countOfDays',
+  COMMENTS = 'comments',
 }

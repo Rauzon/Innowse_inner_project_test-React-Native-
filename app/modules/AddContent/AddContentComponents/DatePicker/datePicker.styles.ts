@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  container: {
+    marginTop: 24,
+  },
   picker_wrapper: {
     height: 50,
     width: '100%',
@@ -13,7 +16,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: 16,
-    paddingBottom: 16, //TODO remove input, placeholder styles
+    paddingBottom: 16,
     paddingTop: 16,
     fontFamily: 'SFProDisplay-Regular',
     fontStyle: 'normal',
@@ -21,9 +24,6 @@ export default StyleSheet.create({
     fontSize: 16,
     lineHeight: 19,
     color: '#000',
-  },
-  placeholder: {
-    color: '#828282',
   },
   icon_wrapper: {
     position: 'absolute',
@@ -45,5 +45,9 @@ export default StyleSheet.create({
     lineHeight: 17,
     letterSpacing: 0.25,
     color: '#353535',
+  },
+  error: {
+    marginTop: 4,
+    color: 'red',
   },
 });
